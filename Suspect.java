@@ -1,9 +1,11 @@
 package groupproj;
 
+import java.util.ArrayList;
+
 public class Suspect {
     protected String bodyType;
     protected boolean isCriminal;
-    ArrayList<Relatives> relatives = new ArrayList<Relative>();
+    ArrayList<Suspect> relatives = new ArrayList<Suspect>();
 
     public Suspect() {
 
