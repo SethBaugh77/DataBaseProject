@@ -22,13 +22,18 @@ public class Victim {
 		this.isHealthy = isHealthy;
 		
 	}
+	
 	public String getVictimStatement()
 	{
+		
 		return victimStatement;
+		
     }
     
     public void setVictimStatement(String victimstatement)
 	{
+    	
 		victimStatement = victimstatement;
+		
 	}
 }
