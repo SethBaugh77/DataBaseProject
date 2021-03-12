@@ -8,6 +8,7 @@ public class DataBase {
 	ArrayList<Officer> officers= new ArrayList<Officer>();
 	ArrayList<String> POI= new ArrayList<String>();
 	ArrayList<String> suspects= new ArrayList<String>();
+
 	public void DataBase(ArrayList<Criminal> Criminals,ArrayList<Case> Cases,ArrayList<User> Users,ArrayList<Victim> Victims,ArrayList<Witness> Witnesses,
 			ArrayList<Officer> Officers,ArrayList<String> poi,ArrayList<String> Suspects)
 	{
@@ -22,67 +23,56 @@ public class DataBase {
 		return;
 		
 	}
+	
 	public void printData()
 	{
-		int num = 0;
-		System.out.println("Criminal list: ");
-	while(criminals.isEmpty!= null)
-	{
-	System.out.println(criminals(num));
-	num++;
+	
+	System.out.print("Person of Interst");
+	
+	
+	for(String data : POI) {
+	
+		System.out.print(data);
 	}
-	System.out.println();
-	num=0;
-	System.out.println("Cases: ");
-	while(cases.isEmpty!= null)
-	{
-	System.out.println(cases(num));
-	num++;
+	
+	for(String data : suspects) {
+		
+		System.out.println(data);
 	}
-	System.out.println();
-	num=0;
-	System.out.println("Users: ");
-	while(users.isEmpty!= null)
-	{
-	System.out.println(users(num));
-	num++;
+	
+	for(Criminal data : criminals) {
+	
+		System.out.println(data);
 	}
-	System.out.println();
-	num=0;
-	System.out.println("Victims: ");
-	while(victims.isEmpty!= null)
-	{
-	System.out.println(victims(num));
-	num++;
+	
+	for(Case data : cases){
+		
+		System.out.print(data);
+	}
+	
+	for(User data : users) {
+		
+		System.out.println(data);
+	}
+	
+	for(Victim data : victims) {
+		 
+		System.out.println(data);
+		
+	}
+	
+	for(Witness data : witnesses) {
+	
+	System.out.println(data);
 	
 	}
-	System.out.println();
-	num=0;
-	System.out.println("Witnesses: ");
-	while(witnesses.isEmpty!= null)
-	{
-	System.out.println(witnesses(num));
-	num++;
-	System.out.println();
-	num=0;
-	System.out.println("Officers: ");
-	while(officers.isEmpty!= null)
-	{
-	System.out.println(officers(num));
-	num++;
-	System.out.println();
-	num=0;
-	System.out.println("Person of intrest: ");
-	while(POI.isEmpty() =! null)
-	{
-	System.out.println(POI(num));
-	num++;
-	System.out.println();
-	num=0;
-	System.out.println("Suspects: ");
-	while(suspects.isEmpty() =! null)
-	{
-	System.out.println(suspects(num));
-	num++;
-
-}
+	
+	for(Officer data : officers) {
+		
+	System.out.println(data);
+	
+	}
+	
+	}
+	
+	}	

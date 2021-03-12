@@ -1,7 +1,6 @@
-package groupproj;
 
 public class Victim {
-    protected String victimStatement;
+	protected String victimStatement;
 	protected boolean isHealthy;
     private String name;
     private int age;
@@ -28,8 +27,8 @@ public class Victim {
 		return victimStatement;
     }
     
-    public void setVictimStatement()
+    public void setVictimStatement(String victimstatement)
 	{
-		
+		victimStatement = victimstatement;
 	}
 }
