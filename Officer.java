@@ -1,7 +1,7 @@
-public class Officer extends Person{
-    private int badgeNumber;
-    private String officerRank;
-    private String officerStatement;
+public class Officer extends Person {
+    protected int badgeNumber;
+    protected String officerRank;
+    protected String officerStatement;
 
     public Officer(int bnum, String officerRank, String officerState, String Name, int Age,int Height,int Weight, String Gender,String Address,
     String Phone, String DateOfBirth,boolean IsAdult,int id) {
