@@ -6,7 +6,7 @@ public class Case {
     private ArrayList<Victim> victims = new ArrayList<Victim>();
     private ArrayList<Witness> witnesses = new ArrayList<Witness>(); // -CaseID: int
     private ArrayList<Officer> officers = new ArrayList<Officer>();
-    private ArrayList<POI> poi = new ArrayList<POI>();
+    private ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
     private String crime;
     private String date;
     private boolean isSolved;

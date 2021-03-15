@@ -1,56 +1,43 @@
-package groupproj;
 
-public class Criminal extends Suspect {
+public class Criminal extends Person {
     private boolean inJail;
     private String notes;
     private int numCrimes;
-    
 
-    public Criminal(boolean inJail, boolean access, String notes, int numCrimes,
-    String bodyType, boolean isCriminal, String[] relatives)
-    {
-        super(bodyType, isCriminal, relatives);
+    public Criminal(String witnessState, String Name, int Age,int Height,int Weight, String Gender,String Address,
+    String Phone, String DateOfBirth,boolean IsAdult,int id, boolean inJail, String notes, int numCrimes) {
+        super(Name, Age, Height, Weight,  Gender,Address,
+        Phone,  DateOfBirth, IsAdult, id);
+        this.inJail = inJail;
         this.notes = notes;
+        this.numCrimes = numCrimes;
     }
-    public void setJail()
-    {
+
+    public void setJail() {
         /*
-        if(this.Criminal.inJail == true)
-        {
-            inJail = true;
-        }
-        else
-        {
-            inJail = false;
-        }
-        */
+         * if(this.Criminal.inJail == true) { inJail = true; } else { inJail = false; }
+         */
     }
-    public void setNumCrimes()
-    {
+
+    public void setNumCrimes() {
         /*
-        for(int i=0;i<cases.length;i++)
-        {
-            if(criminal.getCrimes[i] != null)
-            {
-                numCrimes++;
-            }
-        }
-        */
+         * for(int i=0;i<cases.length;i++) { if(criminal.getCrimes[i] != null) {
+         * numCrimes++; } }
+         */
     }
-    //set crimeTypes 
-    //get crimeTypes String[]
-    public boolean getJail()
-    {
+
+    // set crimeTypes
+    // get crimeTypes String[]
+    public boolean getJail() {
         return inJail;
     }
-    public int getNumCrimes()
-    {
+
+    public int getNumCrimes() {
         return numCrimes;
     }
-    public String getNotes()
-    {
+
+    public String getNotes() {
         return notes;
     }
-   
 
 }

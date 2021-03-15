@@ -5,15 +5,8 @@ public class frontEnd {
     public static void main(String args[])
     {
         
-        while(true)
-        {
-            promptForUsernameAndPassword();
-            promptForAction();
-            displaySearchResults();
-            System.exit(0);
-        }
-
-
+        Witness wit = new Witness("Help ive been hurt", "jon", 35, 64,150, "M", "102932 sicamore lane", "718501924", "9/12/88", true, 9912);
+        
 
 
     }

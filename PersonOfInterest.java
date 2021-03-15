@@ -1,4 +1,4 @@
-package groupproj;
+
 
 public class PersonOfInterest extends Person {
     private String occupation;
