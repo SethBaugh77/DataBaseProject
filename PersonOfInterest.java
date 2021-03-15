@@ -1,33 +1,42 @@
 
-
 public class PersonOfInterest extends Person {
-    private String occupation;
-    private String crimeConnection;
-    private String lastLocation;
+    protected String occupation;
+    protected String lastLocation;
+    protected String poiNotes;
 
     public PersonOfInterest(String name, int age, int height, int weight, 
     String gender, String address, String phone, String dateOfBirth, 
-    boolean isAdult, int id, String occupation, String crimeConnectionString, 
-    String lastLocation)
-    {
+    boolean isAdult, int id, String occupation, String poiNotes, 
+    String lastLocation) {
         super(name, age, height, weight, gender, address, phone, dateOfBirth,
         isAdult, id);
         this.occupation = occupation;
         this.lastLocation = lastLocation;
-        this.crimeConnection = crimeConnection;
-
+        this.poiNotes = poiNotes;
     }
-    public String getOccupation()
-    {
+
+    public String getOccupation(){
         return occupation;
     }
-    public String getCrimeConnection()
-    {
-        return crimeConnection;
+
+    public void setOccupation(String occupation){
+        this.occupation = occupation;
     }
-    public String getLastLocation()
-    {
+
+    public String getpoiNotes(){
+        return poiNotes;
+    }
+
+    public void setpoiNotes(String poiNotes){
+        this.poiNotes = poiNotes;
+    }
+
+    public String getLastLocation(){
         return lastLocation;
+    }
+    
+    public void setLastLocation(String lastLocation){
+        this.lastLocation = lastLocation;
     }
     
 }
