@@ -14,12 +14,10 @@ public class Victim extends Person {
 	public String getVictimStatement() {
 
 		return victimStatement;
-
 	}
 
 	public void setVictimStatement(String victimstatement) {
 
 		this.victimStatement = victimstatement;
-
 	}
 }
