@@ -1,4 +1,4 @@
-package groupproj;
+
 
 
   {
@@ -21,4 +21,4 @@ package groupproj;
     "officers":"Mike Hun",
     "POI":"Nellie Nells",
     "suspects": "Bic Simpson",
-}
+  }
