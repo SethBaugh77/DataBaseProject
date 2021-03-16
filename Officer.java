@@ -3,10 +3,9 @@ public class Officer extends Person {
     protected String officerRank;
     protected String officerStatement;
 
-    public Officer(int bnum, String officerRank, String officerState, String Name, int Age,int Height,int Weight, String Gender,String Address,
-    String Phone, String DateOfBirth,boolean IsAdult,int id) {
-        super(Name, Age, Height, Weight,  Gender,Address,
-        Phone,  DateOfBirth, IsAdult, id);
+    public Officer(int bnum, String officerRank, String officerState, String fName, String lname, int Age, int Height,
+            int Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, int id) {
+        super(fName, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id);
         badgeNumber = bnum;
         this.officerRank = officerRank;
         this.officerStatement = officerState;
@@ -33,6 +32,6 @@ public class Officer extends Person {
     }
 
     public void setOfficerStatement(String officerStatement) {
-    	this.officerStatement = officerStatement;
+        this.officerStatement = officerStatement;
     }
 }

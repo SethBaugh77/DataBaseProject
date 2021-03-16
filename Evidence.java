@@ -1,17 +1,18 @@
 
 public class Evidence {
-private String time;
-private String date;
-private String location;
-private String vehicle;
-private String DNAEvidence;
-private String bloodEvidence;
-private String fingerprintEvidence;
-private String weaponEvidence;
-private String sceneDescription;
-private boolean hasWitness;
+	private String time;
+	private String date;
+	private String location;
+	private String vehicle;
+	private String DNAEvidence;
+	private String bloodEvidence;
+	private String fingerprintEvidence;
+	private String weaponEvidence;
+	private String sceneDescription;
+	private boolean hasWitness;
 
-	public Evidence(){}
+	public Evidence() {
+	}
 
 	public String getTime() {
 		return time;
@@ -92,12 +93,13 @@ private boolean hasWitness;
 	public void setHasWitness(boolean hasWitness) {
 		this.hasWitness = hasWitness;
 	}
+
 	public String toString() {
-		String Evidencestatement = "Time: "+time+" \nDate:  "+date+"\nLocation: "+location;
-		if(vehicle != null)
-			Evidencestatement= Evidencestatement+"\n Vehicle: "+vehicle;
-		if(weaponEvidence != null)
-			Evidencestatement= Evidencestatement+"\n Weapon: "+weaponEvidence;
+		String Evidencestatement = "Time: " + time + " \nDate:  " + date + "\nLocation: " + location;
+		if (vehicle != null)
+			Evidencestatement = Evidencestatement + "\n Vehicle: " + vehicle;
+		if (weaponEvidence != null)
+			Evidencestatement = Evidencestatement + "\n Weapon: " + weaponEvidence;
 		return Evidencestatement;
 	}
 }

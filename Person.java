@@ -1,32 +1,127 @@
 
 public class Person {
-	protected String name;
-	protected int age ;
-	protected int height;
-	protected int weight;
+	protected String fname;
+	protected String lname;
+	protected long age;
+	protected double height;
+	protected double weight;
 	protected String gender;
-	protected String  address;
+	protected String address;
 	protected String phone;
 	protected String dateOfBirth;
 	protected boolean isAdult;
-	protected int ID;
-	
-	public Person(String Name, int Age,int Height,int Weight, String Gender,String Address,
-			String Phone, String DateOfBirth,boolean IsAdult,int id) {
-		this.name = Name;
+	protected long ID;
+
+	public String getFname() {
+		return this.fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return this.lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public long getAge() {
+		return this.age;
+	}
+
+	public void setAge(long age) {
+		this.age = age;
+	}
+
+	public double getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	public double getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public String getGender() {
+		return this.gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getDateOfBirth() {
+		return this.dateOfBirth;
+	}
+
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public boolean isIsAdult() {
+		return this.isAdult;
+	}
+
+	public boolean getIsAdult() {
+		return this.isAdult;
+	}
+
+	public void setIsAdult(boolean isAdult) {
+		this.isAdult = isAdult;
+	}
+
+	public long getID() {
+		return this.ID;
+	}
+
+	public void setID(long ID) {
+		this.ID = ID;
+	}
+
+	public Person(String fName, String lname, long Age, double Height, double Weight, String Gender, String Address,
+			String Phone, String DateOfBirth, boolean IsAdult, long id) {
+		this.fname = fName;
+		this.lname = lname;
 		this.age = Age;
 		this.height = Height;
 		this.weight = Weight;
 		this.gender = Gender;
 		this.address = Address;
 		this.phone = Phone;
-		this.dateOfBirth =DateOfBirth;
-		this.isAdult=IsAdult;
-		this.ID=id;
-		
+		this.dateOfBirth = DateOfBirth;
+		this.isAdult = IsAdult;
+		this.ID = id;
+
 	}
-	public String toString()
-	{
-		return name+" "+age+" "+height+" "+weight+" "+gender+" "+ address +" "+phone+" "+dateOfBirth+" "+isAdult+" "+ID;
+
+	public String toString() {
+		return fname + " " + lname + " " + age + " " + height + " " + weight + " " + gender + " " + address + " "
+				+ phone + " " + dateOfBirth + " " + isAdult + " " + ID;
 	}
 }

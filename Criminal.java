@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Criminal extends Person{
     private boolean inJail;
     private String notes;
-    private int numCrimes;
+    private long numCrimes;
 
-    public Criminal(String Name, int Age,int Height,int Weight, String Gender,String Address,
-    String Phone, String DateOfBirth,boolean IsAdult,int id, boolean inJail, String notes, int numCrimes){
-        super(Name, Age, Height, Weight,  Gender, Address,
+    public Criminal(String fName,String lname ,long Age,double Height,double Weight, String Gender,String Address,
+    String Phone, String DateOfBirth,boolean IsAdult,long id, boolean inJail, String notes, long numCrimes){
+        super(fName,lname ,Age, Height, Weight,  Gender, Address,
         Phone,  DateOfBirth, IsAdult, id);
         this.inJail = inJail;
         this.notes = notes;
@@ -39,11 +39,11 @@ public class Criminal extends Person{
         return numCrimes;
     }
 
-    public void setNumCrimes(ArrayList<Case> cases){
-        for(int i=0;i<cases.size();i++){ 
-            if(cases.get(i) != null && this.name.equals(cases.get(i).getCriminals().name)){
-                numCrimes++; 
-            }
-        }        
-    }
+    // public void setNumCrimes(ArrayList<Case> cases){
+    //     for(int i=0;i<cases.size();i++){ 
+    //         if(cases.get(i) != null && this.name.equals(cases.get(i).getCriminals().name)){
+    //             numCrimes++; 
+    //         }
+    //     }        
+    // }
 }

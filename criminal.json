@@ -1,0 +1,33 @@
+[
+    {
+        "fName":"Tim",
+        "lName" :"Chev",
+        "Age": 33,
+        "Height": 6,
+        "Weight": 200,
+        "Gender": "Male",
+        "Address":"912 Sicamore Lane",
+        "Phone": "301-282-5792",
+        "DOB": "5/2/1987",
+        "isAdult": true,
+        "ID": 591,
+        "inJail":true,
+        "Access": true,
+        "Notes": "nothing",
+         "numCrimes": 2,
+         "crimeTypes": ["personal", "property"],
+         "Occupation": "Software developer",   
+         "crimeConnection": "Seen at scene",  
+         "lastLocation": "Scene of crime", 
+         "bodyType": "Bulky",
+         "isCriminal": true, 
+         "Relatives":[915,512,891]  
+
+
+    }
+]
+
+
+
+
+

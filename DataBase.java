@@ -1,78 +1,133 @@
 import java.util.*;
-public class DataBase {
-	ArrayList<Criminal> criminals= new ArrayList<Criminal>();
-	ArrayList<Case> cases= new ArrayList<Case>();
-	ArrayList<User> users= new ArrayList<User>();
-	ArrayList<Victim> victims= new ArrayList<Victim>();
-	ArrayList<Witness> witnesses= new ArrayList<Witness>();
-	ArrayList<Officer> officers= new ArrayList<Officer>();
-	ArrayList<String> POI= new ArrayList<String>();
-	ArrayList<String> suspects= new ArrayList<String>();
 
-	public void DataBase(ArrayList<Criminal> Criminals,ArrayList<Case> Cases,ArrayList<User> Users,ArrayList<Victim> Victims,ArrayList<Witness> Witnesses,
-			ArrayList<Officer> Officers,ArrayList<String> poi,ArrayList<String> Suspects)
-	{
-		this.criminals = Criminals;
-		this.cases = Cases;
-		this.users = Users;
-		this.victims = Victims;
-		this.witnesses= Witnesses;
-		this.officers= Officers;
-		this.POI=poi;
-		this.suspects= Suspects;
-		return;
-		
+public class DataBase {
+	public static DataBase getInstance() {
+		if (dbase == null)
+			dbase = new DataBase();
+		return dbase;
 	}
-	
-	public void printData()
-	{
-	
-	System.out.print("Person of Interst");
-	
-	
-	for(String data : POI) {
-	
-		System.out.print(data);
+
+	static private DataBase dbase;
+	private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
+	private ArrayList<Case> cases = new ArrayList<Case>();
+	private ArrayList<User> users = new ArrayList<User>();
+	private ArrayList<Victim> victims = new ArrayList<Victim>();
+	private ArrayList<Witness> witnesses = new ArrayList<Witness>();
+	private ArrayList<Officer> officers = new ArrayList<Officer>();
+	private ArrayList<PersonOfInterest> POI = new ArrayList<PersonOfInterest>();
+	private ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+
+	public ArrayList<Criminal> getCriminals() {
+		return this.criminals;
 	}
-	
-	for(String data : suspects) {
-		
-		System.out.println(data);
+
+	public void setCriminals(ArrayList<Criminal> criminals) {
+		this.criminals = criminals;
 	}
-	
-	for(Criminal data : criminals) {
-	
-		System.out.println(data);
+
+	public ArrayList<Case> getCases() {
+		return this.cases;
 	}
-	
-	for(Case data : cases){
-		
-		System.out.print(data);
+
+	public void setCases(ArrayList<Case> cases) {
+		this.cases = cases;
 	}
-	
-	for(User data : users) {
-		
-		System.out.println(data);
+
+	public ArrayList<User> getUsers() {
+		return this.users;
 	}
-	
-	for(Victim data : victims) {
-		 
-		System.out.println(data);
-		
+
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
 	}
-	
-	for(Witness data : witnesses) {
-	
-	System.out.println(data);
-	
+
+	public ArrayList<Victim> getVictims() {
+		return this.victims;
 	}
-	
-	for(Officer data : officers) {
-		
-	System.out.println(data);
-	
+
+	public void setVictims(ArrayList<Victim> victims) {
+		this.victims = victims;
 	}
-	
+
+	public ArrayList<Witness> getWitnesses() {
+		return this.witnesses;
 	}
-	
-	}	
+
+	public void setWitnesses(ArrayList<Witness> witnesses) {
+		this.witnesses = witnesses;
+	}
+
+	public ArrayList<Officer> getOfficers() {
+		return this.officers;
+	}
+
+	public void setOfficers(ArrayList<Officer> officers) {
+		this.officers = officers;
+	}
+
+	public ArrayList<PersonOfInterest> getPOI() {
+		return this.POI;
+	}
+
+	public void setPOI(ArrayList<PersonOfInterest> POI) {
+		this.POI = POI;
+	}
+
+	public ArrayList<Suspect> getSuspects() {
+		return this.suspects;
+	}
+
+	public void setSuspects(ArrayList<Suspect> suspects) {
+		this.suspects = suspects;
+	}
+
+	public void printData() {
+
+		System.out.print("Person of Interst");
+
+		for (String data : POI) {
+
+			System.out.print(data);
+		}
+
+		for (String data : suspects) {
+
+			System.out.println(data);
+		}
+
+		for (Criminal data : criminals) {
+
+			System.out.println(data);
+		}
+
+		for (Case data : cases) {
+
+			System.out.print(data);
+		}
+
+		for (User data : users) {
+
+			System.out.println(data);
+		}
+
+		for (Victim data : victims) {
+
+			System.out.println(data);
+
+		}
+
+		for (Witness data : witnesses) {
+
+			System.out.println(data);
+
+		}
+
+		for (Officer data : officers) {
+
+			System.out.println(data);
+
+		}
+
+	}
+
+}
