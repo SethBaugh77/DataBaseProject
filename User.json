@@ -1,0 +1,13 @@
+[
+    {
+        "ID": 1001,
+        "Admin": "True",
+        "fname": "Tim",
+        "lname": "Chev",
+        "username": "TimChev",
+        "email": "timc@gmail.com",
+        "password": "stylishdonkey",
+        "phone": "3012825792"
+
+    }
+]

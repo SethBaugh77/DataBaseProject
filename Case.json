@@ -1,0 +1,37 @@
+[
+    {
+        "CaseID": 8091,
+        "crimeType": "Personal",
+        "criminals": [591], 
+        "victims": [312], 
+        "witnesses": [127], 
+        "officers": [1001,1005], 
+        "POI": [], 
+        "crime":"Home robbery", 
+        "date": "05/18/2009",
+        "isSolved": true,
+        "severity": 4,
+        "isFederal": false
+
+    }
+]
+// - type: CrimeTypes
+// - criminals:arrayList<Criminal>
+// - victims:arrayList<Victim>
+// - witnesses:arrayList<Witness>
+// - officers:arrayList<Officer>
+// - POI:ArrayList<String>
+// - crime:String
+// - date:String
+// - isSolved :boolean
+// - severity:int
+// - isFederal:boolean
+
+
+
+
+
+
+
+
+

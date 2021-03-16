@@ -1,0 +1,15 @@
+[
+    {
+        "CaseID": 8091,
+        "time": "3-4 AM",
+        "location": "412 underoot drive, Chicago IL",
+        "vehicle": "2009 black Camaro",
+        "DNAEvidence": "N/A",
+        "bloodEvidence": "AB+",
+        "fingerPrintEvidence": "N/A",
+        "weaponEvidence": "dull kitchen knife",
+        "sceneDescription": "Messy house, broken furniture, pans, and glass",
+        "hasWitness": true
+
+    }
+]
