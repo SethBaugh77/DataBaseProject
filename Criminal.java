@@ -40,9 +40,9 @@ public class Criminal extends Person{
     }
 
     public void setNumCrimes(ArrayList<Case> cases){
-        for(int i=0;i<cases.size();i++){ 
-            if(cases.get(i) != null && this.name.equals(cases.get(i).getCriminals().name)){
-                numCrimes++; 
+        for(Case c : cases){
+            if(c.getCriminals() != null && c.getCriminals().contains(this.name)){
+                numCrimes++;
             }
         }        
     }
