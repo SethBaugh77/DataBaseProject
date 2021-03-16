@@ -97,7 +97,7 @@ public class frontEnd {
             System.out.println("1. Criminal");
             System.out.println("2. Person of Interest");
             System.out.println("3. Suspect");
-            System.out.println("4. Criminal");
+            System.out.println("4. Officer");
             System.out.println("5. Witness");
             System.out.println("6. Victim");
             int inp2 = keyboard.nextInt();
@@ -107,111 +107,130 @@ public class frontEnd {
                 System.out.println(
                         "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
                 System.out.println("10. inJail 11. numCrimes 12. crimeType 13. Age");
-                String name, gender, address, phone, DOB, crimeType;
+                String fName, lName, gender, address, phone, DOB, crimeType;
                 long age, height, weight, numCrimes;
                 boolean Adult, inJail;
-                name = keyboard.nextLine();
-                age = keyboard.nextLong();
-                height = keyboard.nextLong();
-                weight = keyboard.nextLong();
+                keyboard.nextLine();
+                fName = keyboard.nextLine();
+                lName = keyboard.nextLine();
+                // keyboard.nextLong();
+                height = (long) keyboard.nextDouble(); // Criminal
+                weight = (long) keyboard.nextDouble();
+                keyboard.nextLine();
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
                 inJail = keyboard.nextBoolean();
-                numCrimes = keyboard.nextLong();
+                numCrimes = (long) keyboard.nextDouble();
+                keyboard.nextLine();
                 crimeType = keyboard.nextLine();
+                age = (long) keyboard.nextDouble();
             } else if (inp2 == 2) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
-                System.out.println("1. Name 2. age 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-                System.out.println("10. Occupation 11. lastLocation");
+                System.out.println(
+                        "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
+                System.out.println("10. occupation? 11. lastLocation 12. age");
 
-                String name, gender, address, phone, DOB, crimeType, occupation, lastLocation;
+                String fName, lName, gender, address, phone, DOB, crimeType, occupation, lastLocation;
                 long age, height, weight, numCrimes;
-                boolean Adult, inJail;
-                name = keyboard.nextLine();
-                age = keyboard.nextLong();
+                boolean Adult;
+                fName = keyboard.nextLine();
+                lName = keyboard.nextLine();
                 height = keyboard.nextLong();
-                weight = keyboard.nextLong();
+                weight = keyboard.nextLong(); // POI
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
-                inJail = keyboard.nextBoolean();
-                numCrimes = keyboard.nextLong();
-                crimeType = keyboard.nextLine();
                 occupation = keyboard.nextLine();
                 lastLocation = keyboard.nextLine();
+                age = keyboard.nextLong();
             } else if (inp2 == 3) {
-
-                String name, gender, address, phone, DOB, crimeType;
+                System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
+                System.out.println(
+                        "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
+                System.out.println("10. occupation? 11. lastLocation 12. age 13. body type, 14. criminal?");
+                String fName, lName, gender, address, phone, DOB, crimeType, occupation, lastLocation, bodyType;
                 long age, height, weight, numCrimes;
-                boolean Adult, inJail;
-                name = keyboard.nextLine();
+                boolean Adult, inJail, isCriminal;
+                fName = keyboard.nextLine();
+                lName = keyboard.nextLine();
                 age = keyboard.nextLong();
                 height = keyboard.nextLong();
-                weight = keyboard.nextLong();
+                weight = keyboard.nextLong(); // Suspect
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
-                inJail = keyboard.nextBoolean();
-                numCrimes = keyboard.nextLong();
-                crimeType = keyboard.nextLine();
+                occupation = keyboard.nextLine();
+                lastLocation = keyboard.nextLine();
+                age = keyboard.nextLong();
+                bodyType = keyboard.nextLine();
+                isCriminal = keyboard.nextBoolean();
+
             } else if (inp2 == 4) {
+                System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
+                System.out.println(
+                        "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
+                System.out.println("10. badgeNumber 11. rank 12. statement");
 
-                String name, gender, address, phone, DOB, crimeType;
-                long age, height, weight, numCrimes;
-                boolean Adult, inJail;
+                String name, gender, address, phone, DOB, rank, statement;
+                long age, height, weight, badgeNumber;
+                boolean Adult;
                 name = keyboard.nextLine();
                 age = keyboard.nextLong();
                 height = keyboard.nextLong();
-                weight = keyboard.nextLong();
+                weight = keyboard.nextLong(); // officer
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
-                inJail = keyboard.nextBoolean();
-                numCrimes = keyboard.nextLong();
-                crimeType = keyboard.nextLine();
+                badgeNumber = keyboard.nextLong();
+                rank = keyboard.nextLine();
+                statement = keyboard.nextLine();
+
             } else if (inp2 == 5) {
-
-                String name, gender, address, phone, DOB, crimeType;
-                long age, height, weight, numCrimes;
-                boolean Adult, inJail;
+                System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
+                System.out.println(
+                        "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
+                System.out.println("10. statement");
+                String name, gender, address, phone, DOB, statement;
+                long age, height, weight;
+                boolean Adult;
                 name = keyboard.nextLine();
                 age = keyboard.nextLong();
                 height = keyboard.nextLong();
-                weight = keyboard.nextLong();
+                weight = keyboard.nextLong(); // witness
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
-                inJail = keyboard.nextBoolean();
-                numCrimes = keyboard.nextLong();
-                crimeType = keyboard.nextLine();
+                statement = keyboard.nextLine();
             } else if (inp2 == 6) {
-
-                String name, gender, address, phone, DOB, crimeType;
-                long age, height, weight, numCrimes;
-                boolean Adult, inJail;
+                System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
+                System.out.println(
+                        "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
+                System.out.println("10. statement 11. isHealthy");
+                String name, gender, address, phone, DOB, statement;
+                long age, height, weight;
+                boolean Adult, isHealthy;
                 name = keyboard.nextLine();
                 age = keyboard.nextLong();
                 height = keyboard.nextLong();
-                weight = keyboard.nextLong();
+                weight = keyboard.nextLong(); // victim
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
-                inJail = keyboard.nextBoolean();
-                numCrimes = keyboard.nextLong();
-                crimeType = keyboard.nextLine();
+                statement = keyboard.nextLine();
+                isHealthy = keyboard.nextBoolean();
             }
 
         } else if (inp == 4) {
