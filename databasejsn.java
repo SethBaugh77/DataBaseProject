@@ -1,7 +1,5 @@
 
-
-
-  {
+{
   	"criminals":"Jason Todd",
   	"cases": 14,
   	"users":"Pete Don",
