@@ -5,9 +5,9 @@ public class Criminal extends Person {
     private String notes;
     private long numCrimes;
 
-    public Criminal(String fName, String lname, long Age, double Height, double Weight, String Gender, String Address,
+    public Criminal(String fname, String lname, long Age, double Height, double Weight, String Gender, String Address,
             String Phone, String DateOfBirth, boolean IsAdult, long id, boolean inJail, String notes, long numCrimes) {
-        super(fName, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id);
+        super(fname, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id);
         this.inJail = inJail;
         this.notes = notes;
         this.numCrimes = numCrimes;
@@ -18,11 +18,7 @@ public class Criminal extends Person {
     }
 
     public void setJail(boolean inJail) {
-        if (this.inJail == true) {
-            inJail = true;
-        } else {
-            inJail = false;
-        }
+        this.inJail = true;
     }
 
     public String getNotes() {
@@ -38,8 +34,8 @@ public class Criminal extends Person {
     }
 
     public void setNumCrimes(ArrayList<Case> cases) {
-        for (Case c : cases) {
-            if (c.getCriminals() != null && c.getCriminals().contains(this.name)) {
+        for (Case caseCheck : cases) {
+            if (caseCheck.getCriminals() != null && caseCheck.getCriminals().contains(this.getFname()) && caseCheck.getCriminals().contains(this.getLname())) {
                 numCrimes++;
             }
         }
