@@ -7,7 +7,6 @@ public class NormalUser extends User {
 			String password, String phone, ArrayList<Criminal> Criminals, ArrayList<Case> Cases,
 			ArrayList<User> Users) {
 		super(ID, Admin, firstname, lastname, username, email, password, phone, Criminals, Cases);
-
 	}
 
 }
