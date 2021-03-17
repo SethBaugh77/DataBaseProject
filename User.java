@@ -1,3 +1,4 @@
+package groupproj;
 import java.util.ArrayList;
 
 public class User {
@@ -14,7 +15,7 @@ public class User {
 	private ArrayList<User> users = new ArrayList<>();
 
 	public User(int id, boolean admin, String fname, String lname, String username, String email, String password,
-			String phone, ArrayList<Criminal> Criminals, ArrayList<Case> _cases) {
+			String phone, ArrayList<Criminal> criminals, ArrayList<Case> cases) {
 		this.id = id;
 		this.admin = admin;
 		this.firstName = fname;
@@ -23,8 +24,8 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.phone = phone;
-		this.criminals = Criminals;
-		this.cases = _cases;
+		this.criminals = criminals;
+		this.cases = cases;
 		this.users = users;
 
 	}
@@ -114,19 +115,30 @@ public class User {
 	// this. = ;
 	// }
 
-	public boolean checkDuplicates(String str1, String str2, String str3, int num) {
-		return true;
+	public boolean checkDuplicates(String str1) {
+		for(int i= 0; i<criminals.length; i++) {
+            if (str1 == criminals[i].getName) {
+                return true;
+            }
+        }
+        return false;
 	}
 
 	public void addCriminal(Criminal crim) {
-
+        criminals.add(crim);
 	}
 
 	public void addUser(User user) {
-
+        users.add(user);
 	}
 
-	public void searchCase(Case _case) {
+	public Case searchCase(int caseID) {
+        for(int i= 0; i<cases.length; i++) {
+            if (caseID == cases[i].getCaseID) {
+                return cases[i];
+            }
+        }
+        return null;
 
 	}
 
