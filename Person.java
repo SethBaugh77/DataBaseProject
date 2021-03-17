@@ -123,5 +123,6 @@ public class Person {
 	public String toString() {
 		return fname + " " + lname + " " + age + " " + height + " " + weight + " " + gender + " " + address + " "
 				+ phone + " " + dateOfBirth + " " + isAdult + " " + ID;
+		
 	}
 }
