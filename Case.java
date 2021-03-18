@@ -1,136 +1,118 @@
-import java.util.ArrayList;
 
 public class Case {
-	private int CaseID;
+	 private int CaseID;
+	    private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
+	    private ArrayList<Victim> victims = new ArrayList<Victim>();
+	    private ArrayList<Witness> witnesses = new ArrayList<Witness>(); // -CaseID: int
+	    private ArrayList<Officer> officers = new ArrayList<Officer>();
+	    private ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
+	    private String crime;
+	    private String date;
+	    private boolean isSolved;
+	    private int severity;
+	    private boolean isFederal;
 
-	private String name;
-	private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
-	private ArrayList<Victim> victims = new ArrayList<Victim>();
-	private ArrayList<Witness> witnesses = new ArrayList<Witness>(); // -CaseID: int
-	private ArrayList<Officer> officers = new ArrayList<Officer>();
-	private ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
-	private String crime;
-	private String date;
-	private boolean isSolved;
-	private int severity;
-	private boolean isFederal;
+	    public  CaseProfile(ArrayList<Criminal> Criminals, ArrayList<Victim> Victims, ArrayList<Witness> Witnesses,
+	            ArrayList<Officer> Officers, ArrayList<String> poi, int _CaseID, String crime, String date,
+	            boolean isSolved, int _Severity, boolean isFederal) {
 
-	public Case(ArrayList<Criminal> Criminals, ArrayList<Victim> Victims, ArrayList<Witness> Witnesses,
-			ArrayList<Officer> Officers, ArrayList<String> poi, int _CaseID, String crime, String date,
-			boolean isSolved, int _Severity, boolean isFederal) {
+	    }
 
-	}
+	    public int getCaseID() {
+			return CaseID;
+		}
 
-	public String getName() {
-		return this.name;
-	}
+		public void setCaseID(int caseID) {
+			CaseID = caseID;
+		}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+		public ArrayList<Criminal> getCriminals() {
+			return criminals;
+		}
 
-	public boolean isIsSolved() {
-		return this.isSolved;
-	}
+		public void setCriminals(ArrayList<Criminal> criminals) {
+			this.criminals = criminals;
+		}
 
-	public boolean isIsFederal() {
-		return this.isFederal;
-	}
+		public ArrayList<Victim> getVictims() {
+			return victims;
+		}
 
-	public int getCaseID() {
-		return CaseID;
-	}
+		public void setVictims(ArrayList<Victim> victims) {
+			this.victims = victims;
+		}
 
-	public void setCaseID(int caseID) {
-		CaseID = caseID;
-	}
+		public ArrayList<Witness> getWitnesses() {
+			return witnesses;
+		}
 
-	public ArrayList<Criminal> getCriminals() {
-		return criminals;
-	}
+		public void setWitnesses(ArrayList<Witness> witnesses) {
+			this.witnesses = witnesses;
+		}
 
-	public void setCriminals(ArrayList<Criminal> criminals) {
-		this.criminals = criminals;
-	}
+		public ArrayList<Officer> getOfficers() {
+			return officers;
+		}
 
-	public ArrayList<Victim> getVictims() {
-		return victims;
-	}
+		public void setOfficers(ArrayList<Officer> officers) {
+			this.officers = officers;
+		}
 
-	public void setVictims(ArrayList<Victim> victims) {
-		this.victims = victims;
-	}
+		public ArrayList<PersonOfInterest> getPoi() {
+			return poi;
+		}
 
-	public ArrayList<Witness> getWitnesses() {
-		return witnesses;
-	}
+		public void setPoi(ArrayList<PersonOfInterest> poi) {
+			this.poi = poi;
+		}
 
-	public void setWitnesses(ArrayList<Witness> witnesses) {
-		this.witnesses = witnesses;
-	}
+		public void setSolved(boolean isSolved) {
+			this.isSolved = isSolved;
+		}
 
-	public ArrayList<Officer> getOfficers() {
-		return officers;
-	}
+		public void setFederal(boolean isFederal) {
+			this.isFederal = isFederal;
+		}
 
-	public void setOfficers(ArrayList<Officer> officers) {
-		this.officers = officers;
-	}
+		public String getCrime() {
+	        return this.crime;
+	    }
 
-	public ArrayList<PersonOfInterest> getPoi() {
-		return poi;
-	}
+	    public void setCrime(String crime) {
+	        this.crime = crime;
+	    }
 
-	public void setPoi(ArrayList<PersonOfInterest> poi) {
-		this.poi = poi;
-	}
+	    public String getDate() {
+	        return this.date;
+	    }
 
-	public void setSolved(boolean isSolved) {
-		this.isSolved = isSolved;
-	}
+	    public void setDate(String date) {
+	        this.date = date;
+	    }
 
-	public void setFederal(boolean isFederal) {
-		this.isFederal = isFederal;
-	}
+	    public boolean getIsSolved() {
+	        return this.isSolved;
+	    }
 
-	public String getCrime() {
-		return this.crime;
-	}
+	    public void setIsSolved(boolean isSolved) {
+	        this.isSolved = isSolved;
+	    }
 
-	public void setCrime(String crime) {
-		this.crime = crime;
-	}
+	    public int getSeverity() {
+	        return this.severity;
+	    }
 
-	public String getDate() {
-		return this.date;
-	}
+	    public void setSeverity(int severity) {
+	        this.severity = severity;
+	    }
 
-	public void setDate(String date) {
-		this.date = date;
-	}
+	    public boolean getIsFederal() {
+	        return this.isFederal;
+	    }
 
-	public boolean getIsSolved() {
-		return this.isSolved;
-	}
+	    public void setIsFederal(boolean isFederal) {
+	        this.isFederal = isFederal;
+	    }
 
-	public void setIsSolved(boolean isSolved) {
-		this.isSolved = isSolved;
-	}
-
-	public int getSeverity() {
-		return this.severity;
-	}
-
-	public void setSeverity(int severity) {
-		this.severity = severity;
-	}
-
-	public boolean getIsFederal() {
-		return this.isFederal;
-	}
-
-	public void setIsFederal(boolean isFederal) {
-		this.isFederal = isFederal;
-	}
 
 }
