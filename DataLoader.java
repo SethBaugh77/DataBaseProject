@@ -70,7 +70,7 @@ public class DataLoader extends DataConstants {
                 String Notes = (String) personJSON.get(PERSON_NOTES);
                 long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
 
-                wit.add(new Witness(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
+                wit.add(new Witness(firstName, LastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
                         inJail, Notes, numCrimes));
             }
 

@@ -27,7 +27,8 @@ public class DataWriter extends DataConstants {
         }
     }
 
-    public static JSONObject getPersonJSON(Criminal crims) {
+    public static JSONObject getPersonJSON(Criminal crims) {  
+        
 		JSONObject crimDetails = new JSONObject();
 		crimDetails.put(PERSON_FIRST_NAME, crims.getFname());
 		crimDetails.put(PERSON_LAST_NAME, crims.getLname());

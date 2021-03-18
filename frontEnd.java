@@ -6,6 +6,7 @@ public class frontEnd {
     static DataBase dBase;
 
     public static void main(String args[]) {
+        
         dBase = DataBase.getInstance();
         frontEnd fEnd = new frontEnd();
         fEnd.doAction();
