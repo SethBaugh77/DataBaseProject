@@ -9,7 +9,7 @@ public class frontEnd {
         
         dBase = DataBase.getInstance();
         frontEnd fEnd = new frontEnd();
-        fEnd.doAction();
+        fEnd.doAction(dBase);
         // Witness wit = new Witness("Help ive been hurt", "jon", 35, 64, 150, "M",
         // "102932 sicamore lane", "718501924",
         // "9/12/88", true, 9912);
@@ -30,7 +30,7 @@ public class frontEnd {
         String inp2 = keyboard.nextLine();
     }
 
-    public void doAction() {
+    public void doAction(DataBase dbase) {
         System.out.println("Welcome to the database. What would you like to do?");
         System.out.println("1. Search for a person.");
         System.out.println("2. Search for a case.");
@@ -107,27 +107,35 @@ public class frontEnd {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
                 System.out.println(
                         "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-                System.out.println("10. inJail 11. numCrimes 12. crimeType 13. Age");
-                String fName, lName, gender, address, phone, DOB, crimeType;
-                long age, height, weight, numCrimes;
+                System.out.println("10. inJail 11. numCrimes 12. crimeType 13. Age 14. Notes");
+                String fName, lName, Gender, Address, Phone, DOB, crimeType, Notes;
+                long Age, Height, Weight, numCrimes;
                 boolean Adult, inJail;
                 keyboard.nextLine();
                 fName = keyboard.nextLine();
                 lName = keyboard.nextLine();
                 // keyboard.nextLong();
-                height = (long) keyboard.nextDouble(); // Criminal
-                weight = (long) keyboard.nextDouble();
+                Height = (long) keyboard.nextDouble(); // Criminal
+                Weight = (long) keyboard.nextDouble();
                 keyboard.nextLine();
-                gender = keyboard.nextLine();
-                address = keyboard.nextLine();
-                phone = keyboard.nextLine();
+                Gender = keyboard.nextLine();
+                Address = keyboard.nextLine();
+                Phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
                 inJail = keyboard.nextBoolean();
                 numCrimes = (long) keyboard.nextDouble();
                 keyboard.nextLine();
                 crimeType = keyboard.nextLine();
-                age = (long) keyboard.nextDouble();
+                Age = (long) keyboard.nextDouble();
+                keyboard.nextLine();
+                Notes = keyboard.nextLine();
+                
+                Criminal crim = new Criminal(fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB, Adult, inJail, Notes, numCrimes);
+                
+                dbase.getCriminals().add(crim);
+                DataWriter.saveCriminal(crim);
+                
             } else if (inp2 == 2) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
                 System.out.println(

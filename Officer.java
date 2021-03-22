@@ -1,17 +1,17 @@
 public class Officer extends Person {
-    protected int badgeNumber;
+    protected long badgeNumber;
     protected String officerRank;
     protected String officerStatement;
 
-    public Officer(int bnum, String officerRank, String officerState, String fName, String lname, int Age, int Height,
-            int Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, int id) {
+    public Officer(long bnum, String officerRank, String officerState, String fName, String lname, long Age, long Height,
+            long Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, long id) {
         super(fName, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id);
         badgeNumber = bnum;
         this.officerRank = officerRank;
         this.officerStatement = officerState;
     }
 
-    public int getBadgeNumber() {
+    public long getBadgeNumber() {
         return this.badgeNumber;
     }
 

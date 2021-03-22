@@ -16,6 +16,19 @@ public class DataBase {
 	private ArrayList<Officer> officers = new ArrayList<Officer>();
 	private ArrayList<PersonOfInterest> POI = new ArrayList<PersonOfInterest>();
 	private ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+	private DataBase()
+	{
+		criminals=DataLoader.loadCriminal();
+		// witnesses=DataLoader.loadWitness();
+		// suspects=DataLoader.loadSuspect();
+		// officers=DataLoader.loadOfficer();
+		// POI=DataLoader.loadPOI();
+		// victims=DataLoader.loadVictim();
+		// dbase.cases = DataLoader.loadCases();
+		// dbase.users = DataLoader.loadUsers();
+
+
+	}
 
 	public ArrayList<Criminal> getCriminals() {
 		return this.criminals;

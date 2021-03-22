@@ -6,13 +6,14 @@ import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
 
-    public static ArrayList loadCrim(String type, String file) {
+    public static ArrayList loadCriminal() {
 
         ArrayList<Criminal> crim = new ArrayList();
         try {
-            FileReader reader = new FileReader(file);
+            FileReader reader = new FileReader("criminal.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+            
 
             for (int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
@@ -30,12 +31,13 @@ public class DataLoader extends DataConstants {
                 boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
                 String Notes = (String) personJSON.get(PERSON_NOTES);
                 long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                
 
                 crim.add(new Criminal(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult,
-                        ID, inJail, Notes, numCrimes));
+                     inJail, Notes, numCrimes));
             }
 
-            return crim;
+           // return crim;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,11 +47,11 @@ public class DataLoader extends DataConstants {
 
     }
 
-    public static ArrayList loadWit(String type, String file) {
+    public static ArrayList loadWitness() {
 
         ArrayList<Witness> wit = new ArrayList();
         try {
-            FileReader reader = new FileReader(file);
+            FileReader reader = new FileReader("Witness.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -66,12 +68,9 @@ public class DataLoader extends DataConstants {
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
-                String Notes = (String) personJSON.get(PERSON_NOTES);
-                long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                String witnessStatement =(String) personJSON.get(PERSON_STATEMENT);
 
-                wit.add(new Witness(firstName, LastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
-                        inJail, Notes, numCrimes));
+                wit.add(new Witness(witnessStatement,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID));
             }
 
             return wit;
@@ -84,11 +83,11 @@ public class DataLoader extends DataConstants {
 
     }
 
-    public static ArrayList loadSus(String type, String file) {
+    public static ArrayList loadSuspect() {
 
         ArrayList<Suspect> sus = new ArrayList();
         try {
-            FileReader reader = new FileReader(file);
+            FileReader reader = new FileReader("Suspect.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -105,12 +104,18 @@ public class DataLoader extends DataConstants {
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
-                String Notes = (String) personJSON.get(PERSON_NOTES);
-                long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                String occupation = (String) personJSON.get(PERSON_OCCUPATION);
+                String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
+                String poiNotes = (String) personJSON.get(PERSON_NOTES);
+                String bodyType = (String) personJSON.get(PERSON_BODY_TYPE);
+                boolean isCriminal = (boolean) personJSON.get(PERSON_IS_CRIMINAL);
+                // protected String occupation;
+                // protected String lastLocation;
+                // protected String poiNotes;
+    //             protected String bodyType;
+    //             protected boolean isCriminal;
 
-                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
-                        inJail, Notes, numCrimes));
+                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, occupation, lastLocation, poiNotes, bodyType, isCriminal));
             }
 
             return sus;
@@ -123,11 +128,11 @@ public class DataLoader extends DataConstants {
 
     }
 
-    public static ArrayList loadVic(String type, String file) {
+    public static ArrayList loadVictim() {
 
         ArrayList<Victim> vic = new ArrayList();
         try {
-            FileReader reader = new FileReader(file);
+            FileReader reader = new FileReader("Victim.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -144,12 +149,10 @@ public class DataLoader extends DataConstants {
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
-                String Notes = (String) personJSON.get(PERSON_NOTES);
-                long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                boolean isHealthy = (boolean) personJSON.get(PERSON_IS_HEALTHY);
+                String victimStatement = (String) personJSON.get(PERSON_STATEMENT);
 
-                vic.add(new Victim(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
-                        inJail, Notes, numCrimes));
+                vic.add(new Victim(isHealthy,victimStatement,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID));
             }
 
             return vic;
@@ -162,11 +165,11 @@ public class DataLoader extends DataConstants {
 
     }
 
-    public static ArrayList loadOfficer(String type, String file) {
+    public static ArrayList loadOfficer() {
 
         ArrayList<Officer> off = new ArrayList();
         try {
-            FileReader reader = new FileReader(file);
+            FileReader reader = new FileReader("Officer.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -183,12 +186,11 @@ public class DataLoader extends DataConstants {
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
-                String Notes = (String) personJSON.get(PERSON_NOTES);
-                long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                long bNum = (long) personJSON.get(PERSON_BADGE_NUMBER);
+                String officerRank = (String) personJSON.get(PERSON_OFFICER_RANK);
+                String officerState = (String) personJSON.get(PERSON_STATEMENT)
 
-                off.add(new Officer(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
-                        inJail, Notes, numCrimes));
+                off.add(new Officer(bNum, officerRank, officerState,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID));
             }
 
             return off;
@@ -201,11 +203,11 @@ public class DataLoader extends DataConstants {
 
     }
 
-    public static ArrayList loadPOI(String type, String file) {
+    public static ArrayList loadPOI() {
 
         ArrayList<PersonOfInterest> poi = new ArrayList();
         try {
-            FileReader reader = new FileReader(file);
+            FileReader reader = new FileReader("POI.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -222,12 +224,12 @@ public class DataLoader extends DataConstants {
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
-                String Notes = (String) personJSON.get(PERSON_NOTES);
-                long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                String occupation = (String) personJSON.get(PERSON_OCCUPATION);
+                String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
+                String poiNotes = (String) personJSON.get(PERSON_NOTES);
 
-                POI.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB,
-                        isAdult, ID, inJail, Notes, numCrimes));
+                poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB, 
+                        isAdult, ID, occupation, lastLocation, poiNotes));
             }
 
             return poi;

@@ -105,7 +105,7 @@ public class Person {
 	}
 
 	public Person(String fName, String lname, long Age, double Height, double Weight, String Gender, String Address,
-			String Phone, String DateOfBirth, boolean IsAdult, long id) {
+			String Phone, String DateOfBirth, boolean IsAdult) {
 		this.fname = fName;
 		this.lname = lname;
 		this.age = Age;
@@ -116,7 +116,7 @@ public class Person {
 		this.phone = Phone;
 		this.dateOfBirth = DateOfBirth;
 		this.isAdult = IsAdult;
-		this.ID = id;
+		
 
 	}
 

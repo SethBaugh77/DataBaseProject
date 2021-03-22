@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 public class Case {
 	 private int CaseID;
 	    private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
@@ -6,6 +6,23 @@ public class Case {
 	    private ArrayList<Witness> witnesses = new ArrayList<Witness>(); // -CaseID: int
 	    private ArrayList<Officer> officers = new ArrayList<Officer>();
 	    private ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
+		private String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isIsSolved() {
+		return this.isSolved;
+	}
+
+	public boolean isIsFederal() {
+		return this.isFederal;
+	}
 	    private String crime;
 	    private String date;
 	    private boolean isSolved;
@@ -14,7 +31,7 @@ public class Case {
 
 	    public  CaseProfile(ArrayList<Criminal> Criminals, ArrayList<Victim> Victims, ArrayList<Witness> Witnesses,
 	            ArrayList<Officer> Officers, ArrayList<String> poi, int _CaseID, String crime, String date,
-	            boolean isSolved, int _Severity, boolean isFederal) {
+	            boolean isSolved, int _Severity, boolean isFederal,) {
 
 	    }
 

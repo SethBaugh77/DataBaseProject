@@ -4,8 +4,8 @@ public class PersonOfInterest extends Person {
     protected String lastLocation;
     protected String poiNotes;
 
-    public PersonOfInterest(String fname, String lname, int age, int height, int weight, String gender, String address,
-            String phone, String dateOfBirth, boolean isAdult, int id, String occupation, String poiNotes,
+    public PersonOfInterest(String fname, String lname, long age, long height, long weight, String gender, String address,
+            String phone, String dateOfBirth, boolean isAdult, long id, String occupation, String poiNotes,
             String lastLocation) {
         super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult, id);
         this.occupation = occupation;

@@ -7,7 +7,7 @@ public abstract class DataConstants {
     protected static final String WITNESS = "witness";
     protected static final String OFFICER_FILE_NAME = "src/officer.json";
     protected static final String OFFICER = "officer";
-    protected static final String CRIMINAL_FILE_NAME = "src/criminal.json";
+    protected static final String CRIMINAL_FILE_NAME = "criminal.json";
     protected static final String CRIMINAL = "criminal";
     protected static final String SUSPECT_FILE_NAME = "src/suspect.json";
     protected static final String SUSPECt = "suspect";
@@ -25,6 +25,16 @@ public abstract class DataConstants {
     protected static final String PERSON_IN_JAIL = "inJail";
     protected static final String PERSON_NOTES = "Notes";
     protected static final String PERSON_NUM_CRIMES = "numCrimes";
+    protected static final String PERSON_STATEMENT = "statement";
+    protected static final String PERSON_OCCUPATION = "Occupation";
+    protected static final String PERSON_LAST_LOCATION = "lastLocation";
+    protected static final String PERSON_BODY_TYPE = "bodyType";
+    protected static final String PERSON_IS_CRIMINAL = "isCriminal";
+    protected final static String PERSON_IS_HEALTHY = "isHealthy";
+    protected final static String PERSON_BADGE_NUMBER = "badgeNumber";
+    protected final static String PERSON_OFFICER_RANK = "officerRank";
+    //protected final static String PERSON_STATEMENT = ""
+    //protected static final String PERSON_NOTES = "Notes";
 
     // TODO finish
 

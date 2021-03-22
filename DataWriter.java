@@ -6,15 +6,15 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 
-    public static void saveCrim(ArrayList<Criminal> aList) {
+    public static void saveCriminal( Criminal criminal) {
         // People people = People.getInstance();
-        ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONArray jsonFriends = new JSONArray();
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        JSONObject jsonFriends = new JSONObject();
 
         // creating all the json objects
-        for (int i = 0; i < aList.size(); i++) {
-            jsonFriends.add(getPersonJSON(aList.get(i)));
-        }
+        //for (int i = 0; i < criminal.size(); i++) {
+            jsonFriends=getCriminalJSON(criminal);
+        
 
         // Write JSON file
         try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
@@ -27,31 +27,306 @@ public class DataWriter extends DataConstants {
         }
     }
 
-    public static JSONObject getPersonJSON(Criminal crims) {  
+    public static JSONObject getCriminalJSON(Criminal criminal) {  
         
 		JSONObject crimDetails = new JSONObject();
-		crimDetails.put(PERSON_FIRST_NAME, crims.getFname());
-		crimDetails.put(PERSON_LAST_NAME, crims.getLname());
-		crimDetails.put(PERSON_PHONE, crims.getPhone());
+		crimDetails.put(PERSON_FIRST_NAME, criminal.getFname());
+		crimDetails.put(PERSON_LAST_NAME, criminal.getLname());
+		crimDetails.put(PERSON_PHONE, criminal.getPhone());
 
-        crimDetails.put(PERSON_AGE, crims.getAge());
-		crimDetails.put(PERSON_HEIGHT, crims.getHeight()));
-		crimDetails.put(PERSON_WEIGHT, crims.getWeight());
+        crimDetails.put(PERSON_AGE, criminal.getAge());
+		crimDetails.put(PERSON_HEIGHT, criminal.getHeight());
+		crimDetails.put(PERSON_WEIGHT, criminal.getWeight());
 
-        crimDetails.put(PERSON_ADDRESS, crims.getAddress());
-		crimDetails.put(PERSON_LAST_NAME, crims.getGender());
-		crimDetails.put(PERSON_PHONE, crims.getPhone());
+        crimDetails.put(PERSON_ADDRESS, criminal.getAddress());
+		crimDetails.put(PERSON_LAST_NAME, criminal.getGender());
+		crimDetails.put(PERSON_PHONE, criminal.getPhone());
 
-        crimDetails.put(PERSON_DOB, crims.getDateOfBirth());
-		crimDetails.put(PERSON_IS_ADULT, crims.getIsAdult());
-		crimDetails.put(PERSON_ID, crims.getID());
+        crimDetails.put(PERSON_DOB, criminal.getDateOfBirth());
+		crimDetails.put(PERSON_IS_ADULT, criminal.getIsAdult());
+		crimDetails.put(PERSON_ID, criminal.getID());
 
-        crimDetails.put(PERSON_IN_JAIL, crims.getJail());
-		crimDetails.put(PERSON_NOTES, crims.getNotes());
-		crimDetails.put(PERSON_NUM_CRIMES, crims.getNumCrimes());
+        crimDetails.put(PERSON_IN_JAIL, criminal.getJail());
+		crimDetails.put(PERSON_NOTES, criminal.getNotes());
+		crimDetails.put(PERSON_NUM_CRIMES, criminal.getNumCrimes());
 
         
         
         return crimDetails;
 	}
+    public static void saveVictim( Victim victim) {
+        // People people = People.getInsance();
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        JSONObject jsonFriends = new JSONObject();
+
+        // creating all the json objects
+        //for (int i = 0; i < criminal.size(); i++) {
+            jsonFriends=getVictimJSON(victim);
+        
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonFriends.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getVictimJSON(Victim victim) {  
+        
+		JSONObject victimDetails = new JSONObject();
+		victimDetails.put(PERSON_FIRST_NAME, victim.getFname());
+		victimDetails.put(PERSON_LAST_NAME, victim.getLname());
+		victimDetails.put(PERSON_PHONE, victim.getPhone());
+
+        victimDetails.put(PERSON_AGE, victim.getAge());
+		victimDetails.put(PERSON_HEIGHT, victim.getHeight()));
+		victimDetails.put(PERSON_WEIGHT, victim.getWeight());
+
+        victimDetails.put(PERSON_ADDRESS, victim.getAddress());
+		victimDetails.put(PERSON_LAST_NAME, victim.getGender());
+		victimDetails.put(PERSON_PHONE, victim.getPhone());
+
+        victimDetails.put(PERSON_DOB, victim.getDateOfBirth());
+		victimDetails.put(PERSON_IS_ADULT, victim.getIsAdult());
+		victimDetails.put(PERSON_ID, victim.getID());
+
+        victimDetails.put(PERSON_STATEMENT, victim.getVictimStatement());
+        victimDetails.put(PERSON_IS_HEALTHY, victim.getIsHealthy();
+        // victimDetails.put(PERSON_IN_JAIL, victim.getJail());
+		// victimDetails.put(PERSON_NOTES, victim.getNotes());
+		// victimDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        return victimDetails;
+	}
+
+
+    public static void saveOfficer( Officer officer) {
+        // People people = People.getInsance();
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        JSONObject jsonFriends = new JSONObject();
+
+        // creating all the json objects
+        //for (int i = 0; i < criminal.size(); i++) {
+            jsonFriends=getOfficerJSON(officer);
+        
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonFriends.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getOfficerJSON(Officer officer) {  
+        
+		JSONObject officerDetails = new JSONObject();
+		officerDetails.put(PERSON_FIRST_NAME, officer.getFname());
+		officerDetails.put(PERSON_LAST_NAME, officer.getLname());
+		officerDetails.put(PERSON_PHONE, officer.getPhone());
+
+        officerDetails.put(PERSON_AGE, officer.getAge());
+		officerDetails.put(PERSON_HEIGHT, officer.getHeight()));
+		officerDetails.put(PERSON_WEIGHT, officer.getWeight());
+
+        officerDetails.put(PERSON_ADDRESS, officer.getAddress());
+		officerDetails.put(PERSON_LAST_NAME, officer.getGender());
+		officerDetails.put(PERSON_PHONE, officer.getPhone());
+
+        officerDetails.put(PERSON_DOB, officer.getDateOfBirth());
+		officerDetails.put(PERSON_IS_ADULT, officer.getIsAdult());
+		officerDetails.put(PERSON_ID, officer.getID());
+
+        officerDetails.put(PERSON_OFFICER_RANK, officer.getOfficerRank()
+		officerDetails.put(PERSON_BADGE_NUMBER, officer.getBadgeNumber();
+		officerDetails.put(PERSON_STATEMENT, officer.getOfficerStatement();
+
+        
+
+        // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
+		// poiDetails.put(PERSON_NOTES, poi.getNotes());
+		// poiDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        return officerDetails;
+	}
+    public static void savepoi( PersonOfInterest poi) {
+        // People people = People.getInsance();
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        JSONObject jsonFriends = new JSONObject();
+
+        // creating all the json objects
+        //for (int i = 0; i < criminal.size(); i++) {
+            jsonFriends=getpoiJSON(poi);
+        
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonFriends.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getpoiJSON(PersonOfInterest poi) {  
+        
+		JSONObject poiDetails = new JSONObject();
+		poiDetails.put(PERSON_FIRST_NAME, poi.getFname());
+		poiDetails.put(PERSON_LAST_NAME, poi.getLname());
+		poiDetails.put(PERSON_PHONE, poi.getPhone());
+
+        poiDetails.put(PERSON_AGE, poi.getAge());
+		poiDetails.put(PERSON_HEIGHT, poi.getHeight()));
+		poiDetails.put(PERSON_WEIGHT, poi.getWeight());
+
+        poiDetails.put(PERSON_ADDRESS, poi.getAddress());
+		poiDetails.put(PERSON_LAST_NAME, poi.getGender());
+		poiDetails.put(PERSON_PHONE, poi.getPhone());
+
+        poiDetails.put(PERSON_DOB, poi.getDateOfBirth());
+		poiDetails.put(PERSON_IS_ADULT, poi.getIsAdult());
+		poiDetails.put(PERSON_ID, poi.getID());
+
+        poiDetails.put(PERSON_LAST_LOCATION, poi.getLastLocation());
+		poiDetails.put(PERSON_OCCUPATION, poi.getOccupation());
+		poiDetails.put(PERSON_NOTES, poi.getpoiNotes());
+
+        // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
+		// poiDetails.put(PERSON_NOTES, poi.getNotes());
+		// poiDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        return poiDetails;
+	}
+
+    public static void saveSuspect( Suspect suspect) {
+        // People people = People.getInsance();
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        JSONObject jsonFriends = new JSONObject();
+
+        // creating all the json objects
+        //for (int i = 0; i < criminal.size(); i++) {
+            jsonFriends=getpoiJSON(suspect);
+        
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonFriends.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getSuspectJSON(Suspect suspect) {  
+        
+		JSONObject suspectDetails = new JSONObject();
+		suspectDetails.put(PERSON_FIRST_NAME, suspect.getFname());
+		suspectDetails.put(PERSON_LAST_NAME, suspect.getLname());
+		suspectDetails.put(PERSON_PHONE, suspect.getPhone());
+
+        suspectDetails.put(PERSON_AGE, suspect.getAge());
+		suspectDetails.put(PERSON_HEIGHT, suspect.getHeight()));
+		suspectDetails.put(PERSON_WEIGHT, suspect.getWeight());
+
+        suspectDetails.put(PERSON_ADDRESS, suspect.getAddress());
+		suspectDetails.put(PERSON_LAST_NAME, suspect.getGender());
+		suspectDetails.put(PERSON_PHONE, suspect.getPhone());
+
+        suspectDetails.put(PERSON_DOB, suspect.getDateOfBirth());
+		suspectDetails.put(PERSON_IS_ADULT, suspect.getIsAdult());
+		suspectDetails.put(PERSON_ID, suspect.getID());
+
+        suspectDetails.put(PERSON_LAST_LOCATION, suspect.getLastLocation());
+		suspectDetails.put(PERSON_OCCUPATION, suspect.getOccupation());
+		suspectDetails.put(PERSON_NOTES, suspect.getpoiNotes());
+
+        suspectDetails.put(PERSON_BODY_TYPE, suspect.getBodyType();
+		suspectDetails.put(PERSON_IS_CRIMINAL, suspect.getIsCriminal();
+
+        // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
+		// poiDetails.put(PERSON_NOTES, poi.getNotes());
+		// poiDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        return suspectDetails;
+	}
+    public static void saveWitness( Witness witness) {
+        // People people = People.getInsance();
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        JSONObject jsonFriends = new JSONObject();
+
+        // creating all the json objects
+        //for (int i = 0; i < criminal.size(); i++) {
+            jsonFriends=getWitnessJSON(witness);
+        
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonFriends.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getWitnessJSON(Witness witness) {  
+        
+		JSONObject witnessDetails = new JSONObject();
+		witnessDetails.put(PERSON_FIRST_NAME, witness.getFname());
+		witnessDetails.put(PERSON_LAST_NAME, witness.getLname());
+		witnessDetails.put(PERSON_PHONE, witness.getPhone());
+
+        witnessDetails.put(PERSON_AGE, witness.getAge());
+		witnessDetails.put(PERSON_HEIGHT, witness.getHeight()));
+		witnessDetails.put(PERSON_WEIGHT, witness.getWeight());
+
+        witnessDetails.put(PERSON_ADDRESS, witness.getAddress());
+		witnessDetails.put(PERSON_LAST_NAME, witness.getGender());
+		witnessDetails.put(PERSON_PHONE, witness.getPhone());
+
+        witnessDetails.put(PERSON_DOB, witness.getDateOfBirth());
+		witnessDetails.put(PERSON_IS_ADULT, witness.getIsAdult());
+		witnessDetails.put(PERSON_ID, witness.getID());
+
+        witnessDetails.put(PERSON_STATEMENT, witness.getWitnessStatement());
+        // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
+		// poiDetails.put(PERSON_NOTES, poi.getNotes());
+		// poiDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        return witnessDetails;
+	}
+
+
+
+
+
+
+
 }
