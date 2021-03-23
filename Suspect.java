@@ -32,12 +32,4 @@ public class Suspect extends PersonOfInterest {
         this.isCriminal = isCriminal;
     }
 
-    public ArrayList<Suspect> getRelatives() {
-        return this.relatives;
-    }
-
-    public void setRelatives(ArrayList<Suspect> relatives) {
-        this.relatives = relatives;
-    }
-
 }
