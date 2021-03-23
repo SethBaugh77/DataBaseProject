@@ -1,0 +1,16 @@
+[
+    {
+        "lName": "F",
+        "Occupation": "teacher",
+        "fName": "jon",
+        "Address": "999 idk lane",
+        "Phone": "222 555 4444",
+        "DOB": "5\/6\/77",
+        "lastLocation": "park",
+        "Height": 65,
+        "ID": 0,
+        "Age": 65,
+        "Weight": 140,
+        "isAdult": true
+    }
+]

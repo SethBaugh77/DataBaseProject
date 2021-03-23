@@ -7,12 +7,18 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 
     public static ArrayList loadCriminal() {
+        
 
         ArrayList<Criminal> crim = new ArrayList();
         try {
             FileReader reader = new FileReader("criminal.json");
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+            
+            // JSONParser parser = new JSONParser();
+            // Object obj  = parser.parse("criminal.json");
+            // JSONArray peopleJSON = new JSONArray();
+            // peopleJSON.add(obj);
             
 
             for (int i = 0; i < peopleJSON.size(); i++) {
@@ -34,7 +40,7 @@ public class DataLoader extends DataConstants {
                 
 
                 crim.add(new Criminal(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult,
-                     inJail, Notes, numCrimes));
+                     inJail, Notes, numCrimes, ID));
             }
 
            // return crim;
@@ -43,7 +49,7 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return null;
+        return crim;
 
     }
 
@@ -73,13 +79,13 @@ public class DataLoader extends DataConstants {
                 wit.add(new Witness(witnessStatement,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID));
             }
 
-            return wit;
+           // return wit;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return wit;
 
     }
 
@@ -118,13 +124,13 @@ public class DataLoader extends DataConstants {
                 sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, occupation, lastLocation, poiNotes, bodyType, isCriminal));
             }
 
-            return sus;
+         //   return sus;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return sus;
 
     }
 
@@ -155,13 +161,13 @@ public class DataLoader extends DataConstants {
                 vic.add(new Victim(isHealthy,victimStatement,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID));
             }
 
-            return vic;
+           // return vic;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return vic;
 
     }
 
@@ -188,18 +194,18 @@ public class DataLoader extends DataConstants {
                 long ID = (long) personJSON.get(PERSON_ID);
                 long bNum = (long) personJSON.get(PERSON_BADGE_NUMBER);
                 String officerRank = (String) personJSON.get(PERSON_OFFICER_RANK);
-                String officerState = (String) personJSON.get(PERSON_STATEMENT)
+                String officerState = (String) personJSON.get(PERSON_STATEMENT);
 
                 off.add(new Officer(bNum, officerRank, officerState,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID));
             }
 
-            return off;
+           // return off;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return off;
 
     }
 
@@ -229,16 +235,15 @@ public class DataLoader extends DataConstants {
                 String poiNotes = (String) personJSON.get(PERSON_NOTES);
 
                 poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB, 
-                        isAdult, ID, occupation, lastLocation, poiNotes));
+                        isAdult, occupation, lastLocation, ID));
             }
 
-            return poi;
-
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return poi;
 
     }
 }

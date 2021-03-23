@@ -3,23 +3,47 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
+import org.json.simple.parser.JSONParser;
+import com.google.gson.*;
 public class DataWriter extends DataConstants {
 
-    public static void saveCriminal( Criminal criminal) {
+    public static void saveCriminal() {
         // People people = People.getInstance();
         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONObject jsonFriends = new JSONObject();
+       ArrayList <Criminal> crimArray = DataBase.getInstance().getCriminals();
+        // Gson gson = new Gson();
+        // String yourfilecontents;
+        //JSONParser parser = new JSONParser();
+        JSONArray jsonFriends = new JSONArray();
+        //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
 
         // creating all the json objects
-        //for (int i = 0; i < criminal.size(); i++) {
-            jsonFriends=getCriminalJSON(criminal);
-        
+        for (int i = 0; i < crimArray.size(); i++) {
+            jsonFriends.add(getCriminalJSON(crimArray.get(i)));
+            //System.out.println(jsonFriends.get(i));
+            //System.out.println(jsonFriends.get(i))
+            // for(JSONObject j : jsonFriends.get(i))
+            // {
+            //     System.out.println(j);
+            // }
 
+            //System.out.println(crimArray.get(i));
+        }
+        
+        //JSONParser parser = new JSONParser();
+        //jsonFriends = jsonFriends
+        //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+            //jsonFriends=getCriminalJSON(criminal);
+            //for(int i = 0 ; i < criminal)
+        
         // Write JSON file
         try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
-
-            file.write(jsonFriends.toJSONString());
+            //System.out.println(jsonFriends.toJSONString());
+           // for(int i = 0; i < jsonFriends.size();i ++)
+            //file.write(jsonFriends.get(i).toString());
+            // for(int i = 0 ; i < jsonFriends.size();i++)
+             file.write(jsonFriends.toJSONString());
+            //file.append(jsonFriends.toJSONString());
             file.flush();
 
         } catch (IOException e) {
@@ -33,13 +57,14 @@ public class DataWriter extends DataConstants {
 		crimDetails.put(PERSON_FIRST_NAME, criminal.getFname());
 		crimDetails.put(PERSON_LAST_NAME, criminal.getLname());
 		crimDetails.put(PERSON_PHONE, criminal.getPhone());
+        //crimDetails.put(PERSON_GENDER, criminal.getGender());
 
         crimDetails.put(PERSON_AGE, criminal.getAge());
 		crimDetails.put(PERSON_HEIGHT, criminal.getHeight());
 		crimDetails.put(PERSON_WEIGHT, criminal.getWeight());
 
         crimDetails.put(PERSON_ADDRESS, criminal.getAddress());
-		crimDetails.put(PERSON_LAST_NAME, criminal.getGender());
+		crimDetails.put(PERSON_GENDER, criminal.getGender());
 		crimDetails.put(PERSON_PHONE, criminal.getPhone());
 
         crimDetails.put(PERSON_DOB, criminal.getDateOfBirth());
@@ -55,19 +80,41 @@ public class DataWriter extends DataConstants {
         return crimDetails;
 	}
     public static void saveVictim( Victim victim) {
-        // People people = People.getInsance();
         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONObject jsonFriends = new JSONObject();
+        ArrayList <Victim> vicArray = DataBase.getInstance().getVictims();
+        // Gson gson = new Gson();
+        // String yourfilecontents;
+        //JSONParser parser = new JSONParser();
+        JSONArray jsonFriends = new JSONArray();
+        //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
 
         // creating all the json objects
-        //for (int i = 0; i < criminal.size(); i++) {
-            jsonFriends=getVictimJSON(victim);
+        for (int i = 0; i < vicArray.size(); i++) {
+            jsonFriends.add(getVictimJSON(vicArray.get(i)));
+            //System.out.println(jsonFriends.get(i));
+            //System.out.println(jsonFriends.get(i))
+            // for(JSONObject j : jsonFriends.get(i))
+            // {
+            //     System.out.println(j);
+            // }
+
+            //System.out.println(crimArray.get(i));
+        }
         
-
+        //JSONParser parser = new JSONParser();
+        //jsonFriends = jsonFriends
+        //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+            //jsonFriends=getCriminalJSON(criminal);
+            //for(int i = 0 ; i < criminal)
+        
         // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
-
-            file.write(jsonFriends.toJSONString());
+        try (FileWriter file = new FileWriter(VICTIM_FILE_NAME)) {
+            //System.out.println(jsonFriends.toJSONString());
+           // for(int i = 0; i < jsonFriends.size();i ++)
+            //file.write(jsonFriends.get(i).toString());
+            // for(int i = 0 ; i < jsonFriends.size();i++)
+             file.write(jsonFriends.toJSONString());
+            //file.append(jsonFriends.toJSONString());
             file.flush();
 
         } catch (IOException e) {
@@ -108,24 +155,46 @@ public class DataWriter extends DataConstants {
 
 
     public static void saveOfficer( Officer officer) {
-        // People people = People.getInsance();
-        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONObject jsonFriends = new JSONObject();
-
-        // creating all the json objects
-        //for (int i = 0; i < criminal.size(); i++) {
-            jsonFriends=getOfficerJSON(officer);
-        
-
-        // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
-
-            file.write(jsonFriends.toJSONString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+         ArrayList <Officer> officerArray = DataBase.getInstance().getOfficers();
+         // Gson gson = new Gson();
+         // String yourfilecontents;
+         //JSONParser parser = new JSONParser();
+         JSONArray jsonFriends = new JSONArray();
+         //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
+ 
+         // creating all the json objects
+         for (int i = 0; i < officerArray.size(); i++) {
+             jsonFriends.add(getOfficerJSON(officerArray.get(i)));
+             //System.out.println(jsonFriends.get(i));
+             //System.out.println(jsonFriends.get(i))
+             // for(JSONObject j : jsonFriends.get(i))
+             // {
+             //     System.out.println(j);
+             // }
+ 
+             //System.out.println(crimArray.get(i));
+         }
+         
+         //JSONParser parser = new JSONParser();
+         //jsonFriends = jsonFriends
+         //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+             //jsonFriends=getCriminalJSON(criminal);
+             //for(int i = 0 ; i < criminal)
+         
+         // Write JSON file
+         try (FileWriter file = new FileWriter(OFFICER_FILE_NAME)) {
+             //System.out.println(jsonFriends.toJSONString());
+            // for(int i = 0; i < jsonFriends.size();i ++)
+             //file.write(jsonFriends.get(i).toString());
+             // for(int i = 0 ; i < jsonFriends.size();i++)
+              file.write(jsonFriends.toJSONString());
+             //file.append(jsonFriends.toJSONString());
+             file.flush();
+ 
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
     }
 
 
@@ -163,28 +232,50 @@ public class DataWriter extends DataConstants {
         return officerDetails;
 	}
     public static void savepoi( PersonOfInterest poi) {
-        // People people = People.getInsance();
-        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONObject jsonFriends = new JSONObject();
-
-        // creating all the json objects
-        //for (int i = 0; i < criminal.size(); i++) {
-            jsonFriends=getpoiJSON(poi);
-        
-
-        // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
-
-            file.write(jsonFriends.toJSONString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+         ArrayList <PersonOfInterest> poiArray = DataBase.getInstance().getPOI();
+         // Gson gson = new Gson();
+         // String yourfilecontents;
+         //JSONParser parser = new JSONParser();
+         JSONArray jsonFriends = new JSONArray();
+         //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
+ 
+         // creating all the json objects
+         for (int i = 0; i < poiArray.size(); i++) {
+             jsonFriends.add(getPOIJSON(poiArray.get(i)));
+             //System.out.println(jsonFriends.get(i));
+             //System.out.println(jsonFriends.get(i))
+             // for(JSONObject j : jsonFriends.get(i))
+             // {
+             //     System.out.println(j);
+             // }
+ 
+             //System.out.println(crimArray.get(i));
+         }
+         
+         //JSONParser parser = new JSONParser();
+         //jsonFriends = jsonFriends
+         //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+             //jsonFriends=getCriminalJSON(criminal);
+             //for(int i = 0 ; i < criminal)
+         
+         // Write JSON file
+         try (FileWriter file = new FileWriter(POI_FILE_NAME)) {
+             //System.out.println(jsonFriends.toJSONString());
+            // for(int i = 0; i < jsonFriends.size();i ++)
+             //file.write(jsonFriends.get(i).toString());
+             // for(int i = 0 ; i < jsonFriends.size();i++)
+              file.write(jsonFriends.toJSONString());
+             //file.append(jsonFriends.toJSONString());
+             file.flush();
+ 
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
     }
 
 
-    public static JSONObject getpoiJSON(PersonOfInterest poi) {  
+    public static JSONObject getPOIJSON(PersonOfInterest poi) {  
         
 		JSONObject poiDetails = new JSONObject();
 		poiDetails.put(PERSON_FIRST_NAME, poi.getFname());
@@ -192,7 +283,7 @@ public class DataWriter extends DataConstants {
 		poiDetails.put(PERSON_PHONE, poi.getPhone());
 
         poiDetails.put(PERSON_AGE, poi.getAge());
-		poiDetails.put(PERSON_HEIGHT, poi.getHeight()));
+		poiDetails.put(PERSON_HEIGHT, poi.getHeight());
 		poiDetails.put(PERSON_WEIGHT, poi.getWeight());
 
         poiDetails.put(PERSON_ADDRESS, poi.getAddress());
@@ -205,7 +296,7 @@ public class DataWriter extends DataConstants {
 
         poiDetails.put(PERSON_LAST_LOCATION, poi.getLastLocation());
 		poiDetails.put(PERSON_OCCUPATION, poi.getOccupation());
-		poiDetails.put(PERSON_NOTES, poi.getpoiNotes());
+		//poiDetails.put(PERSON_NOTES, poi.getpoiNotes());
 
         // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
 		// poiDetails.put(PERSON_NOTES, poi.getNotes());
@@ -218,23 +309,46 @@ public class DataWriter extends DataConstants {
 
     public static void saveSuspect( Suspect suspect) {
         // People people = People.getInsance();
-        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONObject jsonFriends = new JSONObject();
-
-        // creating all the json objects
-        //for (int i = 0; i < criminal.size(); i++) {
-            jsonFriends=getpoiJSON(suspect);
-        
-
-        // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
-
-            file.write(jsonFriends.toJSONString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+         ArrayList <Suspect> suspectArray = DataBase.getInstance().getSuspects();
+         // Gson gson = new Gson();
+         // String yourfilecontents;
+         //JSONParser parser = new JSONParser();
+         JSONArray jsonFriends = new JSONArray();
+         //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
+ 
+         // creating all the json objects
+         for (int i = 0; i < suspectArray.size(); i++) {
+             jsonFriends.add(getSuspectJSON(suspectArray.get(i)));
+             //System.out.println(jsonFriends.get(i));
+             //System.out.println(jsonFriends.get(i))
+             // for(JSONObject j : jsonFriends.get(i))
+             // {
+             //     System.out.println(j);
+             // }
+ 
+             //System.out.println(crimArray.get(i));
+         }
+         
+         //JSONParser parser = new JSONParser();
+         //jsonFriends = jsonFriends
+         //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+             //jsonFriends=getCriminalJSON(criminal);
+             //for(int i = 0 ; i < criminal)
+         
+         // Write JSON file
+         try (FileWriter file = new FileWriter(SUSPECT_FILE_NAME)) {
+             //System.out.println(jsonFriends.toJSONString());
+            // for(int i = 0; i < jsonFriends.size();i ++)
+             //file.write(jsonFriends.get(i).toString());
+             // for(int i = 0 ; i < jsonFriends.size();i++)
+              file.write(jsonFriends.toJSONString());
+             //file.append(jsonFriends.toJSONString());
+             file.flush();
+ 
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
     }
 
 
@@ -274,23 +388,46 @@ public class DataWriter extends DataConstants {
 	}
     public static void saveWitness( Witness witness) {
         // People people = People.getInsance();
-        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
-        JSONObject jsonFriends = new JSONObject();
-
-        // creating all the json objects
-        //for (int i = 0; i < criminal.size(); i++) {
-            jsonFriends=getWitnessJSON(witness);
-        
-
-        // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
-
-            file.write(jsonFriends.toJSONString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+         ArrayList <Witness> witnessArray = DataBase.getInstance().getWitnesses();
+         // Gson gson = new Gson();
+         // String yourfilecontents;
+         //JSONParser parser = new JSONParser();
+         JSONArray jsonFriends = new JSONArray();
+         //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
+ 
+         // creating all the json objects
+         for (int i = 0; i < witnessArray.size(); i++) {
+             jsonFriends.add(getWitnessJSON(witnessArray.get(i)));
+             //System.out.println(jsonFriends.get(i));
+             //System.out.println(jsonFriends.get(i))
+             // for(JSONObject j : jsonFriends.get(i))
+             // {
+             //     System.out.println(j);
+             // }
+ 
+             //System.out.println(crimArray.get(i));
+         }
+         
+         //JSONParser parser = new JSONParser();
+         //jsonFriends = jsonFriends
+         //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+             //jsonFriends=getCriminalJSON(criminal);
+             //for(int i = 0 ; i < criminal)
+         
+         // Write JSON file
+         try (FileWriter file = new FileWriter(WITNESS_FILE_NAME)) {
+             //System.out.println(jsonFriends.toJSONString());
+            // for(int i = 0; i < jsonFriends.size();i ++)
+             //file.write(jsonFriends.get(i).toString());
+             // for(int i = 0 ; i < jsonFriends.size();i++)
+              file.write(jsonFriends.toJSONString());
+             //file.append(jsonFriends.toJSONString());
+             file.flush();
+ 
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
     }
 
 

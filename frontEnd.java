@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import java.util.concurrent.ThreadLocalRandom;
 public class frontEnd {
     static Scanner keyboard = new Scanner(System.in);
     static DataBase dBase;
@@ -111,52 +111,88 @@ public class frontEnd {
                 String fName, lName, Gender, Address, Phone, DOB, crimeType, Notes;
                 long Age, Height, Weight, numCrimes;
                 boolean Adult, inJail;
-                keyboard.nextLine();
-                fName = keyboard.nextLine();
-                lName = keyboard.nextLine();
-                // keyboard.nextLong();
-                Height = (long) keyboard.nextDouble(); // Criminal
-                Weight = (long) keyboard.nextDouble();
-                keyboard.nextLine();
-                Gender = keyboard.nextLine();
-                Address = keyboard.nextLine();
-                Phone = keyboard.nextLine();
-                DOB = keyboard.nextLine();
-                Adult = keyboard.nextBoolean();
-                inJail = keyboard.nextBoolean();
-                numCrimes = (long) keyboard.nextDouble();
-                keyboard.nextLine();
-                crimeType = keyboard.nextLine();
-                Age = (long) keyboard.nextDouble();
-                keyboard.nextLine();
-                Notes = keyboard.nextLine();
                 
-                Criminal crim = new Criminal(fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB, Adult, inJail, Notes, numCrimes);
+                fName = "Billy";
+                lName = "Bob";
+                // keyboard.nextDouble();
+                Height = 65;  // Criminal
+                Weight =  150;
+                
+                Gender = "M";
+                Address = "999 idk lane";
+                Phone = "888 888 8888";
+                DOB ="2/2/22";
+                Adult = true;
+                inJail =true;
+                numCrimes =  15;
+                
+                crimeType = "Assault";
+                Age = 65;
+                
+                Notes = "bad guy";
+                long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
+                
+
+
+
+
+
+                // keyboard.nextLine();
+                // fName = keyboard.nextLine();
+                // lName = keyboard.nextLine();
+                // // keyboard.nextDouble();
+                // Height =  keyboard.nextLong(); // Criminal
+                // Weight =  keyboard.nextLong();
+                // keyboard.nextLine();
+                // Gender = keyboard.nextLine();
+                // Address = keyboard.nextLine();
+                // Phone = keyboard.nextLine();
+                // DOB = keyboard.nextLine();
+                // Adult = keyboard.nextBoolean();
+                // inJail = keyboard.nextBoolean();
+                // numCrimes =  keyboard.nextLong();
+                // keyboard.nextLine();
+                // crimeType = keyboard.nextLine();
+                // Age = keyboard.nextLong();
+                // keyboard.nextLine();
+                // Notes = keyboard.nextLine();
+                
+                Criminal crim = new Criminal(fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB, Adult, inJail, Notes, numCrimes, ID);
                 
                 dbase.getCriminals().add(crim);
-                DataWriter.saveCriminal(crim);
+                //dbase.getCriminals().add(crim);
+                DataWriter.saveCriminal();
                 
             } else if (inp2 == 2) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
                 System.out.println(
                         "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-                System.out.println("10. occupation? 11. lastLocation 12. age");
+                System.out.println("10. occupation? 11. lastLocation 12. age ");
 
                 String fName, lName, gender, address, phone, DOB, crimeType, occupation, lastLocation;
                 long age, height, weight, numCrimes;
                 boolean Adult;
+                keyboard.nextLine();
                 fName = keyboard.nextLine();
                 lName = keyboard.nextLine();
                 height = keyboard.nextLong();
                 weight = keyboard.nextLong(); // POI
+                keyboard.nextLine();
                 gender = keyboard.nextLine();
                 address = keyboard.nextLine();
                 phone = keyboard.nextLine();
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
+                keyboard.nextLine();
                 occupation = keyboard.nextLine();
                 lastLocation = keyboard.nextLine();
+                long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
                 age = keyboard.nextLong();
+                PersonOfInterest poi = new PersonOfInterest( fName,  lName,  age,  height,  weight, gender, address,
+                 phone,  DOB,  Adult,   occupation,lastLocation, ID);
+                 dbase.getPOI().add(poi);
+                DataWriter.savepoi(poi);
+
             } else if (inp2 == 3) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
                 System.out.println(
@@ -180,6 +216,7 @@ public class frontEnd {
                 age = keyboard.nextLong();
                 bodyType = keyboard.nextLine();
                 isCriminal = keyboard.nextBoolean();
+                long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
 
             } else if (inp2 == 4) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
@@ -202,6 +239,7 @@ public class frontEnd {
                 badgeNumber = keyboard.nextLong();
                 rank = keyboard.nextLine();
                 statement = keyboard.nextLine();
+                long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
 
             } else if (inp2 == 5) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
@@ -221,6 +259,7 @@ public class frontEnd {
                 DOB = keyboard.nextLine();
                 Adult = keyboard.nextBoolean();
                 statement = keyboard.nextLine();
+                long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
             } else if (inp2 == 6) {
                 System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
                 System.out.println(
@@ -240,6 +279,7 @@ public class frontEnd {
                 Adult = keyboard.nextBoolean();
                 statement = keyboard.nextLine();
                 isHealthy = keyboard.nextBoolean();
+                long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
             }
 
         } else if (inp == 4) {

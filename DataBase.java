@@ -19,6 +19,11 @@ public class DataBase {
 	private DataBase()
 	{
 		criminals=DataLoader.loadCriminal();
+		POI = DataLoader.loadPOI();
+		officers = DataLoader.loadOfficer();
+		suspects = DataLoader.loadSuspect();
+		witnesses = DataLoader.loadWitness();
+		victims = DataLoader.loadVictim();
 		// witnesses=DataLoader.loadWitness();
 		// suspects=DataLoader.loadSuspect();
 		// officers=DataLoader.loadOfficer();
@@ -31,7 +36,9 @@ public class DataBase {
 	}
 
 	public ArrayList<Criminal> getCriminals() {
+		this.criminals = this.criminals;
 		return this.criminals;
+		
 	}
 
 	public void setCriminals(ArrayList<Criminal> criminals) {

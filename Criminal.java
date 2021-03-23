@@ -5,8 +5,8 @@ public class Criminal extends Person {
     private String notes;
     private long numCrimes;
 
-    public Criminal(String fname, String lname, long Age, double Height, double Weight, String Gender, String Address,
-            String Phone, String DateOfBirth, boolean IsAdult, boolean inJail, String notes, long numCrimes) {
+    public Criminal(String fname, String lname, long Age, long Height, long Weight, String Gender, String Address,
+            String Phone, String DateOfBirth, boolean IsAdult, boolean inJail, String notes, long numCrimes, long ID) {
         super(fname, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult);
         this.inJail = inJail;
         this.notes = notes;

@@ -3,8 +3,8 @@ public class Person {
 	protected String fname;
 	protected String lname;
 	protected long age;
-	protected double height;
-	protected double weight;
+	protected long height;
+	protected long weight;
 	protected String gender;
 	protected String address;
 	protected String phone;
@@ -36,19 +36,19 @@ public class Person {
 		this.age = age;
 	}
 
-	public double getHeight() {
+	public long getHeight() {
 		return this.height;
 	}
 
-	public void setHeight(double height) {
+	public void setHeight(long height) {
 		this.height = height;
 	}
 
-	public double getWeight() {
+	public long getWeight() {
 		return this.weight;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(long weight) {
 		this.weight = weight;
 	}
 
@@ -104,7 +104,7 @@ public class Person {
 		this.ID = ID;
 	}
 
-	public Person(String fName, String lname, long Age, double Height, double Weight, String Gender, String Address,
+	public Person(String fName, String lname, long Age, long Height, long Weight, String Gender, String Address,
 			String Phone, String DateOfBirth, boolean IsAdult) {
 		this.fname = fName;
 		this.lname = lname;
