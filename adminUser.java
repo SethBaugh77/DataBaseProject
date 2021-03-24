@@ -1,5 +1,3 @@
-package groupproj;
-
 import java.util.ArrayList;
 
 public class AdminUser extends User {
