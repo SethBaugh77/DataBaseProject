@@ -1,8 +1,8 @@
-package groupproj;
+
 import java.util.ArrayList;
 
 public class User {
-	protected int id;
+	protected long id;
 	protected boolean admin;
 	protected String firstName;
 	protected String lastName;
@@ -10,12 +10,11 @@ public class User {
 	protected String email;
 	protected String password;
 	protected String phone;
-	private ArrayList<Criminal> criminals = new ArrayList<>();
-	private ArrayList<Case> cases = new ArrayList<>();
-	private ArrayList<User> users = new ArrayList<>();
+	
+	
 
-	public User(int id, boolean admin, String fname, String lname, String username, String email, String password,
-			String phone, ArrayList<Criminal> criminals, ArrayList<Case> cases) {
+	public User(long id, boolean admin, String fname, String lname, String username, String email, String password,
+			String phone) {
 		this.id = id;
 		this.admin = admin;
 		this.firstName = fname;
@@ -24,13 +23,12 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.phone = phone;
-		this.criminals = criminals;
-		this.cases = cases;
-		this.users = users;
+		
+		
 
 	}
 
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 

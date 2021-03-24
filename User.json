@@ -1,13 +1,12 @@
 [
     {
-        "ID": 1001,
-        "Admin": "True",
-        "fname": "Tim",
-        "lname": "Chev",
-        "username": "TimChev",
-        "email": "timc@gmail.com",
-        "password": "stylishdonkey",
-        "phone": "3012825792"
-
+        "lName": "boi",
+        "fName": "johnny",
+        "Email": "johnnyboi@gmail.com",
+        "Username": "johnnyboi",
+        "Phone": "555 444 3333",
+        "ID": 1566,
+        "Admin": true,
+        "Password": "hello"
     }
 ]

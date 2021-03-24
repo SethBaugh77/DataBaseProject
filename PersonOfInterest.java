@@ -6,7 +6,7 @@ public class PersonOfInterest extends Person {
 
     public PersonOfInterest(String fname, String lname, long age, long height, long weight, String gender, String address,
             String phone, String dateOfBirth, boolean isAdult, String occupation, String lastLocation, long ID) {
-        super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult);
+        super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult, ID);
         this.occupation = occupation;
         this.lastLocation = lastLocation;
         this.poiNotes = poiNotes;

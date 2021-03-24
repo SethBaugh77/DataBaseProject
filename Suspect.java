@@ -7,10 +7,8 @@ public class Suspect extends PersonOfInterest {
    // ArrayList<Suspect> relatives = new ArrayList<Suspect>();
 
     public Suspect(String fname, String lname, long age, long height, long weight, String gender, String address,
-            String phone, String dateOfBirth, boolean isAdult, long id, String occupation, String crimeConnectionString,
-            String lastLocation, String bodyType, boolean isCriminal) {
-        super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult, id, occupation,
-                crimeConnectionString, lastLocation);
+            String phone, String dateOfBirth, boolean isAdult, long id, String occupation,String lastLocation, String bodyType, boolean isCriminal) {
+        super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult, occupation, lastLocation, id);
         this.bodyType = bodyType;
         this.isCriminal = isCriminal;
         //this.relatives = relatives;

@@ -11,7 +11,7 @@ public class DataLoader extends DataConstants {
 
         ArrayList<Criminal> crim = new ArrayList();
         try {
-            FileReader reader = new FileReader("criminal.json");
+            FileReader reader = new FileReader(CRIMINAL_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
             
@@ -57,7 +57,7 @@ public class DataLoader extends DataConstants {
 
         ArrayList<Witness> wit = new ArrayList();
         try {
-            FileReader reader = new FileReader("Witness.json");
+            FileReader reader = new FileReader(WITNESS_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -93,7 +93,7 @@ public class DataLoader extends DataConstants {
 
         ArrayList<Suspect> sus = new ArrayList();
         try {
-            FileReader reader = new FileReader("Suspect.json");
+            FileReader reader = new FileReader(SUSPECT_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -121,7 +121,7 @@ public class DataLoader extends DataConstants {
     //             protected String bodyType;
     //             protected boolean isCriminal;
 
-                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, occupation, lastLocation, poiNotes, bodyType, isCriminal));
+                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, occupation, lastLocation, bodyType, isCriminal));
             }
 
          //   return sus;
@@ -138,7 +138,7 @@ public class DataLoader extends DataConstants {
 
         ArrayList<Victim> vic = new ArrayList();
         try {
-            FileReader reader = new FileReader("Victim.json");
+            FileReader reader = new FileReader(VICTIM_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -175,7 +175,7 @@ public class DataLoader extends DataConstants {
 
         ArrayList<Officer> off = new ArrayList();
         try {
-            FileReader reader = new FileReader("Officer.json");
+            FileReader reader = new FileReader(OFFICER_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -213,7 +213,7 @@ public class DataLoader extends DataConstants {
 
         ArrayList<PersonOfInterest> poi = new ArrayList();
         try {
-            FileReader reader = new FileReader("POI.json");
+            FileReader reader = new FileReader(POI_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
 
@@ -246,4 +246,57 @@ public class DataLoader extends DataConstants {
         return poi;
 
     }
+
+    public static ArrayList loadUsers() {
+
+        ArrayList<User> users = new ArrayList();
+        try {
+            FileReader reader = new FileReader(USER_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < peopleJSON.size(); i++) {
+                JSONObject personJSON = (JSONObject) peopleJSON.get(i);
+                String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
+                String lastName = (String) personJSON.get(PERSON_LAST_NAME);
+                boolean admin = (boolean) personJSON.get(PERSON_IS_ADMIN);
+                String username = (String) personJSON.get(PERSON_USERNAME);
+                String email = (String) personJSON.get(PERSON_EMAIL);
+                String password = (String) personJSON.get(PERSON_PASSWORD);
+
+               
+                String phone = (String) personJSON.get(PERSON_PHONE);
+                // String DOB = (String) personJSON.get(PERSON_DOB);
+                // boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
+                 long ID = (long) personJSON.get(PERSON_ID);
+                // String occupation = (String) personJSON.get(PERSON_OCCUPATION);
+                // String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
+                // String poiNotes = (String) personJSON.get(PERSON_NOTES);
+
+                 users.add(new User (ID, admin, firstName, lastName, username, email, password, phone));
+                //         isAdult, occupation, lastLocation, ID));
+                        // protected long id;
+                        // protected boolean admin;
+                        // protected String firstName;
+                        // protected String lastName;
+                        // protected String username;
+                        // protected String email;
+                        // protected String password;
+                        // protected String phone;
+                        
+
+
+            }
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return users;
+
+    }
+
+
+
 }

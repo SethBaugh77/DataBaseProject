@@ -79,7 +79,7 @@ public class DataWriter extends DataConstants {
         
         return crimDetails;
 	}
-    public static void saveVictim( Victim victim) {
+    public static void saveVictim() {
         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
         ArrayList <Victim> vicArray = DataBase.getInstance().getVictims();
         // Gson gson = new Gson();
@@ -131,11 +131,11 @@ public class DataWriter extends DataConstants {
 		victimDetails.put(PERSON_PHONE, victim.getPhone());
 
         victimDetails.put(PERSON_AGE, victim.getAge());
-		victimDetails.put(PERSON_HEIGHT, victim.getHeight()));
+		victimDetails.put(PERSON_HEIGHT, victim.getHeight());
 		victimDetails.put(PERSON_WEIGHT, victim.getWeight());
 
         victimDetails.put(PERSON_ADDRESS, victim.getAddress());
-		victimDetails.put(PERSON_LAST_NAME, victim.getGender());
+		victimDetails.put(PERSON_GENDER, victim.getGender());
 		victimDetails.put(PERSON_PHONE, victim.getPhone());
 
         victimDetails.put(PERSON_DOB, victim.getDateOfBirth());
@@ -143,7 +143,7 @@ public class DataWriter extends DataConstants {
 		victimDetails.put(PERSON_ID, victim.getID());
 
         victimDetails.put(PERSON_STATEMENT, victim.getVictimStatement());
-        victimDetails.put(PERSON_IS_HEALTHY, victim.getIsHealthy();
+        victimDetails.put(PERSON_IS_HEALTHY, victim.getIsHealthy());
         // victimDetails.put(PERSON_IN_JAIL, victim.getJail());
 		// victimDetails.put(PERSON_NOTES, victim.getNotes());
 		// victimDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
@@ -154,7 +154,7 @@ public class DataWriter extends DataConstants {
 	}
 
 
-    public static void saveOfficer( Officer officer) {
+    public static void saveOfficer() {
          //ArrayList<Criminal> crim = new ArrayList<Criminal>();
          ArrayList <Officer> officerArray = DataBase.getInstance().getOfficers();
          // Gson gson = new Gson();
@@ -206,20 +206,20 @@ public class DataWriter extends DataConstants {
 		officerDetails.put(PERSON_PHONE, officer.getPhone());
 
         officerDetails.put(PERSON_AGE, officer.getAge());
-		officerDetails.put(PERSON_HEIGHT, officer.getHeight()));
+		officerDetails.put(PERSON_HEIGHT, officer.getHeight());
 		officerDetails.put(PERSON_WEIGHT, officer.getWeight());
 
         officerDetails.put(PERSON_ADDRESS, officer.getAddress());
-		officerDetails.put(PERSON_LAST_NAME, officer.getGender());
+		officerDetails.put(PERSON_GENDER, officer.getGender());
 		officerDetails.put(PERSON_PHONE, officer.getPhone());
 
         officerDetails.put(PERSON_DOB, officer.getDateOfBirth());
 		officerDetails.put(PERSON_IS_ADULT, officer.getIsAdult());
 		officerDetails.put(PERSON_ID, officer.getID());
 
-        officerDetails.put(PERSON_OFFICER_RANK, officer.getOfficerRank()
-		officerDetails.put(PERSON_BADGE_NUMBER, officer.getBadgeNumber();
-		officerDetails.put(PERSON_STATEMENT, officer.getOfficerStatement();
+        officerDetails.put(PERSON_OFFICER_RANK, officer.getOfficerRank());
+		officerDetails.put(PERSON_BADGE_NUMBER, officer.getBadgeNumber());
+		officerDetails.put(PERSON_STATEMENT, officer.getOfficerStatement());
 
         
 
@@ -231,7 +231,7 @@ public class DataWriter extends DataConstants {
         
         return officerDetails;
 	}
-    public static void savepoi( PersonOfInterest poi) {
+    public static void savepoi() {
          //ArrayList<Criminal> crim = new ArrayList<Criminal>();
          ArrayList <PersonOfInterest> poiArray = DataBase.getInstance().getPOI();
          // Gson gson = new Gson();
@@ -287,7 +287,7 @@ public class DataWriter extends DataConstants {
 		poiDetails.put(PERSON_WEIGHT, poi.getWeight());
 
         poiDetails.put(PERSON_ADDRESS, poi.getAddress());
-		poiDetails.put(PERSON_LAST_NAME, poi.getGender());
+		poiDetails.put(PERSON_GENDER, poi.getGender());
 		poiDetails.put(PERSON_PHONE, poi.getPhone());
 
         poiDetails.put(PERSON_DOB, poi.getDateOfBirth());
@@ -307,7 +307,7 @@ public class DataWriter extends DataConstants {
         return poiDetails;
 	}
 
-    public static void saveSuspect( Suspect suspect) {
+    public static void saveSuspect() {
         // People people = People.getInsance();
          //ArrayList<Criminal> crim = new ArrayList<Criminal>();
          ArrayList <Suspect> suspectArray = DataBase.getInstance().getSuspects();
@@ -360,11 +360,11 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(PERSON_PHONE, suspect.getPhone());
 
         suspectDetails.put(PERSON_AGE, suspect.getAge());
-		suspectDetails.put(PERSON_HEIGHT, suspect.getHeight()));
+		suspectDetails.put(PERSON_HEIGHT, suspect.getHeight());
 		suspectDetails.put(PERSON_WEIGHT, suspect.getWeight());
 
         suspectDetails.put(PERSON_ADDRESS, suspect.getAddress());
-		suspectDetails.put(PERSON_LAST_NAME, suspect.getGender());
+		suspectDetails.put(PERSON_GENDER, suspect.getGender());
 		suspectDetails.put(PERSON_PHONE, suspect.getPhone());
 
         suspectDetails.put(PERSON_DOB, suspect.getDateOfBirth());
@@ -375,8 +375,8 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(PERSON_OCCUPATION, suspect.getOccupation());
 		suspectDetails.put(PERSON_NOTES, suspect.getpoiNotes());
 
-        suspectDetails.put(PERSON_BODY_TYPE, suspect.getBodyType();
-		suspectDetails.put(PERSON_IS_CRIMINAL, suspect.getIsCriminal();
+        suspectDetails.put(PERSON_BODY_TYPE, suspect.getBodyType());
+		suspectDetails.put(PERSON_IS_CRIMINAL, suspect.getIsCriminal());
 
         // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
 		// poiDetails.put(PERSON_NOTES, poi.getNotes());
@@ -386,7 +386,7 @@ public class DataWriter extends DataConstants {
         
         return suspectDetails;
 	}
-    public static void saveWitness( Witness witness) {
+    public static void saveWitness() {
         // People people = People.getInsance();
          //ArrayList<Criminal> crim = new ArrayList<Criminal>();
          ArrayList <Witness> witnessArray = DataBase.getInstance().getWitnesses();
@@ -439,11 +439,11 @@ public class DataWriter extends DataConstants {
 		witnessDetails.put(PERSON_PHONE, witness.getPhone());
 
         witnessDetails.put(PERSON_AGE, witness.getAge());
-		witnessDetails.put(PERSON_HEIGHT, witness.getHeight()));
+		witnessDetails.put(PERSON_HEIGHT, witness.getHeight());
 		witnessDetails.put(PERSON_WEIGHT, witness.getWeight());
 
         witnessDetails.put(PERSON_ADDRESS, witness.getAddress());
-		witnessDetails.put(PERSON_LAST_NAME, witness.getGender());
+		witnessDetails.put(PERSON_GENDER, witness.getGender());
 		witnessDetails.put(PERSON_PHONE, witness.getPhone());
 
         witnessDetails.put(PERSON_DOB, witness.getDateOfBirth());
@@ -459,6 +459,99 @@ public class DataWriter extends DataConstants {
         
         return witnessDetails;
 	}
+
+
+
+    public static void saveUser() {
+        //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+        ArrayList <User> userArray = DataBase.getInstance().getUsers();
+        // Gson gson = new Gson();
+        // String yourfilecontents;
+        //JSONParser parser = new JSONParser();
+        JSONArray jsonFriends = new JSONArray();
+        //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
+
+        // creating all the json objects
+        for (int i = 0; i < userArray.size(); i++) {
+            jsonFriends.add(getUSERJSON(userArray.get(i)));
+            //System.out.println(jsonFriends.get(i));
+            //System.out.println(jsonFriends.get(i))
+            // for(JSONObject j : jsonFriends.get(i))
+            // {
+            //     System.out.println(j);
+            // }
+
+            //System.out.println(crimArray.get(i));
+        }
+        
+        //JSONParser parser = new JSONParser();
+        //jsonFriends = jsonFriends
+        //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+            //jsonFriends=getCriminalJSON(criminal);
+            //for(int i = 0 ; i < criminal)
+        
+        // Write JSON file
+        try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
+            //System.out.println(jsonFriends.toJSONString());
+           // for(int i = 0; i < jsonFriends.size();i ++)
+            //file.write(jsonFriends.get(i).toString());
+            // for(int i = 0 ; i < jsonFriends.size();i++)
+             file.write(jsonFriends.toJSONString());
+            //file.append(jsonFriends.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getUSERJSON(User user) {  
+        
+		JSONObject userDetails = new JSONObject();
+		userDetails.put(PERSON_FIRST_NAME, user.getFirstName());
+        userDetails.put(PERSON_LAST_NAME, user.getLastName());
+        userDetails.put(PERSON_PASSWORD, user.getPassword());
+
+        userDetails.put(PERSON_IS_ADMIN, user.getAdmin());
+        userDetails.put(PERSON_USERNAME, user.getUsername());
+        userDetails.put(PERSON_EMAIL, user.getEmail());
+
+        userDetails.put(PERSON_ID, user.getId());
+        userDetails.put(PERSON_PHONE, user.getPhone());
+        //userDetails.put(PERSON_FIRST_NAME, user.get;
+		// victimDetails.put(PERSON_LAST_NAME, victim2.getLname());
+		// victimDetails.put(PERSON_PHONE, victim2.getPhone());
+
+        // victimDetails.put(PERSON_AGE, victim2.getAge());
+		// victimDetails.put(PERSON_HEIGHT, victim2.getHeight());
+		// victimDetails.put(PERSON_WEIGHT, victim2.getWeight());
+
+        // victimDetails.put(PERSON_ADDRESS, victim2.getAddress());
+		// victimDetails.put(PERSON_GENDER, victim2.getGender());
+		// victimDetails.put(PERSON_PHONE, victim2.getPhone());
+
+        // victimDetails.put(PERSON_DOB, victim.getDateOfBirth());
+		// victimDetails.put(PERSON_IS_ADULT, victim.getIsAdult());
+		// victimDetails.put(PERSON_ID, victim.getID());
+
+        // victimDetails.put(PERSON_STATEMENT, victim.getVictimStatement());
+        // victimDetails.put(PERSON_IS_HEALTHY, victim.getIsHealthy());
+        // victimDetails.put(PERSON_IN_JAIL, victim.getJail());
+		// victimDetails.put(PERSON_NOTES, victim.getNotes());
+		// victimDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        return userDetails;
+	}
+
+
+
+
+
+
+
 
 
 
