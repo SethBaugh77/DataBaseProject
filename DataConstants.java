@@ -38,6 +38,21 @@ public abstract class DataConstants {
     protected final static String PERSON_EMAIL = "Email";
     protected final static String PERSON_PASSWORD = "Password";
     protected final static String USER_FILE_NAME = "User.json";
+    protected final static String CASE_NAME = "Name";
+    protected final static String CASE_CRIME = "Crime";
+    protected final static String CASE_SEVERITY = "Severity";
+    protected final static String CASE_DATE = "DATE";
+    protected final static String CASE_IS_FEDERAL = "isFederal";
+    protected final static String CASE_IS_SOLVED = "isSolved";
+    protected final static String CASE_FILE_NAME = "Case.json";
+    protected final static String CASE_CRIMINALS_ID = "CriminalsID";
+    protected final static String CASE_VICTIMS_ID = "VictimsID";
+    protected final static String CASE_WITNESSES_ID = "WitnessesID";
+    protected final static String CASE_SUSPECTS_ID = "SuspectsID";
+    protected final static String CASE_OFFICERS_ID = "OfficersID";
+    protected final static String CASE_POI_ID = "POIID";
+    protected final static String CASE_ID = "ID";
+
     //protected final static String PERSON_STATEMENT = ""
     //protected static final String PERSON_NOTES = "Notes";
 

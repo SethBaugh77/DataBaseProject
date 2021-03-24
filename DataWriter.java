@@ -548,6 +548,109 @@ public class DataWriter extends DataConstants {
 
 
 
+    public static void saveCase() {
+        // People people = People.getInsance();
+         //ArrayList<Criminal> crim = new ArrayList<Criminal>();
+         ArrayList <Case> caseArray = DataBase.getInstance().getCases();
+         // Gson gson = new Gson();
+         // String yourfilecontents;
+         //JSONParser parser = new JSONParser();
+         JSONArray jsonFriends = new JSONArray();
+         //JSONArray jsonFriends = new (JSONArray) new JSONParser().parse(in)
+ 
+         // creating all the json objects
+         for (int i = 0; i < caseArray.size(); i++) {
+             jsonFriends.add(getCaseJSON(caseArray.get(i)));
+             //System.out.println(jsonFriends.get(i));
+             //System.out.println(jsonFriends.get(i))
+             // for(JSONObject j : jsonFriends.get(i))
+             // {
+             //     System.out.println(j);
+             // }
+ 
+             //System.out.println(crimArray.get(i));
+         }
+         
+         //JSONParser parser = new JSONParser();
+         //jsonFriends = jsonFriends
+         //JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+             //jsonFriends=getCriminalJSON(criminal);
+             //for(int i = 0 ; i < criminal)
+         
+         // Write JSON file
+         try (FileWriter file = new FileWriter(CASE_FILE_NAME)) {
+             //System.out.println(jsonFriends.toJSONString());
+            // for(int i = 0; i < jsonFriends.size();i ++)
+             //file.write(jsonFriends.get(i).toString());
+             // for(int i = 0 ; i < jsonFriends.size();i++)
+              file.write(jsonFriends.toJSONString());
+             //file.append(jsonFriends.toJSONString());
+             file.flush();
+ 
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+    }
+
+
+    public static JSONObject getCaseJSON(Case _case) {  
+        
+		JSONObject caseDetails = new JSONObject();
+
+        caseDetails.putIfAbsent(CASE_NAME, _case.getName());
+        caseDetails.putIfAbsent(CASE_CRIME, _case.getCrime());
+        caseDetails.putIfAbsent(CASE_DATE, _case.getDate());
+
+        caseDetails.putIfAbsent(CASE_IS_FEDERAL, _case.getIsFederal());
+        caseDetails.putIfAbsent(CASE_IS_SOLVED, _case.getIsSolved());
+        caseDetails.putIfAbsent(CASE_SEVERITY, _case.getSeverity());
+
+        caseDetails.putIfAbsent(CASE_ID, _case.getCaseID());
+        caseDetails.putIfAbsent(CASE_CRIMINALS_ID, _case.getCriminals());
+        caseDetails.putIfAbsent(CASE_VICTIMS_ID, _case.getVictims());
+
+        caseDetails.putIfAbsent(CASE_WITNESSES_ID, _case.getWitnesses());
+        caseDetails.putIfAbsent(CASE_OFFICERS_ID, _case.getOfficers());
+        caseDetails.putIfAbsent(CASE_POI_ID, _case.getPoi());
+        caseDetails.putIfAbsent(CASE_SUSPECTS_ID, _case.getSuspects());
+
+        return caseDetails;
+		// witnessDetails.put(PERSON_FIRST_NAME, witness.getFname());
+		// witnessDetails.put(PERSON_LAST_NAME, witness.getLname());
+		// witnessDetails.put(PERSON_PHONE, witness.getPhone());
+
+        // witnessDetails.put(PERSON_AGE, witness.getAge());
+		// witnessDetails.put(PERSON_HEIGHT, witness.getHeight());
+		// witnessDetails.put(PERSON_WEIGHT, witness.getWeight());
+
+        // witnessDetails.put(PERSON_ADDRESS, witness.getAddress());
+		// witnessDetails.put(PERSON_GENDER, witness.getGender());
+		// witnessDetails.put(PERSON_PHONE, witness.getPhone());
+
+        // witnessDetails.put(PERSON_DOB, witness.getDateOfBirth());
+		// witnessDetails.put(PERSON_IS_ADULT, witness.getIsAdult());
+		// witnessDetails.put(PERSON_ID, witness.getID());
+
+        // witnessDetails.put(PERSON_STATEMENT, witness.getWitnessStatement());
+        // // poiDetails.put(PERSON_IN_JAIL, poi.getJail());
+		// // poiDetails.put(PERSON_NOTES, poi.getNotes());
+		// // poiDetails.put(PERSON_NUM_CRIMES, poi.getNumCrimes());
+
+        
+        
+        
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

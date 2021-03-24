@@ -1,12 +1,50 @@
 import java.util.ArrayList;
 public class Case {
-	 private int CaseID;
-	    private ArrayList<Criminal> criminals = new ArrayList<Criminal>();
-	    private ArrayList<Victim> victims = new ArrayList<Victim>();
-	    private ArrayList<Witness> witnesses = new ArrayList<Witness>(); // -CaseID: int
-	    private ArrayList<Officer> officers = new ArrayList<Officer>();
-	    private ArrayList<PersonOfInterest> poi = new ArrayList<PersonOfInterest>();
+	 private long CaseID;
+	    private ArrayList<Long> criminals = new ArrayList<Long>();
+	    private ArrayList<Long> victims = new ArrayList<Long>();
+	    private ArrayList<Long> witnesses = new ArrayList<Long>(); // -CaseID: int
+	    private ArrayList<Long> officers = new ArrayList<Long>();
+	    private ArrayList<Long> poi = new ArrayList<Long>();
+		private ArrayList <Long>suspects = new ArrayList<Long>();
+
+	
 		private String name;
+		private String crime;
+	    private String date;
+	    private boolean isSolved;
+	    private long severity;
+	    private boolean isFederal;
+		public Case(String name, String crime, String date, boolean isSolved, long severity, boolean isFederal, long ID ,ArrayList <Long> criminals, 
+		ArrayList <Long> victims,ArrayList <Long> witnesses,ArrayList <Long> officers,ArrayList <Long> poi, ArrayList <Long> suspects)
+		{
+			this.name = name;
+			this.crime = crime;
+			this.date = date;
+			this.isSolved  = isSolved;
+			this.severity = severity;
+			this.isFederal = isFederal;
+			this.CaseID = ID;
+			this.criminals = criminals;
+			this.victims = victims;
+			this.witnesses = witnesses;
+			this.officers = officers;
+			this.poi = poi;
+			this.suspects = suspects;
+
+
+		}	
+
+
+		public ArrayList<Long> getSuspects() {
+			return this.suspects;
+		}
+	
+		public void setSuspects(ArrayList<Long> suspects) {
+			this.suspects = suspects;
+		}
+
+
 
 	public String getName() {
 		return this.name;
@@ -23,19 +61,15 @@ public class Case {
 	public boolean isIsFederal() {
 		return this.isFederal;
 	}
-	    private String crime;
-	    private String date;
-	    private boolean isSolved;
-	    private int severity;
-	    private boolean isFederal;
+	   
 
-	    public  CaseProfile(ArrayList<Criminal> Criminals, ArrayList<Victim> Victims, ArrayList<Witness> Witnesses,
-	            ArrayList<Officer> Officers, ArrayList<String> poi, int _CaseID, String crime, String date,
-	            boolean isSolved, int _Severity, boolean isFederal,) {
+	    // public  CaseProfile(ArrayList<Criminal> Criminals, ArrayList<Victim> Victims, ArrayList<Witness> Witnesses,
+	    //         ArrayList<Officer> Officers, ArrayList<String> poi, int _CaseID, String crime, String date,
+	    //         boolean isSolved, int _Severity, boolean isFederal,) {
 
-	    }
+	    // }
 
-	    public int getCaseID() {
+	    public long getCaseID() {
 			return CaseID;
 		}
 
@@ -43,43 +77,43 @@ public class Case {
 			CaseID = caseID;
 		}
 
-		public ArrayList<Criminal> getCriminals() {
+		public ArrayList<Long> getCriminals() {
 			return criminals;
 		}
 
-		public void setCriminals(ArrayList<Criminal> criminals) {
+		public void setCriminals(ArrayList<Long> criminals) {
 			this.criminals = criminals;
 		}
 
-		public ArrayList<Victim> getVictims() {
+		public ArrayList<Long> getVictims() {
 			return victims;
 		}
 
-		public void setVictims(ArrayList<Victim> victims) {
+		public void setVictims(ArrayList<Long> victims) {
 			this.victims = victims;
 		}
 
-		public ArrayList<Witness> getWitnesses() {
+		public ArrayList<Long> getWitnesses() {
 			return witnesses;
 		}
 
-		public void setWitnesses(ArrayList<Witness> witnesses) {
+		public void setWitnesses(ArrayList<Long> witnesses) {
 			this.witnesses = witnesses;
 		}
 
-		public ArrayList<Officer> getOfficers() {
+		public ArrayList<Long> getOfficers() {
 			return officers;
 		}
 
-		public void setOfficers(ArrayList<Officer> officers) {
+		public void setOfficers(ArrayList<Long> officers) {
 			this.officers = officers;
 		}
 
-		public ArrayList<PersonOfInterest> getPoi() {
+		public ArrayList<Long> getPoi() {
 			return poi;
 		}
 
-		public void setPoi(ArrayList<PersonOfInterest> poi) {
+		public void setPoi(ArrayList<Long> poi) {
 			this.poi = poi;
 		}
 
@@ -115,7 +149,7 @@ public class Case {
 	        this.isSolved = isSolved;
 	    }
 
-	    public int getSeverity() {
+	    public long getSeverity() {
 	        return this.severity;
 	    }
 

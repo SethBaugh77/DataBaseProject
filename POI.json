@@ -1,17 +1,1 @@
-[
-    {
-        "lName": "F",
-        "Address": "999 idk lane",
-        "lastLocation": "park",
-        "Gender": null,
-        "Weight": 140,
-        "Occupation": "teacher",
-        "fName": "jon",
-        "Phone": "222 555 4444",
-        "DOB": "5\/6\/77",
-        "Height": 65,
-        "ID": 0,
-        "Age": 65,
-        "isAdult": true
-    }
-]
+[{"lName":"F","Address":"999 idk lane","lastLocation":"park","Gender":null,"Weight":140,"Occupation":"teacher","fName":"jon","Phone":"222 555 4444","DOB":"5\/6\/77","Height":65,"ID":0,"Age":65,"isAdult":true},{"lName":"Bob","Address":"999 idk lane","lastLocation":"school","Gender":"M","Weight":150,"Occupation":"teacher","fName":"Billy","Phone":"888 888 8888","DOB":"2\/2\/22","Height":65,"ID":0,"Age":65,"isAdult":true},{"lName":"Bob","Address":"999 idk lane","lastLocation":"school","Gender":"M","Weight":150,"Occupation":"teacher","fName":"Billy","Phone":"888 888 8888","DOB":"2\/2\/22","Height":65,"ID":956,"Age":65,"isAdult":true}]

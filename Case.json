@@ -1,37 +1,97 @@
 [
     {
-        "CaseID": 8091,
-        "crimeType": "Personal",
-        "criminals": [591], 
-        "victims": [312], 
-        "witnesses": [127], 
-        "officers": [1001,1005], 
-        "POI": [], 
-        "crime":"Home robbery", 
-        "date": "05/18/2009",
+        "isFederal": true,
+        "CriminalsID": null,
+        "VictimsID": null,
+        "POIID": null,
+        "Severity": 5,
+        "SuspectsID": null,
+        "Name": "gas station of death",
+        "WitnessesID": null,
+        "OfficersID": null,
+        "DATE": "5\/4\/33",
         "isSolved": true,
-        "severity": 4,
-        "isFederal": false
-
+        "Crime": "robbeyr",
+        "ID": 2542
+    },
+    {
+        "isFederal": true,
+        "CriminalsID": [
+            0
+        ],
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 5,
+        "SuspectsID": [],
+        "Name": "gas station of death",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "5\/4\/33",
+        "isSolved": true,
+        "Crime": "assault",
+        "ID": 2023
+    },
+    {
+        "isFederal": true,
+        "CriminalsID": [],
+        "VictimsID": [],
+        "POIID": [
+            0
+        ],
+        "Severity": 4,
+        "SuspectsID": [],
+        "Name": "hit and run",
+        "WitnessesID": [
+            0
+        ],
+        "OfficersID": [],
+        "DATE": "4\/3\/22",
+        "isSolved": false,
+        "Crime": "assault",
+        "ID": 2279
+    },
+    {
+        "isFederal": true,
+        "CriminalsID": [
+            825
+        ],
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 5,
+        "SuspectsID": [],
+        "Name": "hit and run",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "4\/3",
+        "isSolved": true,
+        "Crime": "assault",
+        "ID": 2336
+    },
+    {
+        "isFederal": false,
+        "CriminalsID": [
+            2,
+            38
+        ],
+        "VictimsID": [
+            473
+        ],
+        "POIID": [
+            956
+        ],
+        "Severity": 3,
+        "SuspectsID": [],
+        "Name": "robbery",
+        "WitnessesID": [
+            21
+        ],
+        "OfficersID": [
+            353,
+            234
+        ],
+        "DATE": "5\/6\/77",
+        "isSolved": false,
+        "Crime": "robbery",
+        "ID": 2058
     }
 ]
-// - type: CrimeTypes
-// - criminals:arrayList<Criminal>
-// - victims:arrayList<Victim>
-// - witnesses:arrayList<Witness>
-// - officers:arrayList<Officer>
-// - POI:ArrayList<String>
-// - crime:String
-// - date:String
-// - isSolved :boolean
-// - severity:int
-// - isFederal:boolean
-
-
-
-
-
-
-
-
-

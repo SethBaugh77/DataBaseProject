@@ -116,6 +116,7 @@ public class Person {
 		this.phone = Phone;
 		this.dateOfBirth = DateOfBirth;
 		this.isAdult = IsAdult;
+		this.ID = ID;
 		
 
 	}

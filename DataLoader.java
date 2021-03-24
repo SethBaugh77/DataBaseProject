@@ -297,6 +297,80 @@ public class DataLoader extends DataConstants {
 
     }
 
+    public static ArrayList loadCases() {
+
+        ArrayList<Case> _cases = new ArrayList();
+        try {
+            FileReader reader = new FileReader(CASE_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < peopleJSON.size(); i++) {
+
+        //         private String name;
+		// private String crime;
+	    // private String date;
+	    // private boolean isSolved;
+	    // private int severity;
+	    // private boolean isFederal;
+
+
+                JSONObject personJSON = (JSONObject) peopleJSON.get(i);
+                String Name = (String) personJSON.get(CASE_NAME);
+                String Crime = (String) personJSON.get(CASE_CRIME);
+                //boolean admin = (boolean) personJSON.get(PERSON_IS_ADMIN);
+                String Date = (String) personJSON.get(CASE_DATE);
+                long Severity = (long) personJSON.get(CASE_SEVERITY);
+                boolean isFederal = (boolean) personJSON.get(CASE_IS_FEDERAL);
+                boolean isSolved = (boolean) personJSON.get(CASE_IS_SOLVED);
+                ArrayList <Long> criminals = (ArrayList <Long>) personJSON.get(CASE_CRIMINALS_ID);
+                ArrayList <Long> victims = (ArrayList <Long>) personJSON.get(CASE_VICTIMS_ID);
+                ArrayList <Long> witnesses = (ArrayList <Long>) personJSON.get(CASE_WITNESSES_ID);
+                ArrayList <Long> officers = (ArrayList <Long>) personJSON.get(CASE_OFFICERS_ID);
+                ArrayList <Long> poi = (ArrayList <Long>) personJSON.get(CASE_POI_ID);
+                ArrayList <Long> suspects = (ArrayList <Long>) personJSON.get(CASE_SUSPECTS_ID);
+
+                //String phone = (String) personJSON.get(PERSON_PHONE);
+                // String DOB = (String) personJSON.get(PERSON_DOB);
+                // boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
+                 long ID = (long) personJSON.get(PERSON_ID);
+                // String occupation = (String) personJSON.get(PERSON_OCCUPATION);
+                // String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
+                // String poiNotes = (String) personJSON.get(PERSON_NOTES);
+
+                 _cases.add(new Case(Name, Crime, Date, isSolved, Severity, isFederal, ID, criminals, victims, witnesses, officers, poi, suspects));
+                //         isAdult, occupation, lastLocation, ID));
+                        // protected long id;
+                        // protected boolean admin;
+                        // protected String firstName;
+                        // protected String lastName;
+                        // protected String username;
+                        // protected String email;
+                        // protected String password;
+                        // protected String phone;
+                        
+
+
+            }
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return _cases;
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -25,6 +25,7 @@ public class DataBase {
 		witnesses = DataLoader.loadWitness();
 		victims = DataLoader.loadVictim();
 		users =DataLoader.loadUsers();
+		cases = DataLoader.loadCases();
 		// witnesses=DataLoader.loadWitness();
 		// suspects=DataLoader.loadSuspect();
 		// officers=DataLoader.loadOfficer();
