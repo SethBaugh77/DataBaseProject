@@ -8,14 +8,17 @@ public class AdminUser extends User {
     }
 
     public void removeCriminal(Criminal _crim) {
+        criminals.remove(_crim);
 
     }
 
     public void removeCase(Case _case) {
+        cases.remove(_case);
 
     }
 
     public void removeUser(User _user) {
+        users.remove(_user);
 
     }
 
