@@ -19,10 +19,13 @@ public class frontEnd {
     static DataBase dBase;
 
     public static void main(String args[]) {
-
+// create instance
         dBase = DataBase.getInstance();
+        
         frontEnd fEnd = new frontEnd();
+        
         User user;
+        
         while (true) {
             user = fEnd.promptForUsernameAndPassword();
 
@@ -207,10 +210,8 @@ public class frontEnd {
             ArrayList<Long> officers = new ArrayList<Long>();
             ArrayList<Long> poi = new ArrayList<Long>();
             ArrayList<Long> suspects = new ArrayList<Long>();
-            ArrayList<Long> evidences = new ArrayList<Long>();
-             Case _case = new Case(Name, crimeType, Date, isSolved, Severity, isFederal, ID, criminals, victims,
-                     witnesses, officers, poi, suspects, evidences);
-           // Case _case;
+            Case _case = new Case(Name, crimeType, Date, isSolved, Severity, isFederal, ID, criminals, victims,
+                    witnesses, officers, poi, suspects);
             while (true) {
                 System.out.println("Which type of person would you like to add to the case?");
                 System.out.println("1. Criminal");
@@ -262,12 +263,11 @@ public class frontEnd {
                 _case.getEvidence().add(evidence.getID());
 
                 dbase.getCases().add(_case);
-                //DataWriter.saveCase();
+                DataWriter.saveCase();
 
                 dBase.getEvidence().add(evidence);
 
                 DataWriter.saveEvidence();
-                DataWriter.saveCase();
             }
 
         } else if (inp == 5) {
@@ -285,6 +285,14 @@ public class frontEnd {
             }
 
         } else if (inp == 6) {
+        	
+        	System.out.println("Enter the case number of the case you would like to remove.");
+           
+        	int input7 = keyboard.nextInt();
+            
+            ArrayList<Case> Caselist = dbase.getCases();
+            
+           Caselist.remove(input7);
 
         } else if (inp == 7) {
             System.out.println("Enter in attributes for person to be added. Press enter after each input.");
@@ -493,7 +501,7 @@ public class frontEnd {
             System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
             System.out.println(
                     "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-            System.out.println("10. inJail 11. numCrimes 12. crimeType 13. Age 14. Notes 15. Race");
+            System.out.println("10. inJail 11. numCrimes 12. crimeType 13. Age 14. Notes ");
             String fName, lName, Gender, Address, Phone, DOB, crimeType, Notes, race;
             long Age, Height, Weight, numCrimes;
             boolean Adult, inJail;
@@ -574,7 +582,7 @@ public class frontEnd {
             System.out.println(
                     "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
             System.out.println(
-                    "10. occupation? 11. lastLocation 12. age 13. body type, 14. Race 15. Criminal 17. Notes");
+                    "10. occupation? 11. lastLocation 12. age 13. body type, 14. Race 15. Criminal 16. Tatoos 17. Notes");
             String fName, lName, Gender, Address, Phone, DOB, Occupation, lastLocation, bodyType, Notes, Race, Tatoos;
             long Age, Height, Weight, numCrimes;
             boolean Adult, inJail, isCriminal;
@@ -603,7 +611,7 @@ public class frontEnd {
             isCriminal = keyboard.nextBoolean();
             keyboard.nextLine();
             Notes = keyboard.nextLine();
-            Tatoos = "none";
+            Tatoos = keyboard.nextLine();
             // long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
             Suspect suspect = new Suspect(fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB, Adult, ID,
                     Occupation, lastLocation, bodyType, isCriminal, Race, Notes, Tatoos);
@@ -735,13 +743,6 @@ public class frontEnd {
             System.out.println("Is Case Federal? " + _case.getIsFederal());
             System.out.println("Case Severity(1-5): " + _case.getSeverity());
             System.out.println("Is Case solved?: " + _case.getIsSolved());
-            // for(int i =0; i < dBase.getEvidence().size();i++)
-            // {
-            //     if(_case.getCaseID() == dBase.getEvidence().get(i).getID())
-            //     {
-            //         System.out.println(dBase.getEvidence().get(i).getFingerprintEvidence());
-            //     }
-            // }
             System.out.println("Persons related to case:");
             for (int k = 0; k < _case.getCriminals().size(); k++) {
                 for (int i = 0; i < dBase.getCriminals().size(); i++) {
@@ -794,7 +795,7 @@ public class frontEnd {
                     }
                 }
             }
-            for (int k = 0; k < dBase.getEvidence().size(); k++) {
+            for (int k = 0; k < _case.getEvidence().size(); k++) {
                 if (_case.getCaseID() == dBase.getEvidence().get(k).getID()) {
                     System.out.println("Evidence:");
                     System.out.println("___________________");
@@ -1057,3 +1058,15 @@ public class frontEnd {
 
 
 }
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
