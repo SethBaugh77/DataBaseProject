@@ -1,0 +1,1 @@
+, First Name: tommy, Last Name: bob, Addres: 444 idk lane, Age: 15, DOB: 2/3/44, Gender M, Height: 65, ID: 911, Phone: 555 555 5555, Race: dove tatoo, Weight: 140, Is Adult: true, In Jail?: true, Notes: bad guy, NumCrimes: 5

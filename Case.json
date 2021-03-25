@@ -49,5 +49,24 @@
         "isSolved": false,
         "Crime": "murder",
         "ID": 2574
+    },
+    {
+        "isFederal": false,
+        "CriminalsID": [],
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 5,
+        "SuspectsID": [
+            948
+        ],
+        "Name": "havoc at gamestop",
+        "WitnessesID": [
+            337
+        ],
+        "OfficersID": [],
+        "DATE": "3\/3\/21",
+        "isSolved": false,
+        "Crime": "robbery at gunPoint",
+        "ID": 2337
     }
 ]

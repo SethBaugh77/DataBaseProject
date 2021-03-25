@@ -17,6 +17,10 @@ public class Case {
 	private long severity;
 	private boolean isFederal;
 
+	public Case()
+	{
+		
+	}
 	public Case(String name, String crime, String date, boolean isSolved, long severity, boolean isFederal, long ID,
 			ArrayList<Long> criminals, ArrayList<Long> victims, ArrayList<Long> witnesses, ArrayList<Long> officers,
 			ArrayList<Long> poi, ArrayList<Long> suspects) {

@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.IllegalFormatWidthException;
 import java.util.concurrent.ThreadLocalRandom;
 
+import javax.lang.model.util.ElementScanner6;
+
+//import jdk.internal.org.jline.terminal.impl.jna.win.Kernel32.WINDOW_BUFFER_SIZE_RECORD;
+
+import java.io.File;  // Import the File class
+import java.io.FileWriter;
+import java.io.IOException;  // Import the IOException class to handle errors
+
 //import jdk.vm.ci.meta.Assumptions.LeafType;
 
 public class frontEnd {
@@ -56,6 +64,7 @@ public class frontEnd {
         System.out.println("6. Remove Case.");
         System.out.println("7. Add User.");
         System.out.println("8. Quit application");
+        System.out.println("9. Write to file");
         int inp = keyboard.nextInt();
 
         if (inp == 1) {
@@ -80,7 +89,7 @@ public class frontEnd {
             }
             boolean remove = false;
             ArrayList<Person> names = new ArrayList<Person>();
-            names = searchPerson(inp2, inp3, remove, search);
+            names = searchPerson(inp2, inp3, remove, search, false);
             displayPersonResults(names);
             System.out.println("Whose attributes would you like to see? Type their last name");
             String who = keyboard.nextLine();
@@ -98,9 +107,62 @@ public class frontEnd {
                     System.out.println("Race: " + names.get(i).getRace());
                     System.out.println("Weight: " + names.get(i).getWeight());
                     System.out.println("Is Adult: " + names.get(i).getIsAdult());
-                    break;
+                    if(names.get(i) instanceof Criminal)
+                    {
+                        Criminal crim =(Criminal)names.get(i);
+                        System.out.println("In Jail?: " + crim.getJail());
+                        System.out.println("Notes: " + crim.getNotes());
+                        System.out.println("NumCrimes: " + crim.getNumCrimes());
+                        break;
+                    }
+                    else if(names.get(i) instanceof Suspect)
+                    {
+                       // else if(names.get(i).getLname().equalsIgnoreCase(who) && names.get(i) instanceof Suspect)
+                        //{
+                            Suspect suspect =(Suspect)names.get(i);
+                    
+        
+                            System.out.println("bodyType: " + suspect.getBodyType());
+                            System.out.println("isCriminal: " + suspect.getIsCriminal());
+                            System.out.println("Occupation: " + suspect.getOccupation());
+        
+                            System.out.println("lastLocation: " + suspect.getLastLocation());
+                            System.out.println("Notes: " + suspect.getPoiNotes());
+                            System.out.println("Tatoos: " + suspect.getTatoos());
+        
+                        //}
+                    }
+                    else if(names.get(i) instanceof Officer)
+                    {
+                        Officer officer =(Officer)names.get(i);
+                        System.out.println("badgeNumber: " + officer.getBadgeNumber());
+                        System.out.println("officerRank: " + officer.getOfficerRank());
+                        System.out.println("officerStatement: " + officer.getOfficerStatement());
+                    }
+                    else if(names.get(i) instanceof Witness)
+                    {
+                        Witness witness = (Witness)names.get(i);
+                       System.out.println("Witness Statement: "+  witness.getWitnessStatement());
+                    }
+                    else if(names.get(i) instanceof Victim)
+                    {
+                        Victim victim = (Victim)names.get(i);
+                        System.out.println("Is Healthy: "+  victim.getIsHealthy());
+                        System.out.println("Victim Statement: "+  victim.getVictimStatement());
+                        
+                    }
+                    else if(names.get(i) instanceof PersonOfInterest)
+                    {
+                        PersonOfInterest poi = (PersonOfInterest)names.get(i);
+                        System.out.println("Occupation: "+  poi.getOccupation());
+                        System.out.println("Location: "+  poi.getLastLocation());
+                        System.out.println("Notes: "+  poi.getPoiNotes());
+                        System.out.println("Tatoos: "+  poi.getTatoos());
+                    }
+                    
 
                 }
+                
 
             }
             System.out.println("Type anything to continue");
@@ -213,7 +275,7 @@ public class frontEnd {
                 String input5 = keyboard.nextLine();
                 String input6 = keyboard.nextLine();
 
-                searchPerson(input5, input6, true, true);
+                searchPerson(input5, input6, true, true, false);
 
             } else {
                 adminErrorMessage();
@@ -242,6 +304,23 @@ public class frontEnd {
         } else if (inp == 8) {
             System.exit(0);
         }
+        else if(inp == 9)
+        {
+            System.out.println("Would you like to write a person to a file or a case? 1 for person 2 for case");
+            int next = keyboard.nextInt();
+            if(next == 1)
+            {
+                System.out.println("Enter the first name of the person you would like to write");
+                keyboard.nextLine();
+                String fName = keyboard.nextLine();
+                System.out.println("Enter the last name fo the person you would like to write");
+                String lName = keyboard.nextLine();
+               ArrayList<Person> person = searchPerson(fName, lName, false, true, true);
+                Case _case = new Case();
+                _case = null;
+            writeToFile(person, _case);
+            }
+        }
 
     }
 
@@ -250,9 +329,11 @@ public class frontEnd {
     }
 
     // search by name
-    public ArrayList<Person> searchPerson(String input, String input2, boolean remove, boolean name) {
+    public ArrayList<Person> searchPerson(String input, String input2, boolean remove, boolean name, boolean write) {
         if (name == true) {
             if (remove == false) {
+                if(write == false)
+                {
                 ArrayList<Person> names = new ArrayList<Person>();
                 for (int i = 0; i < dBase.getCriminals().size(); i++) {
                     if (dBase.getCriminals().get(i).getFname().equalsIgnoreCase(input)
@@ -262,7 +343,7 @@ public class frontEnd {
                 for (int i = 0; i < dBase.getWitnesses().size(); i++) {
                     if (dBase.getWitnesses().get(i).getFname().equalsIgnoreCase(input)
                             || dBase.getWitnesses().get(i).getLname().equalsIgnoreCase(input2))
-                        names.add(dBase.getCriminals().get(i));
+                        names.add(dBase.getWitnesses().get(i));
                 }
                 for (int i = 0; i < dBase.getSuspects().size(); i++) {
                     if (dBase.getSuspects().get(i).getFname().equalsIgnoreCase(input)
@@ -287,6 +368,43 @@ public class frontEnd {
                 if (names.size() == 0)
                     System.out.println("No one was found");
                 return names;
+            }
+            else{
+                ArrayList<Person> names = new ArrayList<Person>();
+                for (int i = 0; i < dBase.getCriminals().size(); i++) {
+                    if (dBase.getCriminals().get(i).getFname().equalsIgnoreCase(input)
+                            && dBase.getCriminals().get(i).getLname().equalsIgnoreCase(input2))
+                        names.add(dBase.getCriminals().get(i));
+                }
+                for (int i = 0; i < dBase.getWitnesses().size(); i++) {
+                    if (dBase.getWitnesses().get(i).getFname().equalsIgnoreCase(input)
+                            && dBase.getWitnesses().get(i).getLname().equalsIgnoreCase(input2))
+                        names.add(dBase.getWitnesses().get(i));
+                }
+                for (int i = 0; i < dBase.getSuspects().size(); i++) {
+                    if (dBase.getSuspects().get(i).getFname().equalsIgnoreCase(input)
+                            && dBase.getSuspects().get(i).getLname().equalsIgnoreCase(input2))
+                        names.add(dBase.getSuspects().get(i));
+                }
+                for (int i = 0; i < dBase.getPOI().size(); i++) {
+                    if (dBase.getPOI().get(i).getFname().equalsIgnoreCase(input)
+                            && dBase.getPOI().get(i).getLname().equalsIgnoreCase(input2))
+                        names.add(dBase.getPOI().get(i));
+                }
+                for (int i = 0; i < dBase.getVictims().size(); i++) {
+                    if (dBase.getVictims().get(i).getFname().equalsIgnoreCase(input)
+                            && dBase.getVictims().get(i).getLname().equalsIgnoreCase(input2))
+                        names.add(dBase.getVictims().get(i));
+                }
+                for (int i = 0; i < dBase.getOfficers().size(); i++) {
+                    if (dBase.getOfficers().get(i).getFname().equalsIgnoreCase(input)
+                            || dBase.getOfficers().get(i).getLname().equalsIgnoreCase(input2))
+                        names.add(dBase.getOfficers().get(i));
+                }
+                if (names.size() == 0)
+                    System.out.println("No one was found");
+                return names;
+            }
             } else {
                 for (int i = 0; i < dBase.getCriminals().size(); i++) {
                     if (dBase.getCriminals().get(i).getFname().equalsIgnoreCase(input)
@@ -684,5 +802,248 @@ public class frontEnd {
             // }
         }
     }
+
+    public void writeToFile(ArrayList<Person> person, Case _case)
+    {
+        try {
+            File myObj = new File("output.txt");
+            if (myObj.createNewFile()) {
+              System.out.println("File created: " + myObj.getName());
+            } else {
+              System.out.println("File already exists.");
+            }
+          } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }
+          //if case is null
+          for(int i = 0 ; i < person.size(); i++)
+          {
+          if(_case == null)
+          {
+            
+            
+            
+            if(person.get(i) instanceof Criminal)
+            {
+                try {
+                    FileWriter myWriter = new FileWriter("output.txt");
+                    Criminal crim =(Criminal)person.get(i);
+                    myWriter.write(" First Name: " + person.get(i).getFname());
+                myWriter.write(", Last Name: " + person.get(i).getLname());
+                myWriter.write(", Addres: " + person.get(i).getAddress());
+                myWriter.write(", Age: " + person.get(i).getAge());
+                myWriter.write(", DOB: " + person.get(i).getDateOfBirth());
+                myWriter.write(", Gender " + person.get(i).getGender());
+                myWriter.write(", Height: " + person.get(i).getHeight());
+                myWriter.write(", ID: " + person.get(i).getID());
+                myWriter.write(", Phone: " + person.get(i).getPhone());
+                myWriter.write(", Race: " + person.get(i).getRace());
+                myWriter.write(", Weight: " + person.get(i).getWeight());
+                myWriter.write(", Is Adult: " + person.get(i).getIsAdult());
+                        myWriter.write(", In Jail?: " + crim.getJail());
+                        myWriter.write(", Notes: " + crim.getNotes());
+                        myWriter.write(", NumCrimes: " + crim.getNumCrimes());
+                    // myWriter.write();
+                    
+                    myWriter.close();
+                    System.out.println("Successfully wrote to the file.");
+                  } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+                }
+            
+            else if(person.get(i) instanceof Officer)
+            {
+                try {
+                    FileWriter myWriter = new FileWriter("output.txt");
+                    Officer officer =(Officer)person.get(i);
+                    myWriter.write("First Name: " + person.get(i).getFname());
+                myWriter.write("Last Name: " + person.get(i).getLname());
+                myWriter.write("Addres: " + person.get(i).getAddress());
+                myWriter.write("Age: " + person.get(i).getAge());
+                myWriter.write("DOB: " + person.get(i).getDateOfBirth());
+                myWriter.write("Gender " + person.get(i).getGender());
+                myWriter.write("Height: " + person.get(i).getHeight());
+                myWriter.write("ID: " + person.get(i).getID());
+                myWriter.write("Phone: " + person.get(i).getPhone());
+                myWriter.write("Race: " + person.get(i).getRace());
+                myWriter.write("Weight: " + person.get(i).getWeight());
+                myWriter.write("Is Adult: " + person.get(i).getIsAdult());
+                    myWriter.write("badgeNumber: " + officer.getBadgeNumber());
+                    myWriter.write("officerRank: " + officer.getOfficerRank());
+                    myWriter.write("officerStatement: " + officer.getOfficerStatement());
+                    //myWriter.write();
+                    
+                    myWriter.close();
+                    System.out.println("Successfully wrote to the file.");
+                  } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+                }
+            
+            else if(person.get(i) instanceof Suspect)
+            {
+                try {
+                    FileWriter myWriter = new FileWriter("output.txt");
+                    Suspect suspect =(Suspect)person.get(i);
+                    myWriter.write("First Name: " + person.get(i).getFname());
+                myWriter.write("Last Name: " + person.get(i).getLname());
+                myWriter.write("Addres: " + person.get(i).getAddress());
+                myWriter.write("Age: " + person.get(i).getAge());
+                myWriter.write("DOB: " + person.get(i).getDateOfBirth());
+                myWriter.write("Gender " + person.get(i).getGender());
+                myWriter.write("Height: " + person.get(i).getHeight());
+                myWriter.write("ID: " + person.get(i).getID());
+                myWriter.write("Phone: " + person.get(i).getPhone());
+                myWriter.write("Race: " + person.get(i).getRace());
+                myWriter.write("Weight: " + person.get(i).getWeight());
+                myWriter.write("Is Adult: " + person.get(i).getIsAdult());
+        
+                            myWriter.write("bodyType: " + suspect.getBodyType());
+                            myWriter.write("isCriminal: " + suspect.getIsCriminal());
+                            myWriter.write("Occupation: " + suspect.getOccupation());
+        
+                            myWriter.write("lastLocation: " + suspect.getLastLocation());
+                            myWriter.write("Notes: " + suspect.getPoiNotes());
+                            myWriter.write("Tatoos: " + suspect.getTatoos());
+                   // myWriter.write();
+                    
+                    myWriter.close();
+                    System.out.println("Successfully wrote to the file.");
+                  } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+                }
+            
+            else if(person.get(i) instanceof Witness)
+            {
+                try {
+                    FileWriter myWriter = new FileWriter("output.txt");
+                    Witness witness = (Witness)person.get(i);
+                    myWriter.write("First Name: " + person.get(i).getFname());
+                myWriter.write("Last Name: " + person.get(i).getLname());
+                myWriter.write("Addres: " + person.get(i).getAddress());
+                myWriter.write("Age: " + person.get(i).getAge());
+                myWriter.write("DOB: " + person.get(i).getDateOfBirth());
+                myWriter.write("Gender " + person.get(i).getGender());
+                myWriter.write("Height: " + person.get(i).getHeight());
+                myWriter.write("ID: " + person.get(i).getID());
+                myWriter.write("Phone: " + person.get(i).getPhone());
+                myWriter.write("Race: " + person.get(i).getRace());
+                myWriter.write("Weight: " + person.get(i).getWeight());
+                myWriter.write("Is Adult: " + person.get(i).getIsAdult());
+                    myWriter.write("Witness Statement: "+  witness.getWitnessStatement());
+                    // myWriter.write();
+                    
+                    myWriter.close();
+                    System.out.println("Successfully wrote to the file.");
+                  } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+                }
+            
+            else if(person.get(i) instanceof Victim)
+            {
+                try {
+                    FileWriter myWriter = new FileWriter("output.txt");
+                    Victim victim = (Victim)person.get(i);
+                    myWriter.write("First Name: " + person.get(i).getFname());
+                myWriter.write("Last Name: " + person.get(i).getLname());
+                myWriter.write("Addres: " + person.get(i).getAddress());
+                myWriter.write("Age: " + person.get(i).getAge());
+                myWriter.write("DOB: " + person.get(i).getDateOfBirth());
+                myWriter.write("Gender " + person.get(i).getGender());
+                myWriter.write("Height: " + person.get(i).getHeight());
+                myWriter.write("ID: " + person.get(i).getID());
+                myWriter.write("Phone: " + person.get(i).getPhone());
+                myWriter.write("Race: " + person.get(i).getRace());
+                myWriter.write("Weight: " + person.get(i).getWeight());
+                myWriter.write("Is Adult: " + person.get(i).getIsAdult());
+                        myWriter.write("Is Healthy: "+  victim.getIsHealthy());
+                        myWriter.write("Victim Statement: "+  victim.getVictimStatement());
+                    //myWriter.write();
+                    
+                    myWriter.close();
+                    System.out.println("Successfully wrote to the file.");
+                  } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+                }
+            
+            else if(person.get(i) instanceof PersonOfInterest)
+            {
+                try {
+                    FileWriter myWriter = new FileWriter("output.txt");
+                    myWriter.write("First Name: " + person.get(i).getFname());
+                myWriter.write("Last Name: " + person.get(i).getLname());
+                myWriter.write("Addres: " + person.get(i).getAddress());
+                myWriter.write("Age: " + person.get(i).getAge());
+                myWriter.write("DOB: " + person.get(i).getDateOfBirth());
+                myWriter.write("Gender " + person.get(i).getGender());
+                myWriter.write("Height: " + person.get(i).getHeight());
+                myWriter.write("ID: " + person.get(i).getID());
+                myWriter.write("Phone: " + person.get(i).getPhone());
+                myWriter.write("Race: " + person.get(i).getRace());
+                myWriter.write("Weight: " + person.get(i).getWeight());
+                myWriter.write("Is Adult: " + person.get(i).getIsAdult());
+                    PersonOfInterest poi = (PersonOfInterest)person.get(i);
+                    myWriter.write("Occupation: "+  poi.getOccupation());
+                    myWriter.write("Location: "+  poi.getLastLocation());
+                    myWriter.write("Notes: "+  poi.getPoiNotes());
+                    myWriter.write("Tatoos: "+  poi.getTatoos());
+                    //myWriter.write();
+                    
+                    myWriter.close();
+                    System.out.println("Successfully wrote to the file.");
+                  } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+                }
+            
+            }
+        }
+
+
+        //   try {
+        //     FileWriter myWriter = new FileWriter("output.txt");
+        //     myWriter.write();
+            
+        //     myWriter.close();
+        //     System.out.println("Successfully wrote to the file.");
+        //   } catch (IOException e) {
+        //     System.out.println("An error occurred.");
+        //     e.printStackTrace();
+        //   }
+        // }
+
+
+
+
+
+        //   else
+        //   {
+
+        //   }
+          //if person is null
+
+
+
+
+
+
+    }
+
+    
+
+
+
+
 
 }
