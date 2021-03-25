@@ -4,8 +4,8 @@ public class Officer extends Person {
     protected String officerStatement;
 
     public Officer(long bnum, String officerRank, String officerState, String fName, String lname, long Age, long Height,
-            long Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, long id) {
-        super(fName, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id);
+            long Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, long id, String race) {
+        super(fName, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id, race);
         badgeNumber = bnum;
         this.officerRank = officerRank;
         this.officerStatement = officerState;

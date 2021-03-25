@@ -7,6 +7,9 @@ public class Case {
 	    private ArrayList<Long> officers = new ArrayList<Long>();
 	    private ArrayList<Long> poi = new ArrayList<Long>();
 		private ArrayList <Long>suspects = new ArrayList<Long>();
+		private ArrayList <Long> evidence = new ArrayList<Long>();
+
+	
 
 	
 		private String name;
@@ -34,7 +37,13 @@ public class Case {
 
 
 		}	
-
+		public ArrayList<Long> getEvidence() {
+			return this.evidence;
+		}
+	
+		public void setEvidence(ArrayList<Long> evidence) {
+			this.evidence = evidence;
+		}
 
 		public ArrayList<Long> getSuspects() {
 			return this.suspects;

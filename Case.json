@@ -1,97 +1,53 @@
 [
     {
-        "isFederal": true,
-        "CriminalsID": null,
-        "VictimsID": null,
-        "POIID": null,
-        "Severity": 5,
-        "SuspectsID": null,
-        "Name": "gas station of death",
-        "WitnessesID": null,
-        "OfficersID": null,
-        "DATE": "5\/4\/33",
-        "isSolved": true,
-        "Crime": "robbeyr",
-        "ID": 2542
-    },
-    {
-        "isFederal": true,
-        "CriminalsID": [
-            0
-        ],
-        "VictimsID": [],
-        "POIID": [],
-        "Severity": 5,
-        "SuspectsID": [],
-        "Name": "gas station of death",
-        "WitnessesID": [],
-        "OfficersID": [],
-        "DATE": "5\/4\/33",
-        "isSolved": true,
-        "Crime": "assault",
-        "ID": 2023
-    },
-    {
-        "isFederal": true,
+        "isFederal": false,
         "CriminalsID": [],
         "VictimsID": [],
-        "POIID": [
-            0
-        ],
-        "Severity": 4,
-        "SuspectsID": [],
-        "Name": "hit and run",
-        "WitnessesID": [
-            0
-        ],
-        "OfficersID": [],
-        "DATE": "4\/3\/22",
-        "isSolved": false,
-        "Crime": "assault",
-        "ID": 2279
-    },
-    {
-        "isFederal": true,
-        "CriminalsID": [
-            825
-        ],
-        "VictimsID": [],
         "POIID": [],
         "Severity": 5,
         "SuspectsID": [],
-        "Name": "hit and run",
-        "WitnessesID": [],
+        "Name": "bad day at the gym",
+        "WitnessesID": [
+            196
+        ],
         "OfficersID": [],
-        "DATE": "4\/3",
-        "isSolved": true,
-        "Crime": "assault",
-        "ID": 2336
+        "DATE": "5\/4\/33",
+        "isSolved": false,
+        "Crime": "hit and run",
+        "ID": 2886
     },
     {
         "isFederal": false,
         "CriminalsID": [
-            2,
-            38
+            777
         ],
-        "VictimsID": [
-            473
-        ],
-        "POIID": [
-            956
-        ],
-        "Severity": 3,
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 5,
         "SuspectsID": [],
-        "Name": "robbery",
-        "WitnessesID": [
-            21
-        ],
-        "OfficersID": [
-            353,
-            234
-        ],
-        "DATE": "5\/6\/77",
+        "Name": "bad day at the gym",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "5\/4\/33",
         "isSolved": false,
         "Crime": "robbery",
-        "ID": 2058
+        "ID": 2429
+    },
+    {
+        "isFederal": false,
+        "CriminalsID": [],
+        "VictimsID": [],
+        "POIID": [
+            809
+        ],
+        "Severity": 5,
+        "SuspectsID": [],
+        "Name": "yikes m8",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "4\/4\/44",
+        "isSolved": false,
+        "Crime": "murder",
+        "ID": 2574
     }
 ]

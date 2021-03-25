@@ -1,42 +1,60 @@
 
 public class Evidence {
-	private String time;
-	private String date;
-	private String location;
+	private long ID;
+	//private String time;
+	//private String date;
+	//private String location;
 	private String vehicle;
-	private String DNAEvidence;
+	//private String DNAEvidence;
 	private String bloodEvidence;
 	private String fingerprintEvidence;
 	private String weaponEvidence;
-	private String sceneDescription;
-	private boolean hasWitness;
+	//private String sceneDescription;
+	//private boolean hasWitness;
 
-	public Evidence() {
+	public Evidence(long ID, String Vehicle, String bloodEvidence, String fingerPrintEvidence, String weaponEvidence) {
+		this.ID = ID;
+		this.vehicle = Vehicle;
+		this.bloodEvidence = bloodEvidence;
+		this.fingerprintEvidence = fingerPrintEvidence;
+		this.weaponEvidence = weaponEvidence;
+	}
+	public long getID() {
+		return this.ID;
 	}
 
-	public String getTime() {
-		return time;
-	}
+	// public long setID(String ID) {
+	// 	this.ID = ID;
+	// }
 
-	public void setTime(String time) {
-		this.time = time;
-	}
+	// public boolean getHasWitness() {
+	// 	return this.hasWitness;
+	// }
 
-	public String getDate() {
-		return date;
-	}
 
-	public void setDate(String date) {
-		this.date = date;
-	}
+	// public String getTime() {
+	// 	return time;
+	// }
 
-	public String getLocation() {
-		return location;
-	}
+	// public void setTime(String time) {
+	// 	this.time = time;
+	// }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+	// public String getDate() {
+	// 	return date;
+	// }
+
+	// public void setDate(String date) {
+	// 	this.date = date;
+	// }
+
+	// public String getLocation() {
+	// 	return location;
+	// }
+
+	// public void setLocation(String location) {
+	// 	this.location = location;
+	// }
 
 	public String getVehicle() {
 		return vehicle;
@@ -46,13 +64,13 @@ public class Evidence {
 		this.vehicle = vehicle;
 	}
 
-	public String getDNAEvidence() {
-		return DNAEvidence;
-	}
+	// public String getDNAEvidence() {
+	// 	return DNAEvidence;
+	// }
 
-	public void setDNAEvidence(String dNAEvidence) {
-		DNAEvidence = dNAEvidence;
-	}
+	// public void setDNAEvidence(String dNAEvidence) {
+	// 	DNAEvidence = dNAEvidence;
+	// }
 
 	public String getBloodEvidence() {
 		return bloodEvidence;
@@ -78,21 +96,21 @@ public class Evidence {
 		this.weaponEvidence = weaponEvidence;
 	}
 
-	public String getSceneDescription() {
-		return sceneDescription;
-	}
+	// public String getSceneDescription() {
+	// 	return sceneDescription;
+	// }
 
-	public void setSceneDescription(String sceneDescription) {
-		this.sceneDescription = sceneDescription;
-	}
+	// public void setSceneDescription(String sceneDescription) {
+	// 	this.sceneDescription = sceneDescription;
+	// }
 
-	public boolean isHasWitness() {
-		return hasWitness;
-	}
+	// public boolean isHasWitness() {
+	// 	return hasWitness;
+	// }
 
-	public void setHasWitness(boolean hasWitness) {
-		this.hasWitness = hasWitness;
-	}
+	// public void setHasWitness(boolean hasWitness) {
+	// 	this.hasWitness = hasWitness;
+	// }
 
 	public String toString() {
 		String Evidencestatement = "Time: " + time + " \nDate:  " + date + "\nLocation: " + location;

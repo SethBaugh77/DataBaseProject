@@ -52,6 +52,13 @@ public abstract class DataConstants {
     protected final static String CASE_OFFICERS_ID = "OfficersID";
     protected final static String CASE_POI_ID = "POIID";
     protected final static String CASE_ID = "ID";
+    protected final static String PERSON_RACE = "Race";
+    protected final static String PERSON_TATOOS = "Tatoos";
+    protected final static String EVIDENCE_FILE_NAME = "Evidence.json";
+    protected final static String EVIDENCE_FINGER_PRINT = "fingerPrintEvidence";
+    protected final static String EVIDENCE_VEHICLE = "vehicleEvidence";
+    protected final static String EVIDENCE_BLOOD = "bloodEvidence";
+    protected final static String EVIDENCE_WEAPON = "weaponEvidence";
 
     //protected final static String PERSON_STATEMENT = ""
     //protected static final String PERSON_NOTES = "Notes";

@@ -11,6 +11,41 @@ public class Person {
 	protected String dateOfBirth;
 	protected boolean isAdult;
 	protected long ID;
+	protected String race;
+	//protected String tatoos;
+	public Person(String fName, String lname, long Age, long Height, long Weight, String Gender, String Address,
+			String Phone, String DateOfBirth, boolean IsAdult,long ID, String race) {
+		this.fname = fName;
+		this.lname = lname;
+		this.age = Age;
+		this.height = Height;
+		this.weight = Weight;
+		this.gender = Gender;
+		this.address = Address;
+		this.phone = Phone;
+		this.dateOfBirth = DateOfBirth;
+		this.isAdult = IsAdult;
+		this.ID = ID;
+		this.race = race;
+		//this.tatoos = tatoos;
+
+	}
+
+	// public String getTatoos() {
+	// 	return this.tatoos;
+	// }
+
+	// public void setTatoos(String tatoos) {
+	// 	this.tatoos = tatoos;
+	// }
+
+	public String getRace() {
+		return this.race;
+	}
+
+	public void setRace(String race) {
+		this.race = race;
+	}
 
 	public String getFname() {
 		return this.fname;
@@ -104,22 +139,7 @@ public class Person {
 		this.ID = ID;
 	}
 
-	public Person(String fName, String lname, long Age, long Height, long Weight, String Gender, String Address,
-			String Phone, String DateOfBirth, boolean IsAdult,long ID) {
-		this.fname = fName;
-		this.lname = lname;
-		this.age = Age;
-		this.height = Height;
-		this.weight = Weight;
-		this.gender = Gender;
-		this.address = Address;
-		this.phone = Phone;
-		this.dateOfBirth = DateOfBirth;
-		this.isAdult = IsAdult;
-		this.ID = ID;
-		
-
-	}
+	
 
 	public String toString() {
 		return fname + " " + lname + " " + age + " " + height + " " + weight + " " + gender + " " + address + " "

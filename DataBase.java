@@ -16,6 +16,9 @@ public class DataBase {
 	private ArrayList<Officer> officers = new ArrayList<Officer>();
 	private ArrayList<PersonOfInterest> POI = new ArrayList<PersonOfInterest>();
 	private ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+	private ArrayList <Evidence> evidence = new ArrayList<Evidence>();
+
+
 	private DataBase()
 	{
 		criminals=DataLoader.loadCriminal();
@@ -26,6 +29,7 @@ public class DataBase {
 		victims = DataLoader.loadVictim();
 		users =DataLoader.loadUsers();
 		cases = DataLoader.loadCases();
+		evidence = DataLoader.loadEvidence();
 		// witnesses=DataLoader.loadWitness();
 		// suspects=DataLoader.loadSuspect();
 		// officers=DataLoader.loadOfficer();
@@ -36,6 +40,16 @@ public class DataBase {
 
 
 	}
+
+
+	public ArrayList<Evidence> getEvidence() {
+		return this.evidence;
+	}
+
+	public void setEvidence(ArrayList<Evidence> evidence) {
+		this.evidence = evidence;
+	}
+
 
 	public ArrayList<Criminal> getCriminals() {
 		this.criminals = this.criminals;
