@@ -39,6 +39,10 @@ public class Person {
 	// 	this.tatoos = tatoos;
 	// }
 
+	/**
+       * Gets the race of the person.
+       * @return this race.
+       */
 	public String getRace() {
 		return this.race;
 	}
@@ -47,6 +51,10 @@ public class Person {
 		this.race = race;
 	}
 
+	/**
+       * Gets the first name of the person.
+       * @return this first name.
+       */
 	public String getFname() {
 		return this.fname;
 	}
@@ -55,6 +63,10 @@ public class Person {
 		this.fname = fname;
 	}
 
+	/**
+       * Gets the last name of the person.
+       * @return this last name.
+       */
 	public String getLname() {
 		return this.lname;
 	}
@@ -63,6 +75,10 @@ public class Person {
 		this.lname = lname;
 	}
 
+	/**
+       * Gets the age of the person.
+       * @return this age.
+       */
 	public long getAge() {
 		return this.age;
 	}
@@ -71,6 +87,10 @@ public class Person {
 		this.age = age;
 	}
 
+	/**
+       * Gets the height of the person.
+       * @return this height.
+       */
 	public long getHeight() {
 		return this.height;
 	}
@@ -79,6 +99,10 @@ public class Person {
 		this.height = height;
 	}
 
+	/**
+       * Gets the weight of the person.
+       * @return this weight.
+       */
 	public long getWeight() {
 		return this.weight;
 	}
@@ -87,6 +111,10 @@ public class Person {
 		this.weight = weight;
 	}
 
+	/**
+       * Gets the gender of the person.
+       * @return this gender.
+       */
 	public String getGender() {
 		return this.gender;
 	}
@@ -95,6 +123,10 @@ public class Person {
 		this.gender = gender;
 	}
 
+	/**
+       * Gets the address of the person.
+       * @return this address.
+       */
 	public String getAddress() {
 		return this.address;
 	}
@@ -103,6 +135,10 @@ public class Person {
 		this.address = address;
 	}
 
+	/**
+       * Gets the phone of the person.
+       * @return this phone.
+       */
 	public String getPhone() {
 		return this.phone;
 	}
@@ -111,6 +147,10 @@ public class Person {
 		this.phone = phone;
 	}
 
+	/**
+       * Gets the date of birth of the person.
+       * @return this date of birth
+       */
 	public String getDateOfBirth() {
 		return this.dateOfBirth;
 	}
@@ -123,6 +163,10 @@ public class Person {
 		return this.isAdult;
 	}
 
+	/**
+       * Gets the status of age of the person.
+       * @return this status of age.
+       */
 	public boolean getIsAdult() {
 		return this.isAdult;
 	}
@@ -131,6 +175,10 @@ public class Person {
 		this.isAdult = isAdult;
 	}
 
+	/**
+       * Gets the ID of the person.
+       * @return this ID.
+       */
 	public long getID() {
 		return this.ID;
 	}
