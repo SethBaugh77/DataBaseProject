@@ -47,6 +47,10 @@ public class Person {
 		return this.race;
 	}
 
+	/**
+   	* Changes race.
+ 	* @param string
+	*/
 	public void setRace(String race) {
 		this.race = race;
 	}
@@ -59,6 +63,10 @@ public class Person {
 		return this.fname;
 	}
 
+	/**
+   	* Changes first name.
+ 	* @param string
+	*/
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
@@ -71,6 +79,10 @@ public class Person {
 		return this.lname;
 	}
 
+	/**
+   	* Changes last name.
+ 	* @param string
+	*/
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
@@ -83,6 +95,10 @@ public class Person {
 		return this.age;
 	}
 
+	/**
+   	* Changes age.
+ 	* @param long
+	*/
 	public void setAge(long age) {
 		this.age = age;
 	}
@@ -95,6 +111,10 @@ public class Person {
 		return this.height;
 	}
 
+	/**
+   	* Changes height.
+ 	* @param long
+	*/
 	public void setHeight(long height) {
 		this.height = height;
 	}
@@ -107,6 +127,10 @@ public class Person {
 		return this.weight;
 	}
 
+	/**
+   	* Changes weight.
+ 	* @param long
+	*/
 	public void setWeight(long weight) {
 		this.weight = weight;
 	}
@@ -119,6 +143,10 @@ public class Person {
 		return this.gender;
 	}
 
+	/**
+   	* Changes gender.
+ 	* @param string
+	*/
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
@@ -131,6 +159,10 @@ public class Person {
 		return this.address;
 	}
 
+	/**
+   	* Changes address.
+ 	* @param string
+	*/
 	public void setAddress(String address) {
 		this.address = address;
 	}
@@ -143,6 +175,10 @@ public class Person {
 		return this.phone;
 	}
 
+	/**
+   	* Changes phone.
+ 	* @param string
+	*/
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -155,6 +191,10 @@ public class Person {
 		return this.dateOfBirth;
 	}
 
+	/**
+   	* Changes date of birth.
+ 	* @param string
+	*/
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
@@ -171,6 +211,10 @@ public class Person {
 		return this.isAdult;
 	}
 
+	/**
+   	* Changes age status.
+ 	* @param boolean
+	*/
 	public void setIsAdult(boolean isAdult) {
 		this.isAdult = isAdult;
 	}
@@ -183,6 +227,10 @@ public class Person {
 		return this.ID;
 	}
 
+	/**
+   	* Changes ID.
+ 	* @param long
+	*/
 	public void setID(long ID) {
 		this.ID = ID;
 	}
