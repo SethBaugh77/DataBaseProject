@@ -113,31 +113,31 @@ public class User {
 	// this. = ;
 	// }
 
-	public boolean checkDuplicates(String str1) {
-		for(int i= 0; i<criminals.length; i++) {
-            if (str1 == criminals[i].getName) {
-                return true;
-            }
-        }
-        return false;
-	}
+	// public boolean checkDuplicates(String str1) {
+	// 	for(int i= 0; i<criminals.length; i++) {
+    //         if (str1 == criminals[i].getName) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+	// }
 
-	public void addCriminal(Criminal crim) {
-        criminals.add(crim);
-	}
+	// public void addCriminal(Criminal crim) {
+    //     criminals.add(crim);
+	// }
 
-	public void addUser(User user) {
-        users.add(user);
-	}
+	// public void addUser(User user) {
+    //     users.add(user);
+	// }
 
-	public Case searchCase(int caseID) {
-        for(int i= 0; i<cases.length; i++) {
-            if (caseID == cases[i].getCaseID) {
-                return cases[i];
-            }
-        }
-        return null;
+	// public Case searchCase(int caseID) {
+    //     for(int i= 0; i<cases.length; i++) {
+    //         if (caseID == cases[i].getCaseID) {
+    //             return cases[i];
+    //         }
+    //     }
+    //     return null;
 
-	}
+	// }
 
 }

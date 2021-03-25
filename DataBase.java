@@ -30,14 +30,7 @@ public class DataBase {
 		users =DataLoader.loadUsers();
 		cases = DataLoader.loadCases();
 		evidence = DataLoader.loadEvidence();
-		// witnesses=DataLoader.loadWitness();
-		// suspects=DataLoader.loadSuspect();
-		// officers=DataLoader.loadOfficer();
-		// POI=DataLoader.loadPOI();
-		// victims=DataLoader.loadVictim();
-		// dbase.cases = DataLoader.loadCases();
-		// dbase.users = DataLoader.loadUsers();
-
+		
 
 	}
 
@@ -117,53 +110,6 @@ public class DataBase {
 		this.suspects = suspects;
 	}
 
-	public void printData() {
-
-		System.out.print("Person of Interst");
-
-		for (String data : POI) {
-
-			System.out.print(data);
-		}
-
-		for (String data : suspects) {
-
-			System.out.println(data);
-		}
-
-		for (Criminal data : criminals) {
-
-			System.out.println(data);
-		}
-
-		for (Case data : cases) {
-
-			System.out.print(data);
-		}
-
-		for (User data : users) {
-
-			System.out.println(data);
-		}
-
-		for (Victim data : victims) {
-
-			System.out.println(data);
-
-		}
-
-		for (Witness data : witnesses) {
-
-			System.out.println(data);
-
-		}
-
-		for (Officer data : officers) {
-
-			System.out.println(data);
-
-		}
-
-	}
+	
 
 }

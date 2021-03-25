@@ -7,19 +7,12 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 
     public static ArrayList loadCriminal() {
-        
 
         ArrayList<Criminal> crim = new ArrayList();
         try {
             FileReader reader = new FileReader(CRIMINAL_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray) new JSONParser().parse(reader);
-            
-            // JSONParser parser = new JSONParser();
-            // Object obj  = parser.parse("criminal.json");
-            // JSONArray peopleJSON = new JSONArray();
-            // peopleJSON.add(obj);
-            
 
             for (int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
@@ -38,13 +31,12 @@ public class DataLoader extends DataConstants {
                 String Notes = (String) personJSON.get(PERSON_NOTES);
                 long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
                 String Race = (String) personJSON.get(PERSON_RACE);
-                
 
                 crim.add(new Criminal(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult,
-                     inJail, Notes, numCrimes, ID, Race));
+                        inJail, Notes, numCrimes, ID, Race));
             }
 
-           // return crim;
+            // return crim;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,13 +67,14 @@ public class DataLoader extends DataConstants {
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                String witnessStatement =(String) personJSON.get(PERSON_STATEMENT);
+                String witnessStatement = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                wit.add(new Witness(witnessStatement,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, Race));
+                wit.add(new Witness(witnessStatement, firstName, lastName, age, height, weight, gender, address, phone,
+                        DOB, isAdult, ID, Race));
             }
 
-           // return wit;
+            // return wit;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -118,18 +111,13 @@ public class DataLoader extends DataConstants {
                 String bodyType = (String) personJSON.get(PERSON_BODY_TYPE);
                 boolean isCriminal = (boolean) personJSON.get(PERSON_IS_CRIMINAL);
                 String Race = (String) personJSON.get(PERSON_RACE);
-                String Tatoos = (String)personJSON.get(PERSON_TATOOS);
+                String Tatoos = (String) personJSON.get(PERSON_TATOOS);
 
-                // protected String occupation;
-                // protected String lastLocation;
-                // protected String poiNotes;
-    //             protected String bodyType;
-    //             protected boolean isCriminal;
-
-                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, occupation, lastLocation, bodyType, isCriminal, Race,poiNotes ,Tatoos));
+                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
+                        occupation, lastLocation, bodyType, isCriminal, Race, poiNotes, Tatoos));
             }
 
-         //   return sus;
+            // return sus;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -164,10 +152,11 @@ public class DataLoader extends DataConstants {
                 String victimStatement = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                vic.add(new Victim(isHealthy,victimStatement,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, Race));
+                vic.add(new Victim(isHealthy, victimStatement, firstName, lastName, age, height, weight, gender,
+                        address, phone, DOB, isAdult, ID, Race));
             }
 
-           // return vic;
+            // return vic;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -203,10 +192,11 @@ public class DataLoader extends DataConstants {
                 String officerState = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                off.add(new Officer(bNum, officerRank, officerState,firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID, Race));
+                off.add(new Officer(bNum, officerRank, officerState, firstName, lastName, age, height, weight, gender,
+                        address, phone, DOB, isAdult, ID, Race));
             }
 
-           // return off;
+            // return off;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -241,13 +231,12 @@ public class DataLoader extends DataConstants {
                 String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
                 String poiNotes = (String) personJSON.get(PERSON_NOTES);
                 String Race = (String) personJSON.get(PERSON_RACE);
-                String Notes = (String)personJSON.get(PERSON_NOTES);
-                String Tatoos = (String)personJSON.get(PERSON_TATOOS);
-                poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB, 
-                        isAdult, occupation, lastLocation, ID, Race,Notes ,Tatoos));
+                String Notes = (String) personJSON.get(PERSON_NOTES);
+                String Tatoos = (String) personJSON.get(PERSON_TATOOS);
+                poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB,
+                        isAdult, occupation, lastLocation, ID, Race, Notes, Tatoos));
             }
 
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -273,31 +262,14 @@ public class DataLoader extends DataConstants {
                 String email = (String) personJSON.get(PERSON_EMAIL);
                 String password = (String) personJSON.get(PERSON_PASSWORD);
 
-               
                 String phone = (String) personJSON.get(PERSON_PHONE);
-                // String DOB = (String) personJSON.get(PERSON_DOB);
-                // boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
-                 long ID = (long) personJSON.get(PERSON_ID);
-                // String occupation = (String) personJSON.get(PERSON_OCCUPATION);
-                // String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
-                // String poiNotes = (String) personJSON.get(PERSON_NOTES);
 
-                 users.add(new User (ID, admin, firstName, lastName, username, email, password, phone));
-                //         isAdult, occupation, lastLocation, ID));
-                        // protected long id;
-                        // protected boolean admin;
-                        // protected String firstName;
-                        // protected String lastName;
-                        // protected String username;
-                        // protected String email;
-                        // protected String password;
-                        // protected String phone;
-                        
+                long ID = (long) personJSON.get(PERSON_ID);
 
+                users.add(new User(ID, admin, firstName, lastName, username, email, password, phone));
 
             }
 
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -316,53 +288,28 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < peopleJSON.size(); i++) {
 
-        //         private String name;
-		// private String crime;
-	    // private String date;
-	    // private boolean isSolved;
-	    // private int severity;
-	    // private boolean isFederal;
-
-
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String Name = (String) personJSON.get(CASE_NAME);
                 String Crime = (String) personJSON.get(CASE_CRIME);
-                //boolean admin = (boolean) personJSON.get(PERSON_IS_ADMIN);
+
                 String Date = (String) personJSON.get(CASE_DATE);
                 long Severity = (long) personJSON.get(CASE_SEVERITY);
                 boolean isFederal = (boolean) personJSON.get(CASE_IS_FEDERAL);
                 boolean isSolved = (boolean) personJSON.get(CASE_IS_SOLVED);
-                ArrayList <Long> criminals = (ArrayList <Long>) personJSON.get(CASE_CRIMINALS_ID);
-                ArrayList <Long> victims = (ArrayList <Long>) personJSON.get(CASE_VICTIMS_ID);
-                ArrayList <Long> witnesses = (ArrayList <Long>) personJSON.get(CASE_WITNESSES_ID);
-                ArrayList <Long> officers = (ArrayList <Long>) personJSON.get(CASE_OFFICERS_ID);
-                ArrayList <Long> poi = (ArrayList <Long>) personJSON.get(CASE_POI_ID);
-                ArrayList <Long> suspects = (ArrayList <Long>) personJSON.get(CASE_SUSPECTS_ID);
+                ArrayList<Long> criminals = (ArrayList<Long>) personJSON.get(CASE_CRIMINALS_ID);
+                ArrayList<Long> victims = (ArrayList<Long>) personJSON.get(CASE_VICTIMS_ID);
+                ArrayList<Long> witnesses = (ArrayList<Long>) personJSON.get(CASE_WITNESSES_ID);
+                ArrayList<Long> officers = (ArrayList<Long>) personJSON.get(CASE_OFFICERS_ID);
+                ArrayList<Long> poi = (ArrayList<Long>) personJSON.get(CASE_POI_ID);
+                ArrayList<Long> suspects = (ArrayList<Long>) personJSON.get(CASE_SUSPECTS_ID);
 
-                //String phone = (String) personJSON.get(PERSON_PHONE);
-                // String DOB = (String) personJSON.get(PERSON_DOB);
-                // boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
-                 long ID = (long) personJSON.get(PERSON_ID);
-                // String occupation = (String) personJSON.get(PERSON_OCCUPATION);
-                // String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
-                // String poiNotes = (String) personJSON.get(PERSON_NOTES);
+                long ID = (long) personJSON.get(PERSON_ID);
 
-                 _cases.add(new Case(Name, Crime, Date, isSolved, Severity, isFederal, ID, criminals, victims, witnesses, officers, poi, suspects));
-                //         isAdult, occupation, lastLocation, ID));
-                        // protected long id;
-                        // protected boolean admin;
-                        // protected String firstName;
-                        // protected String lastName;
-                        // protected String username;
-                        // protected String email;
-                        // protected String password;
-                        // protected String phone;
-                        
-
+                _cases.add(new Case(Name, Crime, Date, isSolved, Severity, isFederal, ID, criminals, victims, witnesses,
+                        officers, poi, suspects));
 
             }
 
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -385,45 +332,13 @@ public class DataLoader extends DataConstants {
                 String fingerPrintEvidence = (String) personJSON.get(EVIDENCE_FINGER_PRINT);
                 String bloodEvidence = (String) personJSON.get(EVIDENCE_BLOOD);
                 String weaponEvidence = (String) personJSON.get(EVIDENCE_WEAPON);
-                // String email = (String) personJSON.get(PERSON_EMAIL);
-                // String password = (String) personJSON.get(PERSON_PASSWORD);
-    //             private String ID;
-	// private String time;
-	// private String date;
-	// private String location;
-	// private String vehicle;
-	
-	// private String bloodEvidence;
-	// private String fingerprintEvidence;
-	// private String weaponEvidence;
-	// private String sceneDescription;
-	// private boolean hasWitness;
 
-               
-                // String phone = (String) personJSON.get(PERSON_PHONE);
-                // String DOB = (String) personJSON.get(PERSON_DOB);
-                // boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
-                 long ID = (long) personJSON.get(PERSON_ID);
-                // String occupation = (String) personJSON.get(PERSON_OCCUPATION);
-                // String lastLocation = (String) personJSON.get(PERSON_LAST_LOCATION);
-                // String poiNotes = (String) personJSON.get(PERSON_NOTES);
+                long ID = (long) personJSON.get(PERSON_ID);
 
-                 evidence.add(new Evidence(ID, Vehicle, bloodEvidence, fingerPrintEvidence, weaponEvidence));
-                //         isAdult, occupation, lastLocation, ID));
-                        // protected long id;
-                        // protected boolean admin;
-                        // protected String firstName;
-                        // protected String lastName;
-                        // protected String username;
-                        // protected String email;
-                        // protected String password;
-                        // protected String phone;
-                        
-
+                evidence.add(new Evidence(ID, Vehicle, bloodEvidence, fingerPrintEvidence, weaponEvidence));
 
             }
 
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -431,17 +346,5 @@ public class DataLoader extends DataConstants {
         return evidence;
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

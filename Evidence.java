@@ -1,16 +1,12 @@
 
 public class Evidence {
 	private long ID;
-	//private String time;
-	//private String date;
-	//private String location;
+
 	private String vehicle;
-	//private String DNAEvidence;
+
 	private String bloodEvidence;
 	private String fingerprintEvidence;
 	private String weaponEvidence;
-	//private String sceneDescription;
-	//private boolean hasWitness;
 
 	public Evidence(long ID, String Vehicle, String bloodEvidence, String fingerPrintEvidence, String weaponEvidence) {
 		this.ID = ID;
@@ -19,42 +15,10 @@ public class Evidence {
 		this.fingerprintEvidence = fingerPrintEvidence;
 		this.weaponEvidence = weaponEvidence;
 	}
+
 	public long getID() {
 		return this.ID;
 	}
-
-	// public long setID(String ID) {
-	// 	this.ID = ID;
-	// }
-
-	// public boolean getHasWitness() {
-	// 	return this.hasWitness;
-	// }
-
-
-	// public String getTime() {
-	// 	return time;
-	// }
-
-	// public void setTime(String time) {
-	// 	this.time = time;
-	// }
-
-	// public String getDate() {
-	// 	return date;
-	// }
-
-	// public void setDate(String date) {
-	// 	this.date = date;
-	// }
-
-	// public String getLocation() {
-	// 	return location;
-	// }
-
-	// public void setLocation(String location) {
-	// 	this.location = location;
-	// }
 
 	public String getVehicle() {
 		return vehicle;
@@ -63,14 +27,6 @@ public class Evidence {
 	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
-
-	// public String getDNAEvidence() {
-	// 	return DNAEvidence;
-	// }
-
-	// public void setDNAEvidence(String dNAEvidence) {
-	// 	DNAEvidence = dNAEvidence;
-	// }
 
 	public String getBloodEvidence() {
 		return bloodEvidence;
@@ -96,28 +52,4 @@ public class Evidence {
 		this.weaponEvidence = weaponEvidence;
 	}
 
-	// public String getSceneDescription() {
-	// 	return sceneDescription;
-	// }
-
-	// public void setSceneDescription(String sceneDescription) {
-	// 	this.sceneDescription = sceneDescription;
-	// }
-
-	// public boolean isHasWitness() {
-	// 	return hasWitness;
-	// }
-
-	// public void setHasWitness(boolean hasWitness) {
-	// 	this.hasWitness = hasWitness;
-	// }
-
-	public String toString() {
-		String Evidencestatement = "Time: " + time + " \nDate:  " + date + "\nLocation: " + location;
-		if (vehicle != null)
-			Evidencestatement = Evidencestatement + "\n Vehicle: " + vehicle;
-		if (weaponEvidence != null)
-			Evidencestatement = Evidencestatement + "\n Weapon: " + weaponEvidence;
-		return Evidencestatement;
-	}
 }
