@@ -13,26 +13,50 @@ public class Criminal extends Person {
         this.numCrimes = numCrimes;
     }
 
+    /**
+   * Gets if the criminal is in jail or not.
+   * @return inJail.
+   */
     public boolean getJail() {
         return inJail;
     }
 
+    /**
+   * Changes in jail status.
+   * @param boolean
+   */
     public void setJail(boolean inJail) {
         this.inJail = true;
     }
 
+    /**
+   * Gets notes on the criminal.
+   * @return notes.
+   */
     public String getNotes() {
         return notes;
     }
 
+    /**
+   * Changes notes.
+   * @param String.
+   */
     public void setNotes(String notes) {
         this.notes = notes;
     }
 
+    /**
+   * Gets the number of crimes.
+   * @return numCrimes.
+   */
     public long getNumCrimes() {
         return numCrimes;
     }
 
+    /**
+   * Changes number of crimes.
+   * @param arraylist
+   */
     public void setNumCrimes(ArrayList<Case> cases) {
         for (Case caseCheck : cases) {
             if (caseCheck.getCriminals() != null && caseCheck.getCriminals().contains(this.getFname()) && caseCheck.getCriminals().contains(this.getLname())) {
