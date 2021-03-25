@@ -14,18 +14,34 @@ public class Suspect extends PersonOfInterest {
         //this.relatives = relatives;
     }
 
+    /**
+    * Gets the body type.
+    * @return this body type.
+    */
     public String getBodyType() {
         return this.bodyType;
     }
 
+    /**
+   	* Changes body type.
+ 	* @param string
+	*/
     public void setBodyType(String bodyType) {
         this.bodyType = bodyType;
     }
 
+    /**
+    * Gets the criminal status.
+    * @return this status.
+    */
     public boolean getIsCriminal() {
         return this.isCriminal;
     }
 
+    /**
+   	* Changes criminal status.
+ 	* @param boolean
+	*/
     public void setIsCriminal(boolean isCriminal) {
         this.isCriminal = isCriminal;
     }
