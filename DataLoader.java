@@ -302,11 +302,12 @@ public class DataLoader extends DataConstants {
                 ArrayList<Long> officers = (ArrayList<Long>) personJSON.get(CASE_OFFICERS_ID);
                 ArrayList<Long> poi = (ArrayList<Long>) personJSON.get(CASE_POI_ID);
                 ArrayList<Long> suspects = (ArrayList<Long>) personJSON.get(CASE_SUSPECTS_ID);
+                ArrayList<Long> evidence = (ArrayList<Long>)personJSON.get(CASE_EVIDENCE);
 
                 long ID = (long) personJSON.get(PERSON_ID);
 
                 _cases.add(new Case(Name, Crime, Date, isSolved, Severity, isFederal, ID, criminals, victims, witnesses,
-                        officers, poi, suspects));
+                        officers, poi, suspects, evidence));
 
             }
 

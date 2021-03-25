@@ -19,11 +19,11 @@ public class Case {
 
 	public Case()
 	{
-		
+
 	}
 	public Case(String name, String crime, String date, boolean isSolved, long severity, boolean isFederal, long ID,
 			ArrayList<Long> criminals, ArrayList<Long> victims, ArrayList<Long> witnesses, ArrayList<Long> officers,
-			ArrayList<Long> poi, ArrayList<Long> suspects) {
+			ArrayList<Long> poi, ArrayList<Long> suspects, ArrayList<Long> evidence) {
 		this.name = name;
 		this.crime = crime;
 		this.date = date;
@@ -37,6 +37,9 @@ public class Case {
 		this.officers = officers;
 		this.poi = poi;
 		this.suspects = suspects;
+		this.evidence = evidence;
+
+		
 
 	}
 

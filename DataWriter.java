@@ -387,6 +387,7 @@ public class DataWriter extends DataConstants {
         caseDetails.putIfAbsent(CASE_OFFICERS_ID, _case.getOfficers());
         caseDetails.putIfAbsent(CASE_POI_ID, _case.getPoi());
         caseDetails.putIfAbsent(CASE_SUSPECTS_ID, _case.getSuspects());
+        caseDetails.put(CASE_EVIDENCE, _case.getEvidence());
 
         return caseDetails;
 

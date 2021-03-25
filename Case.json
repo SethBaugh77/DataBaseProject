@@ -1,5 +1,6 @@
 [
     {
+        "caseEvidence": null,
         "isFederal": false,
         "CriminalsID": [],
         "VictimsID": [],
@@ -17,6 +18,7 @@
         "ID": 2886
     },
     {
+        "caseEvidence": null,
         "isFederal": false,
         "CriminalsID": [
             777
@@ -34,6 +36,7 @@
         "ID": 2429
     },
     {
+        "caseEvidence": null,
         "isFederal": false,
         "CriminalsID": [],
         "VictimsID": [],
@@ -51,6 +54,7 @@
         "ID": 2574
     },
     {
+        "caseEvidence": null,
         "isFederal": false,
         "CriminalsID": [],
         "VictimsID": [],
@@ -68,5 +72,61 @@
         "isSolved": false,
         "Crime": "robbery at gunPoint",
         "ID": 2337
+    },
+    {
+        "caseEvidence": null,
+        "isFederal": false,
+        "CriminalsID": [
+            758
+        ],
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 4,
+        "SuspectsID": [],
+        "Name": "havoc at gamestop",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "3\/3\/21 7-8 PM",
+        "isSolved": false,
+        "Crime": "robbery",
+        "ID": 2827
+    },
+    {
+        "caseEvidence": null,
+        "isFederal": false,
+        "CriminalsID": [
+            319
+        ],
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 5,
+        "SuspectsID": [],
+        "Name": "bad day on the job",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "3\/3\/21",
+        "isSolved": true,
+        "Crime": "assault",
+        "ID": 2615
+    },
+    {
+        "caseEvidence": [
+            2227
+        ],
+        "isFederal": false,
+        "CriminalsID": [
+            89
+        ],
+        "VictimsID": [],
+        "POIID": [],
+        "Severity": 5,
+        "SuspectsID": [],
+        "Name": "unfornate...",
+        "WitnessesID": [],
+        "OfficersID": [],
+        "DATE": "5\/6\/77",
+        "isSolved": true,
+        "Crime": "hit and run",
+        "ID": 2227
     }
 ]
