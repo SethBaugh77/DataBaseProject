@@ -11,26 +11,50 @@ public class Officer extends Person {
         this.officerStatement = officerState;
     }
 
+    /**
+   * Gets the badge number of the officer.
+   * @return this officer badge number.
+   */
     public long getBadgeNumber() {
         return this.badgeNumber;
     }
 
+    /**
+   * Changes badge number .
+   * @param int
+   */
     public void setBadgeNumber(int badgeNumber) {
         this.badgeNumber = badgeNumber;
     }
 
+    /**
+   * Gets the Officer rank.
+   * @return this Officer rank.
+   */
     public String getOfficerRank() {
         return this.officerRank;
     }
 
+    /**
+   * Changes officer rank.
+   * @param string
+   */
     public void setOfficerRank(String officerRank) {
         this.officerRank = officerRank;
     }
 
+    /**
+   * Gets the officer's statement.
+   * @return this officer's statement.
+   */
     public String getOfficerStatement() {
         return this.officerStatement;
     }
 
+    /**
+   * Changes in officer statement.
+   * @param string
+   */
     public void setOfficerStatement(String officerStatement) {
         this.officerStatement = officerStatement;
     }
