@@ -1,14 +1,17 @@
-First Name: katie
-Last Name: lollipop
-Addres: 999 bowling alley road
-Age: 30
-DOB: 2/2/22
+First Name: rebecca
+Last Name: sus
+Addres: 999 sicamore lane
+Age: 99
+DOB: 3/2/11
 Gender F
 Height: 55
-ID: 642
-Phone: 123 123 1234
-Race: white
-Weight: 130
+ID: 330
+Phone: 222 333 4444
+Race: black
+Weight: 150
 Is Adult: true
-Is Healthy: true
-Victim Statement: im fine
+bodyType: fit
+isCriminal: false
+Occupation: teacher
+lastLocation: park
+Notes: long hair

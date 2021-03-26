@@ -8,5 +8,15 @@
         "ID": 1566,
         "Admin": true,
         "Password": "hello"
+    },
+    {
+        "lName": "boi",
+        "fName": "jon",
+        "Email": "johnnyboi@gmail.com",
+        "Username": "jonb",
+        "Phone": "555 444 3333",
+        "ID": 1566,
+        "Admin": false,
+        "Password": "hello"
     }
 ]

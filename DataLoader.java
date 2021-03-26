@@ -4,11 +4,19 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * Class that loads data from json files into the program.
+ * @author Seth Baugh
+ */
 public class DataLoader extends DataConstants {
 
+    /**
+     * Method that reads from json files and puts the values into the criminal arrayList.
+     * @return ArrayList crim holds the arraylist of criminals that was stored in the json files.
+     */
     public static ArrayList loadCriminal() {
 
-        ArrayList<Criminal> crim = new ArrayList();
+        ArrayList<Criminal> criminal = new ArrayList();
         try {
             FileReader reader = new FileReader(CRIMINAL_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -32,7 +40,7 @@ public class DataLoader extends DataConstants {
                 long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                crim.add(new Criminal(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult,
+                criminal.add(new Criminal(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult,
                         inJail, Notes, numCrimes, ID, Race));
             }
 
@@ -42,13 +50,17 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return crim;
+        return criminal;
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the witness arrayList.
+     * @return ArrayList witness holds the arraylist of witnesses that was stored in the json files.
+     */
     public static ArrayList loadWitness() {
 
-        ArrayList<Witness> wit = new ArrayList();
+        ArrayList<Witness> witness = new ArrayList();
         try {
             FileReader reader = new FileReader(WITNESS_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -70,7 +82,7 @@ public class DataLoader extends DataConstants {
                 String witnessStatement = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                wit.add(new Witness(witnessStatement, firstName, lastName, age, height, weight, gender, address, phone,
+                witness.add(new Witness(witnessStatement, firstName, lastName, age, height, weight, gender, address, phone,
                         DOB, isAdult, ID, Race));
             }
 
@@ -80,13 +92,17 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return wit;
+        return witness;
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the suspect arrayList.
+     * @return ArrayList suspect holds the arraylist of Suspects that was stored in the json files.
+     */
     public static ArrayList loadSuspect() {
 
-        ArrayList<Suspect> sus = new ArrayList();
+        ArrayList<Suspect> suspect = new ArrayList();
         try {
             FileReader reader = new FileReader(SUSPECT_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -113,7 +129,7 @@ public class DataLoader extends DataConstants {
                 String Race = (String) personJSON.get(PERSON_RACE);
                // String Tatoos = (String) personJSON.get(PERSON_TATOOS);
 
-                sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
+                suspect.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
                         occupation, lastLocation, bodyType, isCriminal, Race, poiNotes));
             }
 
@@ -123,13 +139,17 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return sus;
+        return suspect;
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the victim arrayList.
+     * @return ArrayList victim holds the arraylist of Victims that was stored in the json files.
+     */
     public static ArrayList loadVictim() {
 
-        ArrayList<Victim> vic = new ArrayList();
+        ArrayList<Victim> victim = new ArrayList();
         try {
             FileReader reader = new FileReader(VICTIM_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -152,7 +172,7 @@ public class DataLoader extends DataConstants {
                 String victimStatement = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                vic.add(new Victim(isHealthy, victimStatement, firstName, lastName, age, height, weight, gender,
+                victim.add(new Victim(isHealthy, victimStatement, firstName, lastName, age, height, weight, gender,
                         address, phone, DOB, isAdult, ID, Race));
             }
 
@@ -162,13 +182,17 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return vic;
+        return victim;
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the officer arrayList.
+     * @return ArrayList officer holds the arraylist of Officers that was stored in the json files.
+     */
     public static ArrayList loadOfficer() {
 
-        ArrayList<Officer> off = new ArrayList();
+        ArrayList<Officer> officer = new ArrayList();
         try {
             FileReader reader = new FileReader(OFFICER_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -192,7 +216,7 @@ public class DataLoader extends DataConstants {
                 String officerState = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
 
-                off.add(new Officer(bNum, officerRank, officerState, firstName, lastName, age, height, weight, gender,
+                officer.add(new Officer(bNum, officerRank, officerState, firstName, lastName, age, height, weight, gender,
                         address, phone, DOB, isAdult, ID, Race));
             }
 
@@ -202,10 +226,14 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return off;
+        return officer;
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the poi arrayList.
+     * @return ArrayList poi holds the arraylist of poi that was stored in the json files.
+     */
     public static ArrayList loadPOI() {
 
         ArrayList<PersonOfInterest> poi = new ArrayList();
@@ -245,6 +273,10 @@ public class DataLoader extends DataConstants {
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the users arrayList.
+     * @return ArrayList users holds the arraylist of Users that was stored in the json files.
+     */
     public static ArrayList loadUsers() {
 
         ArrayList<User> users = new ArrayList();
@@ -278,6 +310,10 @@ public class DataLoader extends DataConstants {
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the _cases arrayList.
+     * @return ArrayList _cases holds the arraylist of Cases that was stored in the json files.
+     */
     public static ArrayList loadCases() {
 
         ArrayList<Case> _cases = new ArrayList();
@@ -319,6 +355,10 @@ public class DataLoader extends DataConstants {
 
     }
 
+    /**
+     * Method that reads from json files and puts the values into the evidence arrayList.
+     * @return ArrayList evidence holds the arraylist of Evidence that was stored in the json files.
+     */
     public static ArrayList loadEvidence() {
 
         ArrayList<Evidence> evidence = new ArrayList();

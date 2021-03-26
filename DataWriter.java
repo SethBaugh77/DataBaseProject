@@ -6,8 +6,16 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.google.gson.*;
 
+/**
+ * Class that takes the data in the database and writes it to json files.
+ * @author Seth Baugh
+ */
 public class DataWriter extends DataConstants {
 
+    /**
+     * Method that collects data from the crimArray and then writes the data to the
+     * json files.
+     */
     public static void saveCriminal() {
 
         ArrayList<Criminal> crimArray = DataBase.getInstance().getCriminals();
@@ -30,6 +38,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a Criminal, gets all the attributes of
+     * the Criminal, converts it into a json object, then returns it.
+     * @param criminal used to get its attributes.
+     * @return jsonObject of the criminal input.
+     */
     public static JSONObject getCriminalJSON(Criminal criminal) {
 
         JSONObject crimDetails = new JSONObject();
@@ -57,6 +71,10 @@ public class DataWriter extends DataConstants {
         return crimDetails;
     }
 
+    /**
+     * Method that collects data from the vicArray and then writes the data to the
+     * json files.
+     */
     public static void saveVictim() {
 
         ArrayList<Victim> vicArray = DataBase.getInstance().getVictims();
@@ -79,6 +97,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a Victim, gets all the attributes of the
+     * Victim, converts it into a json object, then returns it.
+     * @param victim used to get its attributes.
+     * @return jsonObject of the victim input.
+     */
     public static JSONObject getVictimJSON(Victim victim) {
 
         JSONObject victimDetails = new JSONObject();
@@ -105,6 +129,10 @@ public class DataWriter extends DataConstants {
         return victimDetails;
     }
 
+    /**
+     * Method that collects data from the officerArray and then writes the data to
+     * the json files.
+     */
     public static void saveOfficer() {
 
         ArrayList<Officer> officerArray = DataBase.getInstance().getOfficers();
@@ -127,6 +155,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of an Officer, gets all the attributes of
+     * the Officer, converts it into a json object, then returns it.
+     * @param officer used to get its attributes.
+     * @return jsonObject of the officer input.
+     */
     public static JSONObject getOfficerJSON(Officer officer) {
 
         JSONObject officerDetails = new JSONObject();
@@ -154,6 +188,10 @@ public class DataWriter extends DataConstants {
         return officerDetails;
     }
 
+    /**
+     * Method that collects data from the poiArray and then writes the data to the
+     * json files.
+     */
     public static void savepoi() {
 
         ArrayList<PersonOfInterest> poiArray = DataBase.getInstance().getPOI();
@@ -176,6 +214,13 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a PersonOfInterest, gets all the
+     * attributes of the PersonOfInterest, converts it into a json object, then
+     * returns it.
+     * @param poi used to get its attributes.
+     * @return jsonObject of the poi input.
+     */
     public static JSONObject getPOIJSON(PersonOfInterest poi) {
 
         JSONObject poiDetails = new JSONObject();
@@ -199,12 +244,16 @@ public class DataWriter extends DataConstants {
         poiDetails.put(PERSON_OCCUPATION, poi.getOccupation());
         poiDetails.put(PERSON_RACE, poi.getRace());
 
-        //poiDetails.put(PERSON_TATOOS, poi.getTatoos());
+        // poiDetails.put(PERSON_TATOOS, poi.getTatoos());
         poiDetails.put(PERSON_NOTES, poi.getpoiNotes());
 
         return poiDetails;
     }
 
+    /**
+     * Method that collects data from the suspectArray and then writes the data to
+     * the json files.
+     */
     public static void saveSuspect() {
 
         ArrayList<Suspect> suspectArray = DataBase.getInstance().getSuspects();
@@ -227,6 +276,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a Suspect, gets all the attributes of the
+     * Suspect, converts it into a json object, then returns it.
+     * @param suspect used to get its attributes.
+     * @return jsonObject of the suspect input.
+     */
     public static JSONObject getSuspectJSON(Suspect suspect) {
 
         JSONObject suspectDetails = new JSONObject();
@@ -254,11 +309,15 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(PERSON_IS_CRIMINAL, suspect.getIsCriminal());
         suspectDetails.put(PERSON_RACE, suspect.getRace());
 
-        //suspectDetails.put(PERSON_TATOOS, suspect.getTatoos());
+        // suspectDetails.put(PERSON_TATOOS, suspect.getTatoos());
 
         return suspectDetails;
     }
 
+    /**
+     * Method that collects data from the witnessArray and then writes the data to
+     * the json files.
+     */
     public static void saveWitness() {
 
         ArrayList<Witness> witnessArray = DataBase.getInstance().getWitnesses();
@@ -281,6 +340,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a Witness, gets all the attributes of the
+     * Witness, converts it into a json object, then returns it.
+     * @param witness used to get its attributes.
+     * @return jsonObject of the witness input.
+     */
     public static JSONObject getWitnessJSON(Witness witness) {
 
         JSONObject witnessDetails = new JSONObject();
@@ -306,6 +371,10 @@ public class DataWriter extends DataConstants {
         return witnessDetails;
     }
 
+    /**
+     * Method that collects data from the userArray and then writes the data to the
+     * json files.
+     */
     public static void saveUser() {
 
         ArrayList<User> userArray = DataBase.getInstance().getUsers();
@@ -328,6 +397,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a User, gets all the attributes of the
+     * User, converts it into a json object, then returns it.
+     * @param user used to get its attributes.
+     * @return jsonObject of the user input.
+     */
     public static JSONObject getUSERJSON(User user) {
 
         JSONObject userDetails = new JSONObject();
@@ -345,6 +420,10 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
+    /**
+     * Method that collects data from the caseArray and then writes the data to the
+     * json files.
+     */
     public static void saveCase() {
 
         ArrayList<Case> caseArray = DataBase.getInstance().getCases();
@@ -367,6 +446,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a Case, gets all the attributes of the
+     * Case, converts it into a json object, then returns it.
+     * @param _case used to get its attributes.
+     * @return jsonObject of the _case input.
+     */
     public static JSONObject getCaseJSON(Case _case) {
 
         JSONObject caseDetails = new JSONObject();
@@ -393,6 +478,10 @@ public class DataWriter extends DataConstants {
 
     }
 
+    /**
+     * Method that collects data from the evidenceArray and then writes the data to
+     * the json files.
+     */
     public static void saveEvidence() {
 
         ArrayList<Evidence> evidenceArray = DataBase.getInstance().getEvidence();
@@ -415,6 +504,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Method that takes in an instance of a Evidence, gets all the attributes of
+     * the Evidence, converts it into a json object, then returns it.
+     * @param evidence used to get its attributes.
+     * @return jsonObject of the evidence input.
+     */
     public static JSONObject getEvidenceJSON(Evidence evidence) {
 
         JSONObject evidenceDetails = new JSONObject();

@@ -1,23 +1,25 @@
 import java.util.Scanner;
-import java.lang.Thread.State;
+//import java.lang.Thread.State;
 import java.util.ArrayList;
-import java.util.IllegalFormatWidthException;
+//import java.util.IllegalFormatWidthException;
 import java.util.concurrent.ThreadLocalRandom;
-
-import javax.lang.model.util.ElementScanner6;
-
-//import jdk.internal.org.jline.terminal.impl.jna.win.Kernel32.WINDOW_BUFFER_SIZE_RECORD;
-
+//import javax.lang.model.util.ElementScanner6;
 import java.io.File; // Import the File class
 import java.io.FileWriter;
 import java.io.IOException; // Import the IOException class to handle errors
 
-//import jdk.vm.ci.meta.Assumptions.LeafType;
-
+/**
+ * Class that contains all the frontEnd functionality and methods.
+ * @author Seth Baugh and Jonathan Brown
+ */
 public class frontEnd {
     static Scanner keyboard = new Scanner(System.in);
     static DataBase dBase;
 
+    /**
+     * Main method that starts the program.
+     * @param args
+     */
     public static void main(String args[]) {
 
         dBase = DataBase.getInstance();
@@ -25,9 +27,7 @@ public class frontEnd {
         User user;
         while (true) {
             user = fEnd.promptForUsernameAndPassword();
-
             if (user != null) {
-
                 while (true)
                     fEnd.doAction(dBase, user);
             }
@@ -35,13 +35,16 @@ public class frontEnd {
 
     }
 
+    /**
+     * Method that gets the users username and password. Returns true if account is
+     * found. Null otherwise.
+     * @return User if account is found it is returned, otherwise null is returned.
+     */
     public User promptForUsernameAndPassword() {
-
         System.out.println("Enter username:");
         String inp = keyboard.nextLine();
         System.out.println("Enter password:");
         String inp2 = keyboard.nextLine();
-
         for (int i = 0; i < dBase.getUsers().size(); i++) {
             System.out.println(dBase.getUsers().get(i).getUsername());
             if (inp.equals(dBase.getUsers().get(i).getUsername())) {
@@ -51,9 +54,14 @@ public class frontEnd {
             }
         }
         return null;
-
     }
 
+    /**
+     * Method that does all of the actions of the program. Calls to other methods
+     * depending on what is chosen by the user.
+     * @param dbase instance of the database that is used to hold all the data.
+     * @param user  instance of the user that is the account that was signed into.
+     */
     public void doAction(DataBase dbase, User user) {
         System.out.println("Welcome to the database. What would you like to do?");
         System.out.println("1. Search for a person.");
@@ -76,11 +84,9 @@ public class frontEnd {
             if (search2 == 1) {
                 search = true;
                 System.out.println("Enter the first name of the person you would like to find");
-
                 keyboard.nextLine();
                 inp2 = keyboard.nextLine();
                 System.out.println("Enter the last name of the person you would like to find");
-
                 inp3 = keyboard.nextLine();
             } else {
                 System.out.println("Enter the attribute you would like to search for.");
@@ -114,20 +120,15 @@ public class frontEnd {
                         System.out.println("NumCrimes: " + crim.getNumCrimes());
                         break;
                     } else if (names.get(i) instanceof Suspect) {
-                        // else if(names.get(i).getLname().equalsIgnoreCase(who) && names.get(i)
-                        // instanceof Suspect)
-                        // {
+
                         Suspect suspect = (Suspect) names.get(i);
 
                         System.out.println("bodyType: " + suspect.getBodyType());
                         System.out.println("isCriminal: " + suspect.getIsCriminal());
                         System.out.println("Occupation: " + suspect.getOccupation());
-
                         System.out.println("lastLocation: " + suspect.getLastLocation());
                         System.out.println("Notes: " + suspect.getPoiNotes());
-                        //System.out.println("Tatoos: " + suspect.getTatoos());
 
-                        // }
                     } else if (names.get(i) instanceof Officer) {
                         Officer officer = (Officer) names.get(i);
                         System.out.println("badgeNumber: " + officer.getBadgeNumber());
@@ -146,7 +147,7 @@ public class frontEnd {
                         System.out.println("Occupation: " + poi.getOccupation());
                         System.out.println("Location: " + poi.getLastLocation());
                         System.out.println("Notes: " + poi.getPoiNotes());
-                        //System.out.println("Tatoos: " + poi.getTatoos());
+
                     }
 
                 }
@@ -156,13 +157,11 @@ public class frontEnd {
             String test = keyboard.nextLine();
 
         } else if (inp == 2) {
-
             System.out.println("Enter the ID of the case you would like to find");
             int inp2 = keyboard.nextInt();
             for (int i = 0; i < dBase.getCases().size(); i++) {
                 if (dBase.getCases().get(i).getCaseID() == inp2)
                     displayCaseResults(dBase.getCases().get(i));
-
             }
 
         } else if (inp == 3) {
@@ -190,14 +189,14 @@ public class frontEnd {
             long ID = ThreadLocalRandom.current().nextInt(2000, 2997 + 1);
             ArrayList<Long> criminals = new ArrayList<Long>();
             ArrayList<Long> victims = new ArrayList<Long>();
-            ArrayList<Long> witnesses = new ArrayList<Long>(); // -CaseID: int
+            ArrayList<Long> witnesses = new ArrayList<Long>();
             ArrayList<Long> officers = new ArrayList<Long>();
             ArrayList<Long> poi = new ArrayList<Long>();
             ArrayList<Long> suspects = new ArrayList<Long>();
             ArrayList<Long> evidences = new ArrayList<Long>();
             Case _case = new Case(Name, crimeType, Date, isSolved, Severity, isFederal, ID, criminals, victims,
                     witnesses, officers, poi, suspects, evidences);
-            // Case _case;
+
             while (true) {
                 System.out.println("Which type of person would you like to add to the case?");
                 System.out.println("1. Criminal");
@@ -206,7 +205,6 @@ public class frontEnd {
                 System.out.println("4. Officer");
                 System.out.println("5. Witness");
                 System.out.println("6. Victim");
-
                 int inp2 = keyboard.nextInt();
                 if (inp2 == 1) {
                     _case.getCriminals().add((Long) addPerson(dbase, inp2).getID());
@@ -238,21 +236,15 @@ public class frontEnd {
             if (ans6.equalsIgnoreCase("Y") || ans6.equalsIgnoreCase("Yes")) {
                 System.out.println("Enter evidence. Press enter after each insert");
                 System.out.println("1. Blood evidence 2. Vehicle evidence 3. fingerPrintEvidence 4. weaponEvidence 5.");
-
                 String bloodEvidence = keyboard.nextLine();
                 String vehicleEvidence = keyboard.nextLine();
                 String fingerPrintEvidence = keyboard.nextLine();
                 String weaponEvidence = keyboard.nextLine();
-
                 Evidence evidence = new Evidence(ID, vehicleEvidence, bloodEvidence, fingerPrintEvidence,
                         weaponEvidence);
                 _case.getEvidence().add(evidence.getID());
-
                 dbase.getCases().add(_case);
-                // DataWriter.saveCase();
-
                 dBase.getEvidence().add(evidence);
-
                 DataWriter.saveEvidence();
                 DataWriter.saveCase();
             }
@@ -264,7 +256,6 @@ public class frontEnd {
                 keyboard.nextLine();
                 String input5 = keyboard.nextLine();
                 String input6 = keyboard.nextLine();
-
                 searchPerson(input5, input6, true, true, false);
 
             } else {
@@ -272,35 +263,38 @@ public class frontEnd {
             }
 
         } else if (inp == 6) {
-            System.out.println("Enter case ID to be deleted");
-            long id = keyboard.nextLong();
-            for(int i = 0 ; i < dBase.getCases().size(); i++)
-            {
-                if(id == dBase.getCases().get(i).getCaseID())
-                {
-                    dBase.getCases().remove(dBase.getCases().get(i));
-                    DataWriter.saveCase();
-                    break;
+            if (user.getAdmin() == true) {
+                System.out.println("Enter case ID to be deleted");
+                long id = keyboard.nextLong();
+                for (int i = 0; i < dBase.getCases().size(); i++) {
+                    if (id == dBase.getCases().get(i).getCaseID()) {
+                        dBase.getCases().remove(dBase.getCases().get(i));
+                        DataWriter.saveCase();
+                        break;
+                    }
                 }
-            }
-
+            } else
+                adminErrorMessage();
         } else if (inp == 7) {
-            System.out.println("Enter in attributes for person to be added. Press enter after each input.");
-            System.out.println("1. firstName 2. lastName 3. username 4. password, 5. email 6. phone 7. Admin?");
-            String fName, lName, Username, Password, Email, Phone;
-            boolean Admin;
-            keyboard.nextLine();
-            fName = keyboard.nextLine();
-            lName = keyboard.nextLine();
-            Username = keyboard.nextLine();
-            Password = keyboard.nextLine();
-            Email = keyboard.nextLine();
-            Phone = keyboard.nextLine();
-            Admin = keyboard.nextBoolean();
-            long ID = ThreadLocalRandom.current().nextInt(1000, 1997 + 1);
-            User user1 = new User(ID, Admin, fName, lName, Username, Email, Password, Phone);
-            dBase.getUsers().add(user1);
-            DataWriter.saveUser();
+            if (user.getAdmin() == true) {
+                System.out.println("Enter in attributes for person to be added. Press enter after each input.");
+                System.out.println("1. firstName 2. lastName 3. username 4. password, 5. email 6. phone 7. Admin?");
+                String fName, lName, Username, Password, Email, Phone;
+                boolean Admin;
+                keyboard.nextLine();
+                fName = keyboard.nextLine();
+                lName = keyboard.nextLine();
+                Username = keyboard.nextLine();
+                Password = keyboard.nextLine();
+                Email = keyboard.nextLine();
+                Phone = keyboard.nextLine();
+                Admin = keyboard.nextBoolean();
+                long ID = ThreadLocalRandom.current().nextInt(1000, 1997 + 1);
+                User user1 = new User(ID, Admin, fName, lName, Username, Email, Password, Phone);
+                dBase.getUsers().add(user1);
+                DataWriter.saveUser();
+            } else
+                adminErrorMessage();
 
         } else if (inp == 8) {
             System.exit(0);
@@ -319,7 +313,7 @@ public class frontEnd {
                 writeToFile(person, _case);
             } else {
                 System.out.println("Enter the ID of the case you would like to write.");
-                // keyboard.nextLine();
+
                 long id = keyboard.nextLong();
                 for (int i = 0; i < dBase.getCases().size(); i++) {
                     if (dBase.getCases().get(i).getCaseID() == id) {
@@ -336,11 +330,23 @@ public class frontEnd {
 
     }
 
+    /**
+     * Prints out the error message if the user signed in is not an admin and tries
+     * to do something only an admin can do.
+     */
     public void adminErrorMessage() {
         System.out.println("Error, you need to be an admin to access this.");
     }
 
-    // search by name
+    /**
+     * Method that searches through all of the lists of people to find whatever ones
+     * were intended to be found.
+     * @param input  first name of the person to be looked for.
+     * @param input2 last name of the person to be looked for.
+     * @param remove tells method whether the person is to be removed from the list or just found and printed out.
+     * @param write  tells the method whether the person found is going to be
+     * written to another file or not.
+     */
     public ArrayList<Person> searchPerson(String input, String input2, boolean remove, boolean name, boolean write) {
         if (name == true) {
             if (remove == false) {
@@ -461,7 +467,7 @@ public class frontEnd {
                 return null;
             }
         }
-        // search by others
+
         else {
             ArrayList<Person> names = new ArrayList<Person>();
             for (int i = 0; i < dBase.getCriminals().size(); i++) {
@@ -483,6 +489,10 @@ public class frontEnd {
 
     }
 
+    /**
+     * Method that takes in an ArrayList and prints out all persons in the list.
+     * @param aList arrayList of Persons.
+     */
     public void displayPersonResults(ArrayList<Person> aList) {
         System.out.println("Searching database...");
 
@@ -493,11 +503,12 @@ public class frontEnd {
 
     }
 
-    // public void caseAtt(Case _case)
-    // {
-
-    // }
-
+    /**
+     * Method that takes adds Persons to the database. Asks users for data and
+     * creates Persons for the data.
+     * @param dbase instance of the database to be searched.
+     * @param inp2  kind of person to be added to the database.
+     */
     public Person addPerson(DataBase dbase, int inp2) {
 
         if (inp2 == 1) {
@@ -511,11 +522,9 @@ public class frontEnd {
             boolean Adult, inJail;
 
             long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
-
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            // keyboard.nextDouble();
             Height = keyboard.nextLong(); // Criminal
             Weight = keyboard.nextLong();
             keyboard.nextLine();
@@ -536,7 +545,6 @@ public class frontEnd {
                     Notes, numCrimes, ID, race);
 
             dbase.getCriminals().add(crim);
-            // dbase.getCriminals().add(crim);
             DataWriter.saveCriminal();
             return crim;
 
@@ -550,14 +558,11 @@ public class frontEnd {
             long Age, Height, Weight, numCrimes;
             boolean Adult;
 
-
             long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
-
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            // keyboard.nextDouble();
-            Height = keyboard.nextLong(); //poi
+            Height = keyboard.nextLong(); // poi
             Weight = keyboard.nextLong();
             keyboard.nextLine();
             Gender = keyboard.nextLine();
@@ -573,34 +578,6 @@ public class frontEnd {
             Race = keyboard.nextLine();
             Notes = keyboard.nextLine();
 
-
-
-
-            // fName = "Billy";
-            // lName = "Bob";
-            // // keyboard.nextDouble();
-            // Height = 65; // Criminal
-            // Weight = 150;
-
-            // Gender = "M";
-            // Address = "999 idk lane";
-            // Phone = "888 888 8888"; // poi
-            // DOB = "2/2/22";
-            // Adult = true;
-            // // inJail =true;
-            // numCrimes = 15;
-
-            // crimeType = "Assault";
-            // Age = 65;
-            // Occupation = "teacher";
-            // lastLocation = "school";
-            // Race = "white";
-
-            // Notes = "bad guy";
-            // long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
-
-            // Tatoos = keyboard.nextLine();
-            // Race = keyboard.nextLine();
             PersonOfInterest poi = new PersonOfInterest(fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB,
                     Adult, Occupation, lastLocation, ID, Race, Notes);
             dbase.getPOI().add(poi);
@@ -618,11 +595,9 @@ public class frontEnd {
             boolean Adult, inJail, isCriminal;
 
             long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
-
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            // age = keyboard.nextLong();
             Height = keyboard.nextLong();
             Weight = keyboard.nextLong(); // Suspect
             keyboard.nextLine();
@@ -641,8 +616,7 @@ public class frontEnd {
             isCriminal = keyboard.nextBoolean();
             keyboard.nextLine();
             Notes = keyboard.nextLine();
-            //Tatoos = "none";
-            // long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
+
             Suspect suspect = new Suspect(fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB, Adult, ID,
                     Occupation, lastLocation, bodyType, isCriminal, Race, Notes);
             dbase.getSuspects().add(suspect);
@@ -658,12 +632,9 @@ public class frontEnd {
             long Age, Height, Weight, badgeNumber;
             boolean Adult;
 
-           
-
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            // keyboard.nextDouble();
             Height = keyboard.nextLong(); // officer
             Weight = keyboard.nextLong();
             keyboard.nextLine();
@@ -679,13 +650,9 @@ public class frontEnd {
             Age = keyboard.nextLong();
             keyboard.nextLine();
             Race = keyboard.nextLine();
-            //Notes = keyboard.nextLine();
 
-            
             long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
 
-            //Race = keyboard.nextLine();
-            // long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
             Officer officer = new Officer(badgeNumber, Rank, Statement, fName, lName, Age, Height, Weight, Gender,
                     Address, Phone, DOB, Adult, ID, Race);
             dBase.getOfficers().add(officer);
@@ -705,7 +672,6 @@ public class frontEnd {
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            // Age = keyboard.nextLong();
             Height = keyboard.nextLong();
             Weight = keyboard.nextLong(); // witness
             keyboard.nextLine();
@@ -718,7 +684,7 @@ public class frontEnd {
             keyboard.nextLine();
             Statement = keyboard.nextLine();
             Race = keyboard.nextLine();
-            // long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
+
             Witness witness = new Witness(Statement, fName, lName, Age, Height, Weight, Gender, Address, Phone, DOB,
                     Adult, ID, Race);
             dBase.getWitnesses().add(witness);
@@ -734,11 +700,9 @@ public class frontEnd {
             boolean Adult, isHealthy;
 
             long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
-
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            // keyboard.nextDouble();
             Height = keyboard.nextLong(); // Criminal
             Weight = keyboard.nextLong();
             keyboard.nextLine();
@@ -749,12 +713,10 @@ public class frontEnd {
             Adult = keyboard.nextBoolean();
             keyboard.nextLine();
             Statement = keyboard.nextLine();
-           // keyboard.nextLine();
             isHealthy = keyboard.nextBoolean();
             Age = keyboard.nextLong();
             keyboard.nextLine();
             Race = keyboard.nextLine();
-            //Notes = keyboard.nextLine();
 
             Victim victim = new Victim(isHealthy, Statement, fName, lName, Age, Height, Weight, Gender, Address, Phone,
                     DOB, Adult, ID, Race);
@@ -765,13 +727,16 @@ public class frontEnd {
         return null;
     }
 
+    /**
+     * Method that takes in a case and displays all the values for that case. 
+     * @param _case specific case to have its values displayed.
+     */
     public void displayCaseResults(Case _case) {
         System.out.println("Searching database...");
         System.out.println("Cases were found... type 1 to view their names or 2 to quit.");
         int num4 = keyboard.nextInt();
         if (num4 == 1) {
             System.out.println(_case.getName());
-
             System.out.println("Case Name: " + _case.getName());
             System.out.println("Case CrimeType: " + _case.getCrime());
             System.out.println("Case ID: " + _case.getCaseID());
@@ -779,13 +744,7 @@ public class frontEnd {
             System.out.println("Is Case Federal? " + _case.getIsFederal());
             System.out.println("Case Severity(1-5): " + _case.getSeverity());
             System.out.println("Is Case solved?: " + _case.getIsSolved());
-            // for(int i =0; i < dBase.getEvidence().size();i++)
-            // {
-            // if(_case.getCaseID() == dBase.getEvidence().get(i).getID())
-            // {
-            // System.out.println(dBase.getEvidence().get(i).getFingerprintEvidence());
-            // }
-            // }
+
             System.out.println("Persons related to case:");
             for (int k = 0; k < _case.getCriminals().size(); k++) {
                 for (int i = 0; i < dBase.getCriminals().size(); i++) {
@@ -796,7 +755,7 @@ public class frontEnd {
                 }
             }
             for (int k = 0; k < _case.getOfficers().size(); k++) {
-                // System.out.println(aList.get(i).getCriminals())
+
                 for (int i = 0; i < dBase.getOfficers().size(); i++) {
                     if (_case.getOfficers().get(k) == dBase.getOfficers().get(i).getID()) {
                         System.out
@@ -806,7 +765,7 @@ public class frontEnd {
             }
             for (int k = 0; k < _case.getSuspects().size(); k++) {
                 for (int i = 0; i < dBase.getSuspects().size(); i++) {
-                    // System.out.println(aList.get(i).getCriminals())
+
                     if (_case.getSuspects().get(k) == dBase.getSuspects().get(i).getID()) {
                         System.out
                                 .println(dBase.getSuspects().get(i).getFname() + dBase.getSuspects().get(i).getLname());
@@ -815,7 +774,7 @@ public class frontEnd {
             }
             for (int k = 0; k < _case.getPoi().size(); k++) {
                 for (int i = 0; i < dBase.getPOI().size(); i++) {
-                    // System.out.println(aList.get(i).getCriminals())
+
                     if (_case.getPoi().get(k) == dBase.getPOI().get(i).getID()) {
                         System.out.println(dBase.getPOI().get(i).getFname() + dBase.getPOI().get(i).getLname());
                     }
@@ -823,7 +782,7 @@ public class frontEnd {
             }
             for (int k = 0; k < _case.getWitnesses().size(); k++) {
                 for (int i = 0; i < dBase.getWitnesses().size(); i++) {
-                    // System.out.println(aList.get(i).getCriminals())
+
                     if (_case.getWitnesses().get(k) == dBase.getWitnesses().get(i).getID()) {
                         System.out.println(
                                 dBase.getWitnesses().get(i).getFname() + dBase.getWitnesses().get(i).getLname());
@@ -832,7 +791,7 @@ public class frontEnd {
             }
             for (int k = 0; k < _case.getVictims().size(); k++) {
                 for (int i = 0; i < dBase.getVictims().size(); i++) {
-                    // System.out.println(aList.get(i).getCriminals())
+
                     if (_case.getVictims().get(k) == dBase.getVictims().get(i).getID()) {
                         System.out.println(dBase.getVictims().get(i).getFname() + dBase.getVictims().get(i).getLname());
                     }
@@ -857,6 +816,11 @@ public class frontEnd {
         }
     }
 
+    /**
+     * Method that prints to a text document.
+     * @param person Persons to be written to text file.
+     * @param _case  Case to be written to text file.
+     */
     public void writeToFile(ArrayList<Person> person, Case _case) {
         try {
             File myObj = new File("output.txt");
@@ -893,7 +857,6 @@ public class frontEnd {
                         myWriter.write(", In Jail?: " + crim.getJail() + "\n");
                         myWriter.write(", Notes: " + crim.getNotes() + "\n");
                         myWriter.write(", NumCrimes: " + crim.getNumCrimes() + "\n");
-                        // myWriter.write();
 
                         myWriter.close();
                         System.out.println("Successfully wrote to the file.");
@@ -922,7 +885,6 @@ public class frontEnd {
                         myWriter.write("badgeNumber: " + officer.getBadgeNumber() + "\n");
                         myWriter.write("officerRank: " + officer.getOfficerRank() + "\n");
                         myWriter.write("officerStatement: " + officer.getOfficerStatement() + "\n");
-                        // myWriter.write();
 
                         myWriter.close();
                         System.out.println("Successfully wrote to the file.");
@@ -955,8 +917,6 @@ public class frontEnd {
 
                         myWriter.write("lastLocation: " + suspect.getLastLocation() + "\n");
                         myWriter.write("Notes: " + suspect.getPoiNotes() + "\n");
-                        //myWriter.write("Tatoos: " + suspect.getTatoos() + "\n");
-                        // myWriter.write();
 
                         myWriter.close();
                         System.out.println("Successfully wrote to the file.");
@@ -983,7 +943,6 @@ public class frontEnd {
                         myWriter.write("Weight: " + person.get(i).getWeight() + "\n");
                         myWriter.write("Is Adult: " + person.get(i).getIsAdult() + "\n");
                         myWriter.write("Witness Statement: " + witness.getWitnessStatement() + "\n");
-                        // myWriter.write();
 
                         myWriter.close();
                         System.out.println("Successfully wrote to the file.");
@@ -1011,7 +970,6 @@ public class frontEnd {
                         myWriter.write("Is Adult: " + person.get(i).getIsAdult() + "\n");
                         myWriter.write("Is Healthy: " + victim.getIsHealthy() + "\n");
                         myWriter.write("Victim Statement: " + victim.getVictimStatement() + "\n");
-                        // myWriter.write();
 
                         myWriter.close();
                         System.out.println("Successfully wrote to the file.");
@@ -1040,8 +998,6 @@ public class frontEnd {
                         myWriter.write("Occupation: " + poi.getOccupation() + "\n");
                         myWriter.write("Location: " + poi.getLastLocation() + "\n");
                         myWriter.write("Notes: " + poi.getPoiNotes() + "\n");
-                        //myWriter.write("Tatoos: " + poi.getTatoos() + "\n");
-                        // myWriter.write();
 
                         myWriter.close();
                         System.out.println("Successfully wrote to the file.");
@@ -1072,7 +1028,7 @@ public class frontEnd {
                     }
                 }
                 for (int k = 0; k < _case.getOfficers().size(); k++) {
-                    // System.out.println(aList.get(i).getCriminals())
+
                     for (int i = 0; i < dBase.getOfficers().size(); i++) {
                         if (_case.getOfficers().get(k) == dBase.getOfficers().get(i).getID()) {
                             myWriter.write(dBase.getOfficers().get(i).getFname() + dBase.getOfficers().get(i).getLname()
@@ -1082,7 +1038,7 @@ public class frontEnd {
                 }
                 for (int k = 0; k < _case.getSuspects().size(); k++) {
                     for (int i = 0; i < dBase.getSuspects().size(); i++) {
-                        // System.out.println(aList.get(i).getCriminals())
+
                         if (_case.getSuspects().get(k) == dBase.getSuspects().get(i).getID()) {
                             myWriter.write(dBase.getSuspects().get(i).getFname() + dBase.getSuspects().get(i).getLname()
                                     + "\n");
@@ -1091,7 +1047,7 @@ public class frontEnd {
                 }
                 for (int k = 0; k < _case.getPoi().size(); k++) {
                     for (int i = 0; i < dBase.getPOI().size(); i++) {
-                        // System.out.println(aList.get(i).getCriminals())
+
                         if (_case.getPoi().get(k) == dBase.getPOI().get(i).getID()) {
                             myWriter.write(dBase.getPOI().get(i).getFname() + dBase.getPOI().get(i).getLname() + "\n");
                         }
@@ -1099,7 +1055,7 @@ public class frontEnd {
                 }
                 for (int k = 0; k < _case.getWitnesses().size(); k++) {
                     for (int i = 0; i < dBase.getWitnesses().size(); i++) {
-                        // System.out.println(aList.get(i).getCriminals())
+
                         if (_case.getWitnesses().get(k) == dBase.getWitnesses().get(i).getID()) {
                             myWriter.write(dBase.getWitnesses().get(i).getFname()
                                     + dBase.getWitnesses().get(i).getLname() + "\n");
@@ -1108,7 +1064,7 @@ public class frontEnd {
                 }
                 for (int k = 0; k < _case.getVictims().size(); k++) {
                     for (int i = 0; i < dBase.getVictims().size(); i++) {
-                        // System.out.println(aList.get(i).getCriminals())
+
                         if (_case.getVictims().get(k) == dBase.getVictims().get(i).getID()) {
                             myWriter.write(
                                     dBase.getVictims().get(i).getFname() + dBase.getVictims().get(i).getLname() + "\n");

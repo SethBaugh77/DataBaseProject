@@ -1,3 +1,7 @@
+/**
+ * Class that holds all the constants to be used in the dataLoader and dataWriter class.
+ * @author Seth Baugh
+ */
 public abstract class DataConstants {
     protected static final String VICTIM_FILE_NAME = "Victim.json";
     protected static final String PEOPLE = "victim";
@@ -61,25 +65,5 @@ public abstract class DataConstants {
     protected final static String EVIDENCE_WEAPON = "weaponEvidence";
     protected final static String CASE_EVIDENCE = "caseEvidence";
 
-    //protected final static String PERSON_STATEMENT = ""
-    //protected static final String PERSON_NOTES = "Notes";
-
-    // TODO finish
-
-    // # name: String
-    // # age: int
-    // # height: double
-    // # weight: double
-    // # gender: String
-    // # address: String
-    // # phone: String
-    // # dateOfBirth: String
-    // # isAdult: Boolean
-    // #ID: int
-
-    // protected static final String PEOPLE_FILE_NAME = "src/victim.json";
-    // protected static final String PEOPLE = "victim";
-    // protected static final String PEOPLE_FIRST_NAME = "firstName";
-    // protected static final String PEOPLE_LAST_NAME = "lastName";
-    // protected static final String PEOPLE_PHONE_NUMBER = "phoneNumber";
+    
 }
