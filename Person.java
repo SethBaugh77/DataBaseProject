@@ -13,6 +13,10 @@ public class Person {
 	protected long ID;
 	protected String race;
 	//protected String tatoos;
+	public Person()
+	{
+		
+	}
 	public Person(String fName, String lname, long Age, long Height, long Weight, String Gender, String Address,
 			String Phone, String DateOfBirth, boolean IsAdult,long ID, String race) {
 		this.fname = fName;

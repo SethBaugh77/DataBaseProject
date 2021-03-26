@@ -1,1 +1,14 @@
-, First Name: tommy, Last Name: bob, Addres: 444 idk lane, Age: 15, DOB: 2/3/44, Gender M, Height: 65, ID: 911, Phone: 555 555 5555, Race: dove tatoo, Weight: 140, Is Adult: true, In Jail?: true, Notes: bad guy, NumCrimes: 5
+First Name: katie
+Last Name: lollipop
+Addres: 999 bowling alley road
+Age: 30
+DOB: 2/2/22
+Gender F
+Height: 55
+ID: 642
+Phone: 123 123 1234
+Race: white
+Weight: 130
+Is Adult: true
+Is Healthy: true
+Victim Statement: im fine

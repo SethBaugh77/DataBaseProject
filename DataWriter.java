@@ -199,7 +199,7 @@ public class DataWriter extends DataConstants {
         poiDetails.put(PERSON_OCCUPATION, poi.getOccupation());
         poiDetails.put(PERSON_RACE, poi.getRace());
 
-        poiDetails.put(PERSON_TATOOS, poi.getTatoos());
+        //poiDetails.put(PERSON_TATOOS, poi.getTatoos());
         poiDetails.put(PERSON_NOTES, poi.getpoiNotes());
 
         return poiDetails;
@@ -254,7 +254,7 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(PERSON_IS_CRIMINAL, suspect.getIsCriminal());
         suspectDetails.put(PERSON_RACE, suspect.getRace());
 
-        suspectDetails.put(PERSON_TATOOS, suspect.getTatoos());
+        //suspectDetails.put(PERSON_TATOOS, suspect.getTatoos());
 
         return suspectDetails;
     }

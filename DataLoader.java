@@ -111,10 +111,10 @@ public class DataLoader extends DataConstants {
                 String bodyType = (String) personJSON.get(PERSON_BODY_TYPE);
                 boolean isCriminal = (boolean) personJSON.get(PERSON_IS_CRIMINAL);
                 String Race = (String) personJSON.get(PERSON_RACE);
-                String Tatoos = (String) personJSON.get(PERSON_TATOOS);
+               // String Tatoos = (String) personJSON.get(PERSON_TATOOS);
 
                 sus.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
-                        occupation, lastLocation, bodyType, isCriminal, Race, poiNotes, Tatoos));
+                        occupation, lastLocation, bodyType, isCriminal, Race, poiNotes));
             }
 
             // return sus;
@@ -232,9 +232,9 @@ public class DataLoader extends DataConstants {
                 String poiNotes = (String) personJSON.get(PERSON_NOTES);
                 String Race = (String) personJSON.get(PERSON_RACE);
                 String Notes = (String) personJSON.get(PERSON_NOTES);
-                String Tatoos = (String) personJSON.get(PERSON_TATOOS);
+                //String Tatoos = (String) personJSON.get(PERSON_TATOOS);
                 poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB,
-                        isAdult, occupation, lastLocation, ID, Race, Notes, Tatoos));
+                        isAdult, occupation, lastLocation, ID, Race, Notes));
             }
 
         } catch (Exception e) {

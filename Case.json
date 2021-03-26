@@ -108,25 +108,5 @@
         "isSolved": true,
         "Crime": "assault",
         "ID": 2615
-    },
-    {
-        "caseEvidence": [
-            2227
-        ],
-        "isFederal": false,
-        "CriminalsID": [
-            89
-        ],
-        "VictimsID": [],
-        "POIID": [],
-        "Severity": 5,
-        "SuspectsID": [],
-        "Name": "unfornate...",
-        "WitnessesID": [],
-        "OfficersID": [],
-        "DATE": "5\/6\/77",
-        "isSolved": true,
-        "Crime": "hit and run",
-        "ID": 2227
     }
 ]
