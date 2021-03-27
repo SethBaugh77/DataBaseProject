@@ -7,13 +7,29 @@ public class Evidence {
 	private String bloodEvidence;
 	private String fingerprintEvidence;
 	private String weaponEvidence;
+	private String otherEvidence;
+	//
 
-	public Evidence(long ID, String Vehicle, String bloodEvidence, String fingerPrintEvidence, String weaponEvidence) {
+	public Evidence(long ID, String Vehicle, String bloodEvidence, String fingerPrintEvidence, String weaponEvidence,
+			String otherEvidence) {
 		this.ID = ID;
 		this.vehicle = Vehicle;
 		this.bloodEvidence = bloodEvidence;
 		this.fingerprintEvidence = fingerPrintEvidence;
 		this.weaponEvidence = weaponEvidence;
+		this.otherEvidence = otherEvidence;
+	}
+
+	public void setID(long ID) {
+		this.ID = ID;
+	}
+
+	public String getOtherEvidence() {
+		return this.otherEvidence;
+	}
+
+	public void setOtherEvidence(String otherEvidence) {
+		this.otherEvidence = otherEvidence;
 	}
 
 	public long getID() {

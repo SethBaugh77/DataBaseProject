@@ -64,6 +64,7 @@ public abstract class DataConstants {
     protected final static String EVIDENCE_BLOOD = "bloodEvidence";
     protected final static String EVIDENCE_WEAPON = "weaponEvidence";
     protected final static String CASE_EVIDENCE = "caseEvidence";
+    protected final static String EVIDENCE_OTHER = "otherEvidence";
 
     
 }

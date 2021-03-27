@@ -373,10 +373,11 @@ public class DataLoader extends DataConstants {
                 String fingerPrintEvidence = (String) personJSON.get(EVIDENCE_FINGER_PRINT);
                 String bloodEvidence = (String) personJSON.get(EVIDENCE_BLOOD);
                 String weaponEvidence = (String) personJSON.get(EVIDENCE_WEAPON);
+                String otherEvidence = (String)personJSON.get(EVIDENCE_OTHER);
 
                 long ID = (long) personJSON.get(PERSON_ID);
 
-                evidence.add(new Evidence(ID, Vehicle, bloodEvidence, fingerPrintEvidence, weaponEvidence));
+                evidence.add(new Evidence(ID, Vehicle, bloodEvidence, fingerPrintEvidence, weaponEvidence, otherEvidence));
 
             }
 

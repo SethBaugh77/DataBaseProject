@@ -15,3 +15,16 @@ isCriminal: false
 Occupation: teacher
 lastLocation: park
 Notes: long hair
+Case Details:
+Case Name: bad day on the job
+Case ID:2615
+Case crimeType:assault
+Case Date:3/3/21
+Case Severity:5
+Persons related to case:marysmith
+Evidence:
+___________________Blood Evidence: AB+
+Vehicle Evidence: blue minivab
+Weapon Evidence: bloody tomahawk
+FingerPrint Evidence: N/A
+Other Evidence: null

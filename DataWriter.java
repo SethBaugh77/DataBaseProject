@@ -519,6 +519,7 @@ public class DataWriter extends DataConstants {
         evidenceDetails.put(EVIDENCE_FINGER_PRINT, evidence.getFingerprintEvidence());
         evidenceDetails.put(EVIDENCE_WEAPON, evidence.getWeaponEvidence());
         evidenceDetails.put(PERSON_ID, evidence.getID());
+        evidenceDetails.put(EVIDENCE_OTHER, evidence.getOtherEvidence());
 
         return evidenceDetails;
     }

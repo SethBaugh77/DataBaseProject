@@ -235,13 +235,14 @@ public class frontEnd {
             String ans6 = keyboard.nextLine();
             if (ans6.equalsIgnoreCase("Y") || ans6.equalsIgnoreCase("Yes")) {
                 System.out.println("Enter evidence. Press enter after each insert");
-                System.out.println("1. Blood evidence 2. Vehicle evidence 3. fingerPrintEvidence 4. weaponEvidence 5.");
+                System.out.println("1. Blood evidence 2. Vehicle evidence 3. fingerPrintEvidence 4. weaponEvidence 5. other evidence");
                 String bloodEvidence = keyboard.nextLine();
                 String vehicleEvidence = keyboard.nextLine();
                 String fingerPrintEvidence = keyboard.nextLine();
                 String weaponEvidence = keyboard.nextLine();
+                String otherEvidence = keyboard.nextLine();
                 Evidence evidence = new Evidence(ID, vehicleEvidence, bloodEvidence, fingerPrintEvidence,
-                        weaponEvidence);
+                        weaponEvidence, otherEvidence);
                 _case.getEvidence().add(evidence.getID());
                 dbase.getCases().add(_case);
                 dBase.getEvidence().add(evidence);
@@ -552,7 +553,7 @@ public class frontEnd {
             System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
             System.out.println(
                     "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-            System.out.println("10. occupation? 11. lastLocation 12. age 13. Race 15. Notes ");
+            System.out.println("10. occupation? 11. lastLocation 12. age 13. Race 14. Notes ");
 
             String fName, lName, Gender, Address, Phone, DOB, crimeType, Occupation, lastLocation, Notes, Race, Tatoos;
             long Age, Height, Weight, numCrimes;
@@ -589,7 +590,7 @@ public class frontEnd {
             System.out.println(
                     "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
             System.out
-                    .println("10. occupation? 11. lastLocation 12. age 13. body type, 14. Race 15. Criminal 17. Notes");
+                    .println("10. occupation? 11. lastLocation 12. age 13. body type, 14. Race 15. isCriminal? 16. Notes");
             String fName, lName, Gender, Address, Phone, DOB, Occupation, lastLocation, bodyType, Notes, Race, Tatoos;
             long Age, Height, Weight, numCrimes;
             boolean Adult, inJail, isCriminal;
@@ -626,9 +627,9 @@ public class frontEnd {
             System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
             System.out.println(
                     "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-            System.out.println("10. badgeNumber 11. rank 12. statement 13. age 14. Race 15. Notes");
+            System.out.println("10. badgeNumber 11. rank 12. statement 13. age 14. Race");
 
-            String fName, lName, Gender, Address, Phone, DOB, Rank, Statement, Race, Notes;
+            String fName, lName, Gender, Address, Phone, DOB, Rank, Statement, Race;
             long Age, Height, Weight, badgeNumber;
             boolean Adult;
 
@@ -662,7 +663,7 @@ public class frontEnd {
             System.out.println("Enter in the folliwng attributes for your person. Press enter after every insert");
             System.out.println(
                     "1. firstName 2. lastName 3. height 4. weight 5. gender 6. address 7. phone 8. DOB 9. Adult?");
-            System.out.println("10. Age 11. Statement 12. Race 13. Notes");
+            System.out.println("10. Age 11. Statement 12. Race");
             String fName, lName, Gender, Address, Phone, DOB, Statement, Race, Notes;
             long Age, Height, Weight;
             boolean Adult;
@@ -703,7 +704,7 @@ public class frontEnd {
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            Height = keyboard.nextLong(); // Criminal
+            Height = keyboard.nextLong(); //victim
             Weight = keyboard.nextLong();
             keyboard.nextLine();
             Gender = keyboard.nextLine();
@@ -805,6 +806,7 @@ public class frontEnd {
                     System.out.println("Vehicle Evidence: " + dBase.getEvidence().get(k).getVehicle());
                     System.out.println("Weapon Evidence: " + dBase.getEvidence().get(k).getWeaponEvidence());
                     System.out.println("FingerPrint Evidence: " + dBase.getEvidence().get(k).getFingerprintEvidence());
+                    System.out.println("Other Evidence: " + dBase.getEvidence().get(k).getOtherEvidence());;
                 }
             }
 
@@ -1080,6 +1082,7 @@ public class frontEnd {
                         myWriter.write("Weapon Evidence: " + dBase.getEvidence().get(k).getWeaponEvidence() + "\n");
                         myWriter.write(
                                 "FingerPrint Evidence: " + dBase.getEvidence().get(k).getFingerprintEvidence() + "\n");
+                                myWriter.write("Other Evidence: " + dBase.getEvidence().get(k).getOtherEvidence() + "\n");
                     }
                 }
 

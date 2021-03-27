@@ -1,1 +1,32 @@
-[{"lName":"harry","Address":"555 idk lane","Gender":"M","Weight":140,"fName":"bob","Phone":"555 444 3333","DOB":"5\/6\/77","Race":"white","statement":"i saw a bad guy","Height":65,"ID":196,"Age":65,"isAdult":true},{"lName":"Clemont","Address":"123 Gervais St., Columbia SC, 29210","Gender":"M","Weight":0,"fName":"Henry","Phone":"803-898-7766","DOB":"N\/A","Race":"the man came in with the gun, and Henry hid behind the cash register.  He saw him leaving in a blue mini-van.","statement":"the man came in with the gun, and Henry hid behind the cash register.  He saw him leaving in a blue mini-van.","Height":0,"ID":337,"Age":0,"isAdult":true},{"lName":"mcFly","Address":"999 bowling alley road","Gender":"M","Weight":150,"fName":"marty","Phone":"123 456 9999","DOB":"2\/3\/22","Race":"white","statement":"idk m8","Height":59,"ID":559,"Age":7,"isAdult":true}]
+[
+    {
+        "lName": "harry",
+        "Address": "555 idk lane",
+        "Gender": "M",
+        "Weight": 140,
+        "fName": "bob",
+        "Phone": "555 444 3333",
+        "DOB": "5\/6\/77",
+        "Race": "white",
+        "statement": "i saw a bad guy",
+        "Height": 65,
+        "ID": 196,
+        "Age": 65,
+        "isAdult": true
+    },
+    {
+        "lName": "mcFly",
+        "Address": "999 bowling alley road",
+        "Gender": "M",
+        "Weight": 150,
+        "fName": "marty",
+        "Phone": "123 456 9999",
+        "DOB": "2\/3\/22",
+        "Race": "white",
+        "statement": "idk m8",
+        "Height": 59,
+        "ID": 559,
+        "Age": 7,
+        "isAdult": true
+    }
+]
