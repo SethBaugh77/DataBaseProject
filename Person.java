@@ -1,10 +1,10 @@
 
-public class Person {
+public class  Person {
 	protected String fname;
 	protected String lname;
-	protected long age;
-	protected long height;
-	protected long weight;
+	protected String age;
+	protected String height;
+	protected String weight;
 	protected String gender;
 	protected String address;
 	protected String phone;
@@ -12,12 +12,13 @@ public class Person {
 	protected boolean isAdult;
 	protected long ID;
 	protected String race;
+	//protected String hairColor;
 	//protected String tatoos;
 	public Person()
 	{
 		
 	}
-	public Person(String fName, String lname, long Age, long Height, long Weight, String Gender, String Address,
+	public Person(String fName, String lname, String Age, String Height, String Weight, String Gender, String Address,
 			String Phone, String DateOfBirth, boolean IsAdult,long ID, String race) {
 		this.fname = fName;
 		this.lname = lname;
@@ -95,15 +96,15 @@ public class Person {
        * Gets the age of the person.
        * @return this age.
        */
-	public long getAge() {
+	public String getAge() {
 		return this.age;
 	}
 
 	/**
    	* Changes age.
- 	* @param long
+ 	* @param String
 	*/
-	public void setAge(long age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 
@@ -111,15 +112,15 @@ public class Person {
        * Gets the height of the person.
        * @return this height.
        */
-	public long getHeight() {
+	public String getHeight() {
 		return this.height;
 	}
 
 	/**
    	* Changes height.
- 	* @param long
+ 	* @param String
 	*/
-	public void setHeight(long height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
 
@@ -127,15 +128,15 @@ public class Person {
        * Gets the weight of the person.
        * @return this weight.
        */
-	public long getWeight() {
+	public String getWeight() {
 		return this.weight;
 	}
 
 	/**
    	* Changes weight.
- 	* @param long
+ 	* @param String
 	*/
-	public void setWeight(long weight) {
+	public void setWeight(String weight) {
 		this.weight = weight;
 	}
 
@@ -233,7 +234,7 @@ public class Person {
 
 	/**
    	* Changes ID.
- 	* @param long
+ 	* @param String
 	*/
 	public void setID(long ID) {
 		this.ID = ID;

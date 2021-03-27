@@ -1,1 +1,20 @@
-[{"lName":"Bob","Address":"999 idk lane","lastLocation":"school","Gender":"M","Weight":150,"Occupation":"teacher","fName":"Billy","Phone":"888 888 8888","DOB":"2\/2\/22","Race":"billy","Height":65,"ID":871,"Age":65,"isAdult":true,"Notes":"bad guy"},{"lName":"Bob","Address":"999 idk lane","lastLocation":"school","Gender":"M","Weight":150,"Occupation":"teacher","fName":"Billy","Phone":"888 888 8888","DOB":"2\/2\/22","Race":"1","Height":65,"ID":809,"Age":65,"isAdult":true,"Notes":"bad guy"},{"lName":"interest","Address":"999 sicamore lane","lastLocation":"school","Gender":"M","Weight":300,"Occupation":"teacher","fName":"uri","Phone":"888 888 8888","DOB":"2\/3\/44","Race":"White","Height":79,"ID":31,"Age":91,"isAdult":true,"Notes":"shoulder length hair"}]
+[
+    {
+        "lName": "interest",
+        "Address": "123 sicamore lane",
+        "lastLocation": "school",
+        "Gender": "M",
+        "Weight": "120 lbs",
+        "Occupation": "teacher",
+        "fName": "joe interest",
+        "Phone": "222 222 2222",
+        "DOB": "3\/3\/33",
+        "Race": "white",
+        "Height": "5\"10",
+        "ID": 348,
+        "Age": "55",
+        "isAdult": true,
+        "Notes": "dove tatoo",
+        "hairColor": "black"
+    }
+]

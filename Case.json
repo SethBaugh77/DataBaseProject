@@ -1,112 +1,46 @@
 [
     {
-        "caseEvidence": null,
+        "caseEvidence": [
+            2566
+        ],
         "isFederal": false,
         "CriminalsID": [],
         "VictimsID": [],
         "POIID": [],
-        "Severity": 5,
-        "SuspectsID": [],
-        "Name": "bad day at the gym",
-        "WitnessesID": [
-            196
-        ],
-        "OfficersID": [],
-        "DATE": "5\/4\/33",
-        "isSolved": false,
-        "Crime": "hit and run",
-        "ID": 2886
-    },
-    {
-        "caseEvidence": null,
-        "isFederal": false,
-        "CriminalsID": [
-            777
-        ],
-        "VictimsID": [],
-        "POIID": [],
-        "Severity": 5,
-        "SuspectsID": [],
-        "Name": "bad day at the gym",
-        "WitnessesID": [],
-        "OfficersID": [],
-        "DATE": "5\/4\/33",
-        "isSolved": false,
-        "Crime": "robbery",
-        "ID": 2429
-    },
-    {
-        "caseEvidence": null,
-        "isFederal": false,
-        "CriminalsID": [],
-        "VictimsID": [],
-        "POIID": [
-            809
-        ],
-        "Severity": 5,
-        "SuspectsID": [],
-        "Name": "yikes m8",
-        "WitnessesID": [],
-        "OfficersID": [],
-        "DATE": "4\/4\/44",
-        "isSolved": false,
-        "Crime": "murder",
-        "ID": 2574
-    },
-    {
-        "caseEvidence": null,
-        "isFederal": false,
-        "CriminalsID": [],
-        "VictimsID": [],
-        "POIID": [],
-        "Severity": 5,
+        "Severity": "5",
         "SuspectsID": [
-            948
+            873
         ],
         "Name": "havoc at gamestop",
         "WitnessesID": [
-            337
+            312
         ],
-        "OfficersID": [],
-        "DATE": "3\/3\/21",
-        "isSolved": false,
-        "Crime": "robbery at gunPoint",
-        "ID": 2337
-    },
-    {
-        "caseEvidence": null,
-        "isFederal": false,
-        "CriminalsID": [
-            758
-        ],
-        "VictimsID": [],
-        "POIID": [],
-        "Severity": 4,
-        "SuspectsID": [],
-        "Name": "havoc at gamestop",
-        "WitnessesID": [],
         "OfficersID": [],
         "DATE": "3\/3\/21 7-8 PM",
         "isSolved": false,
         "Crime": "robbery",
-        "ID": 2827
+        "ID": 2566
     },
     {
-        "caseEvidence": null,
-        "isFederal": false,
-        "CriminalsID": [
-            319
+        "caseEvidence": [
+            2053
         ],
+        "isFederal": false,
+        "CriminalsID": [],
         "VictimsID": [],
         "POIID": [],
-        "Severity": 5,
-        "SuspectsID": [],
-        "Name": "bad day on the job",
-        "WitnessesID": [],
+        "Severity": "5",
+        "SuspectsID": [
+            847
+        ],
+        "Name": "havoc at gamestop",
+        "WitnessesID": [
+            215
+        ],
         "OfficersID": [],
-        "DATE": "3\/3\/21",
-        "isSolved": true,
-        "Crime": "assault",
-        "ID": 2615
+        "DATE": "3\/3\/21 7-8 PM",
+        "isSolved": false,
+        "Crime": "robbery",
+        "ID": 2053
     }
 ]

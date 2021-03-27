@@ -1,18 +1,29 @@
 
 import java.util.ArrayList;
 
+import javax.swing.text.StringContent;
+
 public class Suspect extends PersonOfInterest {
-    protected String bodyType;
-    protected boolean isCriminal;
+    private String bodyType;
+    private boolean isCriminal;
+    
+
+    // 
    // ArrayList<Suspect> relatives = new ArrayList<Suspect>();
 
-    public Suspect(String fname, String lname, long age, long height, long weight, String gender, String address,
-            String phone, String dateOfBirth, boolean isAdult, long id, String occupation,String lastLocation, String bodyType, boolean isCriminal, String race,String Notes) {
-        super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult, occupation, lastLocation, id, race,Notes);
+    public Suspect(String fname, String lname, String age, String height, String weight, String gender, String address,
+            String phone, String dateOfBirth, boolean isAdult, long id, String occupation,String lastLocation, String bodyType, boolean isCriminal, String race,String Notes, String hairColor) {
+        super(fname, lname, age, height, weight, gender, address, phone, dateOfBirth, isAdult, occupation, lastLocation, id, race,Notes, hairColor);
         this.bodyType = bodyType;
         this.isCriminal = isCriminal;
+        this.hairColor = hairColor;
         //this.relatives = relatives;
     }
+    public boolean isIsCriminal() {
+        return this.isCriminal;
+    }
+
+    // 
 
     /**
     * Gets the body type.

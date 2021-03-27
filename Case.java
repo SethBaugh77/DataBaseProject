@@ -14,14 +14,14 @@ public class Case {
 	private String crime;
 	private String date;
 	private boolean isSolved;
-	private long severity;
+	private String severity;
 	private boolean isFederal;
 
 	public Case()
 	{
 
 	}
-	public Case(String name, String crime, String date, boolean isSolved, long severity, boolean isFederal, long ID,
+	public Case(String name, String crime, String date, boolean isSolved, String severity, boolean isFederal, long ID,
 			ArrayList<Long> criminals, ArrayList<Long> victims, ArrayList<Long> witnesses, ArrayList<Long> officers,
 			ArrayList<Long> poi, ArrayList<Long> suspects, ArrayList<Long> evidence) {
 		this.name = name;
@@ -81,7 +81,7 @@ public class Case {
 		return CaseID;
 	}
 
-	public void setCaseID(int caseID) {
+	public void setCaseID(long caseID) {
 		CaseID = caseID;
 	}
 
@@ -157,11 +157,11 @@ public class Case {
 		this.isSolved = isSolved;
 	}
 
-	public long getSeverity() {
+	public String getSeverity() {
 		return this.severity;
 	}
 
-	public void setSeverity(int severity) {
+	public void setSeverity(String severity) {
 		this.severity = severity;
 	}
 

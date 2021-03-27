@@ -18,5 +18,15 @@
         "ID": 1566,
         "Admin": false,
         "Password": "hello"
+    },
+    {
+        "lName": "mcbride",
+        "fName": "harry",
+        "Email": "harrym@gmail.com",
+        "Username": "harrym",
+        "Phone": "444 444 4444",
+        "ID": 1552,
+        "Admin": false,
+        "Password": "bob"
     }
 ]

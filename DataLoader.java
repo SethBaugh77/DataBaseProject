@@ -26,9 +26,9 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String) personJSON.get(PERSON_LAST_NAME);
-                long age = (long) personJSON.get(PERSON_AGE);
-                long height = (long) personJSON.get(PERSON_HEIGHT);
-                long weight = (long) personJSON.get(PERSON_WEIGHT);
+                String age = (String) personJSON.get(PERSON_AGE);
+                String height = (String) personJSON.get(PERSON_HEIGHT);
+                String weight = (String) personJSON.get(PERSON_WEIGHT);
                 String address = (String) personJSON.get(PERSON_ADDRESS);
                 String gender = (String) personJSON.get(PERSON_GENDER);
                 String phone = (String) personJSON.get(PERSON_PHONE);
@@ -37,11 +37,13 @@ public class DataLoader extends DataConstants {
                 long ID = (long) personJSON.get(PERSON_ID);
                 boolean inJail = (boolean) personJSON.get(PERSON_IN_JAIL);
                 String Notes = (String) personJSON.get(PERSON_NOTES);
-                long numCrimes = (long) personJSON.get(PERSON_NUM_CRIMES);
+                String numCrimes = (String) personJSON.get(PERSON_NUM_CRIMES);
                 String Race = (String) personJSON.get(PERSON_RACE);
+                String crimeType = (String)personJSON.get(PERSON_CRIME_TYPE);
+                String hairColor = (String)personJSON.get(PERSON_HAIR_COLOR);
 
-                criminal.add(new Criminal(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult,
-                        inJail, Notes, numCrimes, ID, Race));
+                criminal.add(new Criminal(firstName, lastName, age, height, weight,crimeType ,gender, address, phone, DOB, isAdult,
+                        inJail, Notes, numCrimes, ID, Race, hairColor));
             }
 
             // return crim;
@@ -70,9 +72,9 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String) personJSON.get(PERSON_LAST_NAME);
-                long age = (long) personJSON.get(PERSON_AGE);
-                long height = (long) personJSON.get(PERSON_HEIGHT);
-                long weight = (long) personJSON.get(PERSON_WEIGHT);
+                String age = (String) personJSON.get(PERSON_AGE);
+                String height = (String) personJSON.get(PERSON_HEIGHT);
+                String weight = (String) personJSON.get(PERSON_WEIGHT);
                 String address = (String) personJSON.get(PERSON_ADDRESS);
                 String gender = (String) personJSON.get(PERSON_GENDER);
                 String phone = (String) personJSON.get(PERSON_PHONE);
@@ -112,9 +114,9 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String) personJSON.get(PERSON_LAST_NAME);
-                long age = (long) personJSON.get(PERSON_AGE);
-                long height = (long) personJSON.get(PERSON_HEIGHT);
-                long weight = (long) personJSON.get(PERSON_WEIGHT);
+                String age = (String) personJSON.get(PERSON_AGE);
+                String height = (String) personJSON.get(PERSON_HEIGHT);
+                String weight = (String) personJSON.get(PERSON_WEIGHT);
                 String address = (String) personJSON.get(PERSON_ADDRESS);
                 String gender = (String) personJSON.get(PERSON_GENDER);
                 String phone = (String) personJSON.get(PERSON_PHONE);
@@ -127,10 +129,11 @@ public class DataLoader extends DataConstants {
                 String bodyType = (String) personJSON.get(PERSON_BODY_TYPE);
                 boolean isCriminal = (boolean) personJSON.get(PERSON_IS_CRIMINAL);
                 String Race = (String) personJSON.get(PERSON_RACE);
+                String hairColor = (String)personJSON.get(PERSON_HAIR_COLOR);
                // String Tatoos = (String) personJSON.get(PERSON_TATOOS);
 
                 suspect.add(new Suspect(firstName, lastName, age, height, weight, gender, address, phone, DOB, isAdult, ID,
-                        occupation, lastLocation, bodyType, isCriminal, Race, poiNotes));
+                        occupation, lastLocation, bodyType, isCriminal, Race, poiNotes, hairColor));
             }
 
             // return sus;
@@ -159,9 +162,9 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String) personJSON.get(PERSON_LAST_NAME);
-                long age = (long) personJSON.get(PERSON_AGE);
-                long height = (long) personJSON.get(PERSON_HEIGHT);
-                long weight = (long) personJSON.get(PERSON_WEIGHT);
+                String age = (String) personJSON.get(PERSON_AGE);
+                String height = (String) personJSON.get(PERSON_HEIGHT);
+                String weight = (String) personJSON.get(PERSON_WEIGHT);
                 String address = (String) personJSON.get(PERSON_ADDRESS);
                 String gender = (String) personJSON.get(PERSON_GENDER);
                 String phone = (String) personJSON.get(PERSON_PHONE);
@@ -202,16 +205,16 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String) personJSON.get(PERSON_LAST_NAME);
-                long age = (long) personJSON.get(PERSON_AGE);
-                long height = (long) personJSON.get(PERSON_HEIGHT);
-                long weight = (long) personJSON.get(PERSON_WEIGHT);
+                String age = (String) personJSON.get(PERSON_AGE);
+                String height = (String) personJSON.get(PERSON_HEIGHT);
+                String weight = (String) personJSON.get(PERSON_WEIGHT);
                 String address = (String) personJSON.get(PERSON_ADDRESS);
                 String gender = (String) personJSON.get(PERSON_GENDER);
                 String phone = (String) personJSON.get(PERSON_PHONE);
                 String DOB = (String) personJSON.get(PERSON_DOB);
                 boolean isAdult = (boolean) personJSON.get(PERSON_IS_ADULT);
                 long ID = (long) personJSON.get(PERSON_ID);
-                long bNum = (long) personJSON.get(PERSON_BADGE_NUMBER);
+                String bNum = (String) personJSON.get(PERSON_BADGE_NUMBER);
                 String officerRank = (String) personJSON.get(PERSON_OFFICER_RANK);
                 String officerState = (String) personJSON.get(PERSON_STATEMENT);
                 String Race = (String) personJSON.get(PERSON_RACE);
@@ -246,9 +249,9 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
                 String firstName = (String) personJSON.get(PERSON_FIRST_NAME);
                 String lastName = (String) personJSON.get(PERSON_LAST_NAME);
-                long age = (long) personJSON.get(PERSON_AGE);
-                long height = (long) personJSON.get(PERSON_HEIGHT);
-                long weight = (long) personJSON.get(PERSON_WEIGHT);
+                String age = (String) personJSON.get(PERSON_AGE);
+                String height = (String) personJSON.get(PERSON_HEIGHT);
+                String weight = (String) personJSON.get(PERSON_WEIGHT);
                 String address = (String) personJSON.get(PERSON_ADDRESS);
                 String gender = (String) personJSON.get(PERSON_GENDER);
                 String phone = (String) personJSON.get(PERSON_PHONE);
@@ -261,8 +264,9 @@ public class DataLoader extends DataConstants {
                 String Race = (String) personJSON.get(PERSON_RACE);
                 String Notes = (String) personJSON.get(PERSON_NOTES);
                 //String Tatoos = (String) personJSON.get(PERSON_TATOOS);
+                String hairColor = (String)personJSON.get(PERSON_HAIR_COLOR);
                 poi.add(new PersonOfInterest(firstName, lastName, age, height, weight, gender, address, phone, DOB,
-                        isAdult, occupation, lastLocation, ID, Race, Notes));
+                        isAdult, occupation, lastLocation, ID, Race, Notes, hairColor));
             }
 
         } catch (Exception e) {
@@ -329,7 +333,7 @@ public class DataLoader extends DataConstants {
                 String Crime = (String) personJSON.get(CASE_CRIME);
 
                 String Date = (String) personJSON.get(CASE_DATE);
-                long Severity = (long) personJSON.get(CASE_SEVERITY);
+                String Severity =(String) personJSON.get(CASE_SEVERITY);
                 boolean isFederal = (boolean) personJSON.get(CASE_IS_FEDERAL);
                 boolean isSolved = (boolean) personJSON.get(CASE_IS_SOLVED);
                 ArrayList<Long> criminals = (ArrayList<Long>) personJSON.get(CASE_CRIMINALS_ID);

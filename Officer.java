@@ -1,10 +1,10 @@
 public class Officer extends Person {
-    protected long badgeNumber;
+    protected String badgeNumber;
     protected String officerRank;
     protected String officerStatement;
 
-    public Officer(long bnum, String officerRank, String officerState, String fName, String lname, long Age, long Height,
-            long Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, long id, String race) {
+    public Officer(String bnum, String officerRank, String officerState, String fName, String lname, String Age, String Height,
+            String Weight, String Gender, String Address, String Phone, String DateOfBirth, boolean IsAdult, long id, String race) {
         super(fName, lname, Age, Height, Weight, Gender, Address, Phone, DateOfBirth, IsAdult, id, race);
         badgeNumber = bnum;
         this.officerRank = officerRank;
@@ -15,7 +15,7 @@ public class Officer extends Person {
    * Gets the badge number of the officer.
    * @return this officer badge number.
    */
-    public long getBadgeNumber() {
+    public String getBadgeNumber() {
         return this.badgeNumber;
     }
 
@@ -23,7 +23,7 @@ public class Officer extends Person {
    * Changes badge number .
    * @param int
    */
-    public void setBadgeNumber(int badgeNumber) {
+    public void setBadgeNumber(String badgeNumber) {
         this.badgeNumber = badgeNumber;
     }
 

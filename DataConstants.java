@@ -65,6 +65,8 @@ public abstract class DataConstants {
     protected final static String EVIDENCE_WEAPON = "weaponEvidence";
     protected final static String CASE_EVIDENCE = "caseEvidence";
     protected final static String EVIDENCE_OTHER = "otherEvidence";
+    protected final static String PERSON_CRIME_TYPE = "crimeType";
+    protected final static String PERSON_HAIR_COLOR = "hairColor";
 
     
 }
