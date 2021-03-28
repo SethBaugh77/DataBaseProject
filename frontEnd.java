@@ -845,8 +845,9 @@ public class frontEnd {
             for (int k = 0; k < _case.getCriminals().size(); k++) {
                 for (int i = 0; i < dBase.getCriminals().size(); i++) {
                     if (_case.getCriminals().get(k) == dBase.getCriminals().get(i).getID()) {
+                        System.out.println("Criminals: ");
                         System.out.println(
-                                dBase.getCriminals().get(i).getFname() + dBase.getCriminals().get(i).getLname());
+                                dBase.getCriminals().get(i).getFname() + " " +dBase.getCriminals().get(i).getLname());
                         names.add(dBase.getCriminals().get(i));
                     }
                 }
@@ -855,8 +856,9 @@ public class frontEnd {
 
                 for (int i = 0; i < dBase.getOfficers().size(); i++) {
                     if (_case.getOfficers().get(k) == dBase.getOfficers().get(i).getID()) {
+                        System.out.println("Officers: ");
                         System.out
-                                .println(dBase.getOfficers().get(i).getFname() + dBase.getOfficers().get(i).getLname());
+                                .println(dBase.getOfficers().get(i).getFname() + " " +dBase.getOfficers().get(i).getLname());
                         names.add(dBase.getOfficers().get(i));
                     }
                 }
@@ -865,8 +867,9 @@ public class frontEnd {
                 for (int i = 0; i < dBase.getSuspects().size(); i++) {
 
                     if (_case.getSuspects().get(k) == dBase.getSuspects().get(i).getID()) {
+                        System.out.println("Suspects: ");
                         System.out
-                                .println(dBase.getSuspects().get(i).getFname() + dBase.getSuspects().get(i).getLname());
+                                .println(dBase.getSuspects().get(i).getFname() + " " +dBase.getSuspects().get(i).getLname());
                         names.add(dBase.getSuspects().get(i));
                     }
                 }
@@ -875,7 +878,8 @@ public class frontEnd {
                 for (int i = 0; i < dBase.getPOI().size(); i++) {
 
                     if (_case.getPoi().get(k) == dBase.getPOI().get(i).getID()) {
-                        System.out.println(dBase.getPOI().get(i).getFname() + dBase.getPOI().get(i).getLname());
+                        System.out.println("Persons of Interest: ");
+                        System.out.println(dBase.getPOI().get(i).getFname() + " " +dBase.getPOI().get(i).getLname());
                         names.add(dBase.getPOI().get(i));
                     }
                 }
@@ -884,17 +888,19 @@ public class frontEnd {
                 for (int i = 0; i < dBase.getWitnesses().size(); i++) {
 
                     if (_case.getWitnesses().get(k) == dBase.getWitnesses().get(i).getID()) {
+                        System.out.println("Witnesses: ");
                         System.out.println(
-                                dBase.getWitnesses().get(i).getFname() + dBase.getWitnesses().get(i).getLname());
+                                dBase.getWitnesses().get(i).getFname() + " " +dBase.getWitnesses().get(i).getLname());
                         names.add(dBase.getWitnesses().get(i));
                     }
                 }
             }
             for (int k = 0; k < _case.getVictims().size(); k++) {
                 for (int i = 0; i < dBase.getVictims().size(); i++) {
+                    System.out.println("Victims: ");
 
                     if (_case.getVictims().get(k) == dBase.getVictims().get(i).getID()) {
-                        System.out.println(dBase.getVictims().get(i).getFname() + dBase.getVictims().get(i).getLname());
+                        System.out.println(dBase.getVictims().get(i).getFname() + " " +dBase.getVictims().get(i).getLname());
                         names.add(dBase.getVictims().get(i));
                     }
                 }
