@@ -1,17 +1,13 @@
-First Name: rebecca
-Last Name: sus
-Addres: 999 idk lane
-Age: 65
-DOB: 5/5/55
-Gender F
-Height: 5"5
-ID: 496
-Phone: 555 444 3333
-Race: white
-Weight: 130
+First Name: Henry
+Last Name: Clemont
+Addres: 123 Gervais St., Columbia SC
+Age: unknown
+DOB: unknown
+Gender M
+Height: unknown
+ID: 215
+Phone: 803-898-7766
+Race: unknown
+Weight: unknown
 Is Adult: true
-bodyType: fit
-isCriminal: true
-Occupation: doctor
-lastLocation: church
-Notes: killed someone during surgery
+Witness Statement: the man came in with the gun, and Henry hid behind the cash register.  He saw him leaving in a blue mini-van.

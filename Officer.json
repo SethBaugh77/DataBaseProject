@@ -1,1 +1,19 @@
-[{"lName":"montgomery","Address":"9999 bowling alley road","Gender":"M","badgeNumber":"1234","Weight":"180","fName":"billy","Phone":"144 331 1111","DOB":"december 12th 1991","Race":"black","statement":"im the best","officerRank":"sheriff","Height":"5\"10","ID":760,"Age":"55","isAdult":true}]
+[
+    {
+        "lName": "montgomery",
+        "Address": "9999 bowling alley road",
+        "Gender": "M",
+        "badgeNumber": "1234",
+        "Weight": "180",
+        "fName": "billy",
+        "Phone": "144 331 1111",
+        "DOB": "december 12th 1991",
+        "Race": "black",
+        "statement": "im the best",
+        "officerRank": "sheriff",
+        "Height": "5\"10",
+        "ID": 760,
+        "Age": "55",
+        "isAdult": true
+    }
+]

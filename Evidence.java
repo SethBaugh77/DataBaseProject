@@ -1,4 +1,8 @@
-
+ 
+	 /**
+   	* a public class of evidence
+   	* @author Jonathan Brown
+   	*/
 public class Evidence {
 	private long ID;
 
@@ -9,6 +13,15 @@ public class Evidence {
 	private String weaponEvidence;
 	private String otherEvidence;
 
+	 /**
+	  * Creates an instnace of evidence
+	  * @param ID connects Case to evidence
+	  * @param Vehicle vechiles related to case
+	  * @param bloodEvidence bloodEvidence found
+	  * @param fingerPrintEvidence fingerPrintEvidence found
+	  * @param weaponEvidence weapons found/used
+	  * @param otherEvidence additional random evidence
+	  */
 	public Evidence(long ID, String Vehicle, String bloodEvidence, String fingerPrintEvidence, String weaponEvidence,
 			String otherEvidence) {
 		this.ID = ID;
@@ -18,51 +31,99 @@ public class Evidence {
 		this.weaponEvidence = weaponEvidence;
 		this.otherEvidence = otherEvidence;
 	}
-
+ 
+	 /**
+   	* Changes the ID.
+   	* @param int ID.  
+   	*/
 	public void setID(long ID) {
 		this.ID = ID;
 	}
 
+	 /**
+   	* Gets the evidence.
+   	* @return this evidence.
+   	*/
 	public String getOtherEvidence() {
 		return this.otherEvidence;
 	}
 
+	 /**
+   	* Changes the set other evidence.
+   	* @param string evidence.  
+   	*/
 	public void setOtherEvidence(String otherEvidence) {
 		this.otherEvidence = otherEvidence;
 	}
 
+	 /**
+   	* Gets the ID.
+   	* @return this ID.
+   	*/
 	public long getID() {
 		return this.ID;
 	}
 
+	 /**
+   	* Gets the vehicle.
+   	* @return this vehicle.
+   	*/
 	public String getVehicle() {
 		return vehicle;
 	}
 
+	 /**
+   	* Changes the vehicle.
+   	* @param string vehicle.  
+   	*/
 	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
 
+	 /**
+   	* Gets the blood evidence.
+   	* @return this blood evidence.
+   	*/
 	public String getBloodEvidence() {
 		return bloodEvidence;
 	}
 
+	 /**
+   	* Changes the blood evidence.
+   	* @param string blood evidence.  
+   	*/
 	public void setBloodEvidence(String bloodEvidence) {
 		this.bloodEvidence = bloodEvidence;
 	}
 
+	 /**
+   	* Gets the finger print.
+   	* @return this finger print.
+   	*/
 	public String getFingerprintEvidence() {
 		return fingerprintEvidence;
 	}
 
+	 /**
+   	* Changes the finger print.
+   	* @param string fingerprint.  
+   	*/
 	public void setFingerprintEvidence(String fingerprintEvidence) {
 		this.fingerprintEvidence = fingerprintEvidence;
 	}
 
+	 /**
+   	* Gets the weapon.
+   	* @return this weapon.
+   	*/
 	public String getWeaponEvidence() {
 		return weaponEvidence;
 	}
 
+	 /**
+   	* Changes the weapon.
+   	* @param string weapon.  
+   	*/
 	public void setWeaponEvidence(String weaponEvidence) {
 		this.weaponEvidence = weaponEvidence;
 	}

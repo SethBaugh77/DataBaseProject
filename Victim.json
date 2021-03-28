@@ -1,1 +1,18 @@
-[{"lName":"davis","Address":"999 riptide road","Gender":"F","Weight":"180","isHealthy":false,"fName":"mary","Phone":"999 999 0000","DOB":"2\/2\/22","Race":"white","statement":"help im stuck","Height":"5\"6","ID":200,"Age":"29","isAdult":true}]
+[
+    {
+        "lName": "davis",
+        "Address": "999 riptide road",
+        "Gender": "F",
+        "Weight": "180",
+        "isHealthy": false,
+        "fName": "mary",
+        "Phone": "999 999 0000",
+        "DOB": "2\/2\/22",
+        "Race": "white",
+        "statement": "help im stuck",
+        "Height": "5\"6",
+        "ID": 200,
+        "Age": "29",
+        "isAdult": true
+    }
+]

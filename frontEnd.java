@@ -982,7 +982,7 @@ public class frontEnd {
 
                 else if (person.get(i) instanceof Officer) {
                     try {
-                        FileWriter myWriter = new FileWriter("output.txt");
+                        FileWriter myWriter = new FileWriter("output.txt", true);
                         Officer officer = (Officer) person.get(i);
                         myWriter.write("First Name: " + person.get(i).getFname() + "\n");
                         myWriter.write("Last Name: " + person.get(i).getLname() + "\n");
@@ -1010,7 +1010,7 @@ public class frontEnd {
 
                 else if (person.get(i) instanceof Suspect) {
                     try {
-                        FileWriter myWriter = new FileWriter("output.txt");
+                        FileWriter myWriter = new FileWriter("output.txt", true);
                         Suspect suspect = (Suspect) person.get(i);
                         myWriter.write("First Name: " + person.get(i).getFname() + "\n");
                         myWriter.write("Last Name: " + person.get(i).getLname() + "\n");
@@ -1042,7 +1042,7 @@ public class frontEnd {
 
                 else if (person.get(i) instanceof Witness) {
                     try {
-                        FileWriter myWriter = new FileWriter("output.txt");
+                        FileWriter myWriter = new FileWriter("output.txt", true);
                         Witness witness = (Witness) person.get(i);
                         myWriter.write("First Name: " + person.get(i).getFname() + "\n");
                         myWriter.write("Last Name: " + person.get(i).getLname() + "\n");
@@ -1068,7 +1068,7 @@ public class frontEnd {
 
                 else if (person.get(i) instanceof Victim) {
                     try {
-                        FileWriter myWriter = new FileWriter("output.txt");
+                        FileWriter myWriter = new FileWriter("output.txt", true);
                         Victim victim = (Victim) person.get(i);
                         myWriter.write("First Name: " + person.get(i).getFname() + "\n");
                         myWriter.write("Last Name: " + person.get(i).getLname() + "\n");
@@ -1095,7 +1095,7 @@ public class frontEnd {
 
                 else if (person.get(i) instanceof PersonOfInterest) {
                     try {
-                        FileWriter myWriter = new FileWriter("output.txt");
+                        FileWriter myWriter = new FileWriter("output.txt", true);
                         myWriter.write("First Name: " + person.get(i).getFname() + "\n");
                         myWriter.write("Last Name: " + person.get(i).getLname() + "\n");
                         myWriter.write("Addres: " + person.get(i).getAddress() + "\n");

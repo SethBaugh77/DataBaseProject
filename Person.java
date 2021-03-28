@@ -1,4 +1,7 @@
-
+/**
+ * Class to represent a Person Class.
+ * @author Jonathan Brown
+ */
 public class Person {
 	protected String fname;
 	protected String lname;
@@ -12,11 +15,28 @@ public class Person {
 	protected boolean isAdult;
 	protected long ID;
 	protected String race;
-
+/**
+ * Normal constructor to create a null Person.
+ */
 	public Person() {
 
 	}
 
+	/**
+	 * Constructor to create a Person and sets its indicated values
+	 * @param fName first name of Person
+	 * @param lname last name of Person
+	 * @param Age Age of Person
+	 * @param Height Height of Person
+	 * @param Weight Weight of Person
+	 * @param Gender Gender of Person
+	 * @param Address Address of Person
+	 * @param Phone Phone number of Person
+	 * @param DateOfBirth DOB of Person
+	 * @param IsAdult true/false are they an adult
+	 * @param ID unique identifier of Person
+	 * @param race race of Person
+	 */
 	public Person(String fName, String lname, String Age, String Height, String Weight, String Gender, String Address,
 			String Phone, String DateOfBirth, boolean IsAdult, long ID, String race) {
 		this.fname = fName;

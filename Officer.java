@@ -1,8 +1,30 @@
+/**
+ * Class to represent an Officer kind of Person.
+ * @author Sophie Bacon
+ */
 public class Officer extends Person {
     private String badgeNumber;
     private String officerRank;
     private String officerStatement;
 
+    /**
+     * Constructor to create an Officer kind of person and sets its attributes to inputted values.
+     * @param bnum badgeNumber of Officer
+     * @param officerRank Rank of Officer
+     * @param officerState Officer Statement
+     * @param fName first name of Officer
+     * @param lname last name of Officer
+     * @param Age Age of Officer
+     * @param Height Height of Officer
+     * @param Weight Weight of Officer
+     * @param Gender Gender of Officer
+     * @param Address address of Officer
+     * @param Phone phone number of Officer
+     * @param DateOfBirth DOB of Officer
+     * @param IsAdult true/false are they an adult
+     * @param id unique ID of Officer
+     * @param race race of Officer
+     */
     public Officer(String bnum, String officerRank, String officerState, String fName, String lname, String Age,
             String Height, String Weight, String Gender, String Address, String Phone, String DateOfBirth,
             boolean IsAdult, long id, String race) {
