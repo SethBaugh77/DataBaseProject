@@ -1,12 +1,10 @@
 import java.util.Scanner;
-//import java.lang.Thread.State;
+
 import java.util.ArrayList;
-//import java.util.IllegalFormatWidthException;
 import java.util.concurrent.ThreadLocalRandom;
-//import javax.lang.model.util.ElementScanner6;
-import java.io.File; // Import the File class
+import java.io.File; 
 import java.io.FileWriter;
-import java.io.IOException; // Import the IOException class to handle errors
+import java.io.IOException; 
 
 /**
  * Class that contains all the frontEnd functionality and methods.
@@ -49,7 +47,6 @@ public class frontEnd {
         System.out.println("Enter password:");
         String inp2 = keyboard.nextLine();
         for (int i = 0; i < dBase.getUsers().size(); i++) {
-            // System.out.println(dBase.getUsers().get(i).getUsername());
             if (inp.equals(dBase.getUsers().get(i).getUsername())) {
                 if (inp2.equals(dBase.getUsers().get(i).getPassword())) {
                     return dBase.getUsers().get(i);
@@ -554,7 +551,7 @@ public class frontEnd {
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            Height = keyboard.nextLine(); // Criminal
+            Height = keyboard.nextLine(); 
             Weight = keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
@@ -590,7 +587,7 @@ public class frontEnd {
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            Height = keyboard.nextLine(); // poi
+            Height = keyboard.nextLine(); 
             Weight = keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
@@ -625,7 +622,7 @@ public class frontEnd {
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
             Height = keyboard.nextLine();
-            Weight = keyboard.nextLine(); // Suspect
+            Weight = keyboard.nextLine(); 
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -659,7 +656,7 @@ public class frontEnd {
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            Height = keyboard.nextLine(); // officer
+            Height = keyboard.nextLine(); 
             Weight = keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
@@ -694,7 +691,7 @@ public class frontEnd {
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
             Height = keyboard.nextLine();
-            Weight = keyboard.nextLine(); // witness
+            Weight = keyboard.nextLine(); 
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -723,7 +720,7 @@ public class frontEnd {
             keyboard.nextLine();
             fName = keyboard.nextLine();
             lName = keyboard.nextLine();
-            Height = keyboard.nextLine(); // victim
+            Height = keyboard.nextLine(); 
             Weight = keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
