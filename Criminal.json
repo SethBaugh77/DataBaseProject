@@ -1,0 +1,108 @@
+[
+    
+    {
+        "fname": "json",
+        "lname": "liberty",
+        "Height": "6.5",
+        "weight": "200"
+        "crimetype": "Property"
+        "Gender": "male"
+        "Address": "720 Main Ave."
+        "phone": "1(800)5678942"
+        "DateofBirth": 01/02/1978
+        "isAdult": "True"
+        "injail": "False"
+        "notes": " robbed and stole liquor from store"
+        "numCrimes": "1"
+        "ID": "783452"
+        "race": "black"
+        "hairColor": "black"
+    },
+    {
+        "fname": "kim",
+        "lname": "doe",
+        "Height": "5'6",
+        "weight": "120"
+        "crimetype": "Assault"
+        "Gender": "female"
+        "Address": "324 abc street"
+        "phone": "1(800)0987212"
+        "DateofBirth": 11/20/1994
+        "isAdult": "True"
+        "injail": "False"
+        "notes": " Murdered her watermelon"
+        "numCrimes": "1"
+        "ID": "265783"
+        "race": "white"
+        "hairColor": "red"
+    },
+        "fname": "lumber",
+        "lname": "jack",
+        "Height": "6.0",
+        "weight": "180"
+        "crimetype": "Assault"
+        "Gender": "male"
+        "Address": "1234 diver st."
+        "phone": "1(800)7584930"
+        "DateofBirth": 01/02/1994
+        "isAdult": "True"
+        "injail": "True"
+        "notes": " has a beard"
+        "numCrimes": "3"
+        "ID": "346590"
+        "race": "white"
+        "hairColor": "black"
+    },
+    {
+        "fname": "robert",
+        "lname": "fade",
+        "Height": "6'5",
+        "weight": "155"
+        "crimetype": "FinacialFraud"
+        "Gender": "male"
+        "Address": "1234 diver st."
+        "phone": "1(800)7584930"
+        "DateofBirth": 01/02/19
+        "isAdult": "True"
+        "injail": "True"
+        "notes": " cut on the right cheek, has facial hair, and bald"
+        "numCrimes": "2"
+        "ID": "120976"
+        "race": "black"
+        "hairColor": "black"
+    },
+    {"fname": "blake",
+        "lname": "ace",
+        "Height": "6.1",
+        "weight": "180"
+        "crimetype": "statutory"
+        "Gender": "male"
+        "Address": "852 square cir."
+        "phone": "1(800)9753217"
+        "DateofBirth": 01/02/1990
+        "isAdult": "True"
+        "injail": "False"
+        "notes": " Mohawk , and tattoo on right leg"
+        "numCrimes": "5"
+        "ID": "913245"
+        "race": "italian"
+        "hairColor": "brown"
+    },
+    {"fname": "bert",
+        "lname": "pierce",
+        "Height": "6.0",
+        "weight": "180"
+        "crimetype": "Assault"
+        "Gender": "male"
+        "Address": "1234 diver st."
+        "phone": "1(800)9056741"
+        "DateofBirth": 01/02/1988
+        "isAdult": "True"
+        "injail": "False"
+        "notes": " braided hair"
+        "numCrimes": "4"
+        "ID": "785643"
+        "race": "white"
+        "hairColor": "blonde"
+    }
+]
