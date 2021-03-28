@@ -1,4 +1,10 @@
 
+/**
+ * Class that creates a person of interest
+ * 
+ * @author Nick Brady
+ */
+
 public class PersonOfInterest extends Person {
     protected String occupation;
     protected String lastLocation;
