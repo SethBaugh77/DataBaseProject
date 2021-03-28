@@ -24,6 +24,10 @@ public class User {
 
 	}
 
+	 /**
+   	* Gets the ID.
+   	* @return this ID.
+   	*/
 	public long getId() {
 		return this.id;
 	}
@@ -32,6 +36,10 @@ public class User {
 		this.id = id;
 	}
 
+	 /**
+   	* Gets the Admin.
+   	* @return this Admin.
+   	*/
 	public boolean getAdmin() {
 		return this.admin;
 	}
@@ -40,6 +48,10 @@ public class User {
 		this.admin = admin;
 	}
 
+	 /**
+   	* Gets the first name.
+   	* @return this first name.
+   	*/
 	public String getFirstName() {
 		return this.firstName;
 	}
@@ -48,6 +60,10 @@ public class User {
 		this.firstName = firstName;
 	}
 
+	 /**
+   	* Gets the last name.
+   	* @return this last name.
+   	*/
 	public String getLastName() {
 		return this.lastName;
 	}
@@ -56,6 +72,10 @@ public class User {
 		this.lastName = lastName;
 	}
 
+	 /**
+   	* Gets the username.
+   	* @return this username.
+   	*/
 	public String getUsername() {
 		return this.username;
 	}
@@ -64,6 +84,10 @@ public class User {
 		this.username = username;
 	}
 
+	 /**
+   	* Gets the email.
+   	* @return this email.
+   	*/
 	public String getEmail() {
 		return this.email;
 	}
@@ -72,6 +96,10 @@ public class User {
 		this.email = email;
 	}
 
+	 /**
+   	* Gets the password.
+   	* @return this password.
+   	*/
 	public String getPassword() {
 		return this.password;
 	}
@@ -80,6 +108,10 @@ public class User {
 		this.password = password;
 	}
 
+	 /**
+   	* Gets the phone.
+   	* @return this phone.
+   	*/
 	public String getPhone() {
 		return this.phone;
 	}
