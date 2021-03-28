@@ -18,34 +18,66 @@ public class Criminal extends Person {
         this.hairColor = hairColor;
     }
 
+     /**
+   	* Gets the hair color.
+   	* @return this hair color.
+   	*/
     public String getHairColor() {
         return this.hairColor;
     }
 
+     /**
+   	* Changes the hair color.
+   	* @param string hair color.  
+   	*/
     public void setHairColor(String hairColor) {
         this.hairColor = hairColor;
     }
 
+     /**
+   	* Gets the jail status.
+   	* @return this boolean status.
+   	*/
     public boolean isInJail() {
         return this.inJail;
     }
 
+     /**
+   	* Gets the in jail status.
+   	* @return this in jail status.
+   	*/
     public boolean getInJail() {
         return this.inJail;
     }
 
+     /**
+   	* Changes the in jail status.
+   	* @param boolean inJail.  
+   	*/
     public void setInJail(boolean inJail) {
         this.inJail = inJail;
     }
 
+     /**
+   	* Changes the number of crimes.
+   	* @param string number of crimes.  
+   	*/
     public void setNumCrimes(String numCrimes) {
         this.numCrimes = numCrimes;
     }
 
+     /**
+   	* Gets the crime type.
+   	* @return this crime type.
+   	*/
     public String getCrimeType() {
         return this.crimeType;
     }
 
+     /**
+   	* Changes the crime type.
+   	* @param string crime type.  
+   	*/
     public void setCrimeType(String crimeType) {
         this.crimeType = crimeType;
     }
