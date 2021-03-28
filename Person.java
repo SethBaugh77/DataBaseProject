@@ -1,6 +1,6 @@
 /**
  * Class to represent a Person Class.
- * @author Jonathan Brown
+ * @author Sophie Bacon
  */
 public class Person {
 	protected String fname;
