@@ -32,6 +32,10 @@ public class User {
 		return this.id;
 	}
 
+	 /**
+   	* Changes the ID.
+   	* @param int ID.  
+   	*/
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -44,6 +48,10 @@ public class User {
 		return this.admin;
 	}
 
+	 /**
+   	* Changes the Admin.
+   	* @param boolean admin.  
+   	*/
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
@@ -56,6 +64,10 @@ public class User {
 		return this.firstName;
 	}
 
+	 /**
+   	* Changes the first name.
+   	* @param String first name.  
+   	*/
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -68,6 +80,10 @@ public class User {
 		return this.lastName;
 	}
 
+	 /**
+   	* Changes the last name.
+   	* @param string last name.  
+   	*/
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
@@ -80,6 +96,10 @@ public class User {
 		return this.username;
 	}
 
+	 /**
+   	* Changes the username.
+   	* @param string username.  
+   	*/
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -92,6 +112,10 @@ public class User {
 		return this.email;
 	}
 
+	 /**
+   	* Changes the email.
+   	* @param string email.  
+   	*/
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -104,6 +128,10 @@ public class User {
 		return this.password;
 	}
 
+	 /**
+   	* Changes the password.
+   	* @param string password.  
+   	*/
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -116,6 +144,10 @@ public class User {
 		return this.phone;
 	}
 
+	 /**
+   	* Changes the phone.
+   	* @param string phone.  
+   	*/
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
