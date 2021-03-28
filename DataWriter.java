@@ -8,6 +8,7 @@ import com.google.gson.*;
 
 /**
  * Class that takes the data in the database and writes it to json files.
+ * 
  * @author Seth Baugh
  */
 public class DataWriter extends DataConstants {
@@ -41,6 +42,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a Criminal, gets all the attributes of
      * the Criminal, converts it into a json object, then returns it.
+     * 
      * @param criminal used to get its attributes.
      * @return jsonObject of the criminal input.
      */
@@ -62,7 +64,7 @@ public class DataWriter extends DataConstants {
         crimDetails.put(PERSON_DOB, criminal.getDateOfBirth());
         crimDetails.put(PERSON_IS_ADULT, criminal.getIsAdult());
         crimDetails.put(PERSON_ID, criminal.getID());
-        crimDetails.put(PERSON_CRIME_TYPE,criminal.getCrimeType());
+        crimDetails.put(PERSON_CRIME_TYPE, criminal.getCrimeType());
 
         crimDetails.put(PERSON_IN_JAIL, criminal.getJail());
         crimDetails.put(PERSON_NOTES, criminal.getNotes());
@@ -102,6 +104,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a Victim, gets all the attributes of the
      * Victim, converts it into a json object, then returns it.
+     * 
      * @param victim used to get its attributes.
      * @return jsonObject of the victim input.
      */
@@ -160,6 +163,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of an Officer, gets all the attributes of
      * the Officer, converts it into a json object, then returns it.
+     * 
      * @param officer used to get its attributes.
      * @return jsonObject of the officer input.
      */
@@ -220,6 +224,7 @@ public class DataWriter extends DataConstants {
      * Method that takes in an instance of a PersonOfInterest, gets all the
      * attributes of the PersonOfInterest, converts it into a json object, then
      * returns it.
+     * 
      * @param poi used to get its attributes.
      * @return jsonObject of the poi input.
      */
@@ -246,7 +251,6 @@ public class DataWriter extends DataConstants {
         poiDetails.put(PERSON_OCCUPATION, poi.getOccupation());
         poiDetails.put(PERSON_RACE, poi.getRace());
 
-        // poiDetails.put(PERSON_TATOOS, poi.getTatoos());
         poiDetails.put(PERSON_NOTES, poi.getpoiNotes());
         poiDetails.put(PERSON_HAIR_COLOR, poi.getHairColor());
 
@@ -282,6 +286,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a Suspect, gets all the attributes of the
      * Suspect, converts it into a json object, then returns it.
+     * 
      * @param suspect used to get its attributes.
      * @return jsonObject of the suspect input.
      */
@@ -312,8 +317,6 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(PERSON_IS_CRIMINAL, suspect.getIsCriminal());
         suspectDetails.put(PERSON_RACE, suspect.getRace());
         suspectDetails.put(PERSON_HAIR_COLOR, suspect.getHairColor());
-
-        // suspectDetails.put(PERSON_TATOOS, suspect.getTatoos());
 
         return suspectDetails;
     }
@@ -347,6 +350,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a Witness, gets all the attributes of the
      * Witness, converts it into a json object, then returns it.
+     * 
      * @param witness used to get its attributes.
      * @return jsonObject of the witness input.
      */
@@ -404,6 +408,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a User, gets all the attributes of the
      * User, converts it into a json object, then returns it.
+     * 
      * @param user used to get its attributes.
      * @return jsonObject of the user input.
      */
@@ -453,6 +458,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a Case, gets all the attributes of the
      * Case, converts it into a json object, then returns it.
+     * 
      * @param _case used to get its attributes.
      * @return jsonObject of the _case input.
      */
@@ -511,6 +517,7 @@ public class DataWriter extends DataConstants {
     /**
      * Method that takes in an instance of a Evidence, gets all the attributes of
      * the Evidence, converts it into a json object, then returns it.
+     * 
      * @param evidence used to get its attributes.
      * @return jsonObject of the evidence input.
      */

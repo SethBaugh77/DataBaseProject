@@ -112,67 +112,6 @@ public class frontEnd {
             displayPersonResults(names);
             printPersonAttributes(names);
 
-            // System.out.println("Whose attributes would you like to see? Type their last
-            // name");
-            // String who = keyboard.nextLine();
-            // for (int i = 0; i < names.size(); i++) {
-            // if (names.get(i).getLname().equalsIgnoreCase(who)) {
-            // System.out.println("First Name: " + names.get(i).getFname());
-            // System.out.println("Last Name: " + names.get(i).getLname());
-            // System.out.println("Addres: " + names.get(i).getAddress());
-            // System.out.println("Age: " + names.get(i).getAge());
-            // System.out.println("DOB: " + names.get(i).getDateOfBirth());
-            // System.out.println("Gender " + names.get(i).getGender());
-            // System.out.println("Height: " + names.get(i).getHeight());
-            // System.out.println("ID: " + names.get(i).getID());
-            // System.out.println("Phone: " + names.get(i).getPhone());
-            // System.out.println("Race: " + names.get(i).getRace());
-            // System.out.println("Weight: " + names.get(i).getWeight());
-            // System.out.println("Is Adult: " + names.get(i).getIsAdult());
-            // // System.out.println("CrimeType: " + names.get(i).getCrimeType());
-            // if (names.get(i) instanceof Criminal) {
-            // Criminal crim = (Criminal) names.get(i);
-            // System.out.println("In Jail?: " + crim.getJail());
-            // System.out.println("Notes: " + crim.getNotes());
-            // System.out.println("NumCrimes: " + crim.getNumCrimes());
-            // System.out.println("CrimeType: " + crim.getCrimeType());
-            // System.out.println("HairColor: " + crim.getHairColor());
-            // break;
-            // } else if (names.get(i) instanceof Suspect) {
-
-            // Suspect suspect = (Suspect) names.get(i);
-
-            // System.out.println("bodyType: " + suspect.getBodyType());
-            // System.out.println("isCriminal: " + suspect.getIsCriminal());
-            // System.out.println("Occupation: " + suspect.getOccupation());
-            // System.out.println("lastLocation: " + suspect.getLastLocation());
-            // System.out.println("Notes: " + suspect.getPoiNotes());
-            // System.out.println("HairColor: " + suspect.getHairColor());
-
-            // } else if (names.get(i) instanceof Officer) {
-            // Officer officer = (Officer) names.get(i);
-            // System.out.println("badgeNumber: " + officer.getBadgeNumber());
-            // System.out.println("officerRank: " + officer.getOfficerRank());
-            // System.out.println("officerStatement: " + officer.getOfficerStatement());
-            // } else if (names.get(i) instanceof Witness) {
-            // Witness witness = (Witness) names.get(i);
-            // System.out.println("Witness Statement: " + witness.getWitnessStatement());
-            // } else if (names.get(i) instanceof Victim) {
-            // Victim victim = (Victim) names.get(i);
-            // System.out.println("Is Healthy: " + victim.getIsHealthy());
-            // System.out.println("Victim Statement: " + victim.getVictimStatement());
-
-            // } else if (names.get(i) instanceof PersonOfInterest) {
-            // PersonOfInterest poi = (PersonOfInterest) names.get(i);
-            // System.out.println("Occupation: " + poi.getOccupation());
-            // System.out.println("Location: " + poi.getLastLocation());
-            // System.out.println("Notes: " + poi.getPoiNotes());
-            // System.out.println("HairColor: " + poi.getHairColor());
-            // }
-
-            // }
-
-            // }
             System.out.println("Type anything to continue");
             String test = keyboard.nextLine();
 
@@ -494,7 +433,7 @@ public class frontEnd {
                 return null;
             }
         }
-        // notes
+
         else {
             ArrayList<Person> names = new ArrayList<Person>();
             for (int i = 0; i < dBase.getCriminals().size(); i++) {
@@ -516,8 +455,6 @@ public class frontEnd {
                     names.add(dBase.getPOI().get(i));
             }
 
-            // age
-
             for (int i = 0; i < dBase.getCriminals().size(); i++) {
                 if (dBase.getCriminals().get(i).getAge().equalsIgnoreCase(input)
                         || dBase.getCriminals().get(i).getAge().equalsIgnoreCase(input2)
@@ -537,8 +474,6 @@ public class frontEnd {
                     names.add(dBase.getPOI().get(i));
             }
 
-            // hair color
-
             for (int i = 0; i < dBase.getCriminals().size(); i++) {
                 if (dBase.getCriminals().get(i).getHairColor().equalsIgnoreCase(input)
                         || dBase.getCriminals().get(i).getHairColor().equalsIgnoreCase(input2)
@@ -557,8 +492,6 @@ public class frontEnd {
                         || dBase.getPOI().get(i).getHairColor().equalsIgnoreCase(input3))
                     names.add(dBase.getPOI().get(i));
             }
-
-            // height
 
             for (int i = 0; i < dBase.getCriminals().size(); i++) {
                 if (dBase.getCriminals().get(i).getHeight().equalsIgnoreCase(input)
@@ -581,9 +514,6 @@ public class frontEnd {
 
             return names;
 
-            // if (names.size() == 0)
-            // System.out.println("No one was found");
-            // return names;
         }
 
     }
@@ -594,12 +524,10 @@ public class frontEnd {
      * @param aList arrayList of Persons.
      */
     public void displayPersonResults(ArrayList<Person> aList) {
-        // System.out.println("Searching database...");
 
         for (int i = 0; i < aList.size(); i++) {
             System.out.println(aList.get(i).getFname() + " " + aList.get(i).getLname());
         }
-        // System.out.println("All eligible persons were found...");
 
     }
 
@@ -628,7 +556,6 @@ public class frontEnd {
             lName = keyboard.nextLine();
             Height = keyboard.nextLine(); // Criminal
             Weight = keyboard.nextLine();
-            // keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -637,10 +564,8 @@ public class frontEnd {
             inJail = keyboard.nextBoolean();
             keyboard.nextLine();
             numCrimes = keyboard.nextLine();
-            // keyboard.nextLine();
             crimeType = keyboard.nextLine();
             Age = keyboard.nextLine();
-            // keyboard.nextLine();
             Notes = keyboard.nextLine();
             race = keyboard.nextLine();
             hairColor = keyboard.nextLine();
@@ -667,7 +592,6 @@ public class frontEnd {
             lName = keyboard.nextLine();
             Height = keyboard.nextLine(); // poi
             Weight = keyboard.nextLine();
-            // keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -677,7 +601,6 @@ public class frontEnd {
             Occupation = keyboard.nextLine();
             lastLocation = keyboard.nextLine();
             Age = keyboard.nextLine();
-            // keyboard.nextLine();
             Race = keyboard.nextLine();
             Notes = keyboard.nextLine();
             hairColor = keyboard.nextLine();
@@ -703,7 +626,6 @@ public class frontEnd {
             lName = keyboard.nextLine();
             Height = keyboard.nextLine();
             Weight = keyboard.nextLine(); // Suspect
-            // keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -713,7 +635,6 @@ public class frontEnd {
             Occupation = keyboard.nextLine();
             lastLocation = keyboard.nextLine();
             Age = keyboard.nextLine();
-            // keyboard.nextLine();
             bodyType = keyboard.nextLine();
             Race = keyboard.nextLine();
             isCriminal = keyboard.nextBoolean();
@@ -740,7 +661,6 @@ public class frontEnd {
             lName = keyboard.nextLine();
             Height = keyboard.nextLine(); // officer
             Weight = keyboard.nextLine();
-            // keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -748,13 +668,10 @@ public class frontEnd {
             Adult = keyboard.nextBoolean();
             keyboard.nextLine();
             badgeNumber = keyboard.nextLine();
-            // keyboard.nextLine();
             Rank = keyboard.nextLine();
             Statement = keyboard.nextLine();
             Age = keyboard.nextLine();
-            // keyboard.nextLine();
             Race = keyboard.nextLine();
-
             long ID = ThreadLocalRandom.current().nextInt(0, 997 + 1);
 
             Officer officer = new Officer(badgeNumber, Rank, Statement, fName, lName, Age, Height, Weight, Gender,
@@ -778,7 +695,6 @@ public class frontEnd {
             lName = keyboard.nextLine();
             Height = keyboard.nextLine();
             Weight = keyboard.nextLine(); // witness
-            // keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -786,7 +702,6 @@ public class frontEnd {
             Adult = keyboard.nextBoolean();
             keyboard.nextLine();
             Age = keyboard.nextLine();
-            // keyboard.nextLine();
             Statement = keyboard.nextLine();
             Race = keyboard.nextLine();
 
@@ -810,7 +725,6 @@ public class frontEnd {
             lName = keyboard.nextLine();
             Height = keyboard.nextLine(); // victim
             Weight = keyboard.nextLine();
-            // keyboard.nextLine();
             Gender = keyboard.nextLine();
             Address = keyboard.nextLine();
             Phone = keyboard.nextLine();
@@ -821,7 +735,6 @@ public class frontEnd {
             isHealthy = keyboard.nextBoolean();
             keyboard.nextLine();
             Age = keyboard.nextLine();
-            // keyboard.nextLine();
             Race = keyboard.nextLine();
 
             Victim victim = new Victim(isHealthy, Statement, fName, lName, Age, Height, Weight, Gender, Address, Phone,
@@ -835,13 +748,10 @@ public class frontEnd {
 
     public void printPersonAttributes(ArrayList<Person> names) {
         System.out.println("Whose attributes would you like to see? Type their last name");
-        // keyboard.nextLine();
         String who = keyboard.nextLine();
         boolean test = false;
         while (true) {
-            // System.out.println("Whose attributes would you like to see? Type their last
-            // name");
-            // keyboard.nextLine();
+
             if (test == true)
                 who = keyboard.nextLine();
             for (int i = 0; i < names.size(); i++) {
@@ -859,7 +769,7 @@ public class frontEnd {
                     System.out.println("Race: " + names.get(i).getRace());
                     System.out.println("Weight: " + names.get(i).getWeight());
                     System.out.println("Is Adult: " + names.get(i).getIsAdult());
-                    // System.out.println("CrimeType: " + names.get(i).getCrimeType());
+
                     if (names.get(i) instanceof Criminal) {
                         Criminal crim = (Criminal) names.get(i);
                         System.out.println("In Jail?: " + crim.getJail());
@@ -1006,10 +916,9 @@ public class frontEnd {
             printPersonAttributes(names);
 
             System.out.println("Type anything once you are finished viewing.");
-            // keyboard.nextLine();
+
             String cont = keyboard.nextLine();
 
-            // }
         }
     }
 
@@ -1031,7 +940,7 @@ public class frontEnd {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        // if case is null
+
         if (_case == null) {
             for (int i = 0; i < person.size(); i++) {
 

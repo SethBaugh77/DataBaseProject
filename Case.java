@@ -4,7 +4,7 @@ public class Case {
 	private long CaseID;
 	private ArrayList<Long> criminals = new ArrayList<Long>();
 	private ArrayList<Long> victims = new ArrayList<Long>();
-	private ArrayList<Long> witnesses = new ArrayList<Long>(); // -CaseID: int
+	private ArrayList<Long> witnesses = new ArrayList<Long>();
 	private ArrayList<Long> officers = new ArrayList<Long>();
 	private ArrayList<Long> poi = new ArrayList<Long>();
 	private ArrayList<Long> suspects = new ArrayList<Long>();
@@ -17,10 +17,10 @@ public class Case {
 	private String severity;
 	private boolean isFederal;
 
-	public Case()
-	{
+	public Case() {
 
 	}
+
 	public Case(String name, String crime, String date, boolean isSolved, String severity, boolean isFederal, long ID,
 			ArrayList<Long> criminals, ArrayList<Long> victims, ArrayList<Long> witnesses, ArrayList<Long> officers,
 			ArrayList<Long> poi, ArrayList<Long> suspects, ArrayList<Long> evidence) {
@@ -38,8 +38,6 @@ public class Case {
 		this.poi = poi;
 		this.suspects = suspects;
 		this.evidence = evidence;
-
-		
 
 	}
 
@@ -74,8 +72,6 @@ public class Case {
 	public boolean isIsFederal() {
 		return this.isFederal;
 	}
-
-
 
 	public long getCaseID() {
 		return CaseID;

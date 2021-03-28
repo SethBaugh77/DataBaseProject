@@ -8,7 +8,6 @@ public class Evidence {
 	private String fingerprintEvidence;
 	private String weaponEvidence;
 	private String otherEvidence;
-	//
 
 	public Evidence(long ID, String Vehicle, String bloodEvidence, String fingerPrintEvidence, String weaponEvidence,
 			String otherEvidence) {

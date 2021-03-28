@@ -1,5 +1,5 @@
 
 public enum CrimeTypes {
-	Personal,Property,Statutory, FinancialFraud,Assault
+	Personal, Property, Statutory, FinancialFraud, Assault
 
 }

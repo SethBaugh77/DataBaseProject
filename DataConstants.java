@@ -1,5 +1,7 @@
 /**
- * Class that holds all the constants to be used in the dataLoader and dataWriter class.
+ * Class that holds all the constants to be used in the dataLoader and
+ * dataWriter class.
+ * 
  * @author Seth Baugh
  */
 public abstract class DataConstants {
@@ -68,5 +70,4 @@ public abstract class DataConstants {
     protected final static String PERSON_CRIME_TYPE = "crimeType";
     protected final static String PERSON_HAIR_COLOR = "hairColor";
 
-    
 }
