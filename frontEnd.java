@@ -20,7 +20,7 @@ public class frontEnd {
      * @param args
      */
     public static void main(String args[]) {
-
+       
         dBase = DataBase.getInstance();
         frontEnd fEnd = new frontEnd();
         User user;
@@ -63,7 +63,7 @@ public class frontEnd {
      * @param user  instance of the user that is the account that was signed into.
      */
     public void doAction(DataBase dbase, User user) {
-        System.out.println("Welcome to the database. What would you like to do?");
+        System.out.println("Welcome to the Crime Collector. What would you like to do?");
         System.out.println("1. Search for a person.");
         System.out.println("2. Search for a case.");
         System.out.println("3. Add new Person.");
