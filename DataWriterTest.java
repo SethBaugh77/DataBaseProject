@@ -182,10 +182,10 @@ class DataWriterTest {
 	}
 	@Test
 	void testWritingOneWitness() {
-		witList.add(new Witness("I saw the man come in with a gun", "Barry ", "Bonds", "79", "6'10", "250",
+		witList.add(new Witness("I saw the man come in with a gun", "Barry", "Bonds", "79", "6'10", "250",
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));
 		DataWriter.saveWitness();
-		assertEquals("Barry", witList.get(1).getFname());
+		assertEquals("Barry", witList.get(0).getFname());
 	}
 	@Test
 	void testWritingFiveWitness() {
@@ -197,24 +197,23 @@ class DataWriterTest {
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));
 		witList.add(new Witness("I saw the man come in with a gun", "Earry ", "Bonds", "79", "6'10", "250",
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));
-		witList.add(new Witness("I saw the man come in with a gun", "Farry ", "Bonds", "79", "6'10", "250",
+		witList.add(new Witness("I saw the man come in with a gun", "Farry", "Bonds", "79", "6'10", "250",
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));
 		DataWriter.saveWitness();
-		assertEquals("Farry", dBase.getWitnesses().get(1).getFname());
+		assertEquals("Farry", dBase.getWitnesses().get(4).getFname());
 	}
 	@Test
 	void testWritingEmptyWitness() {
 		witList.add(new Witness("I saw the man come in with a gun", "", "Bonds", "79", "6'10", "250",
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));		
 		DataWriter.saveWitness();
-		assertEquals("", dBase.getWitnesses().get(1).getFname());
+		assertEquals("", dBase.getWitnesses().get(0).getFname());
 	}
 	@Test
 	void testWritingNullWitness() {
 		witList.add(new Witness("I saw the man come in with a gun", null, "Bonds", "79", "6'10", "250",
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));
 		DataWriter.saveWitness();
-		assertEquals(null, dBase.getWitnesses().get(1).getFname());
+		assertEquals(null, dBase.getWitnesses().get(0).getFname());
 	}
 }
-
