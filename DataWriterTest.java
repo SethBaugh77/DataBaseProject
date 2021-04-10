@@ -216,4 +216,102 @@ class DataWriterTest {
 		DataWriter.saveWitness();
 		assertEquals(null, dBase.getWitnesses().get(0).getFname());
 	}
+	
+	// criminal test
+    @Test
+	void testWritingOneCriminal() {
+        CriminalList.add(new Criminal("Hunter", "Lee", "30", "6'2", "200", null, "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, true, "limp", "10", 0645, "white", "brown" ));
+		DataWriter.saveCriminal();
+		assertEquals("Hunter", CriminalList.get(0).getFname());
+    }
+    
+    @Test
+	void testWritingNullCriminal() {
+		CriminalList.add(new Criminal(null, "Lee", "30", "6'2", "200", null, "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, true, "limp", "10", 0645, "white", "brown" ));
+		DataWriter.saveCriminal();
+		assertEquals(null, dBase.getCriminals().get(0).geFLname());
+    }
+    
+    // suspect test
+    @Test
+	void testWritingOneSuspect() {
+		SuspectList.add(new Suspect("Hunter", "Lee", "30", "6'2", "200", "M", "22 Sein Lane"));
+		DataWriter.saveSuspect();
+		assertEquals("Hunter", SuspectList.get(0).getFname());
+    }
+    
+    @Test
+	void testWritingNullSuspect() {
+		SuspectList.add(new Suspect(null, "Lee", "30", "6'2", "200", "M", "22 Sein Lane"));
+		DataWriter.saveSuspect();
+		assertEquals(null, dBase.getSuspects().get(0).getFname());
+    }
+    
+    // officer test
+    @Test
+	void testWritingOneOfficer() {
+        OfficerList.add(new Officer("1801", "Officer", "MD", "Anya", "Star", "30", 
+        "5'10", "170", "F", "22 Sein Lane", "2023650982", "11/10/90", true, 0672, "white"));
+		DataWriter.saveOfficer();
+		assertEquals("Anya", OfficerList.get(0).getFname());
+    }
+    
+    @Test
+	void testWritingNullOfficer() {
+		OfficerList.add(new Officer("1801", "Officer", "MD", null, "Star", "30", 
+        "5'10", "170", "F", "22 Sein Lane", "2023650982", "11/10/90", true, 0672, "white"));
+		DataWriter.saveOfficer();
+		assertEquals(null, dBase.getOfficers().get(0).getFname());
+    }
+    
+    // POI test
+    @Test
+	void testWritingOnePOI() {
+        POIList.add(new POI("Hunter", "Lee", "30", "6'2", "200", "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, "doctor", "PA", 2306, "white", "grey"));
+		DataWriter.savePOI();
+		assertEquals("Hunter", POIList.get(0).getFname());
+    }
+    
+    @Test
+	void testWritingNullPOI() {
+		POIList.add(new POI(null, "Lee", "30", "6'2", "200", "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, "doctor", "PA", 2306, "white", "grey"));
+		DataWriter.savePOI();
+		assertEquals(null, dBase.getPOI().get(0).getFname());
+    }
+    
+    // victim test
+    @Test
+	void testWritingOneVictim() {
+        VictimList.add(new Victim(true, "I was scared", "Hunter", "Lee", "30", "6'2", "200", "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, 2306, "white"));
+		DataWriter.saveVictim();
+		assertEquals("Hunter", VictimList.get(0).getFname());
+    }
+    
+    @Test
+	void testWritingNullPOI() {
+		VictimList.add(new Victim(true, "I was scared", null, "Lee", "30", "6'2", "200", "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, 2306, "white"));
+		DataWriter.saveVictim();
+		assertEquals(null, dBase.getVictim().get(0).getFname());
+    }
+    
+    // evidence test
+    @Test
+	void testWritingOneEvidence() {
+        EvidenceList.add(new Evidence(0921, "toyota", "type O", null, "gun", null));
+		DataWriter.saveEvidence();
+		assertEquals("toyota", EvidenceList.get(0).getVehicle());
+    }
+    
+    @Test
+	void testWritingNullEvidence() {
+		EvidenceList.add(new Evidence(0921, null, "type O", null, "gun", null));
+		DataWriter.saveEvidence();
+		assertEquals(null, dBase.getEvidence().get(0).getVehicle());
+	}
 }
