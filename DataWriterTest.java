@@ -62,17 +62,22 @@ class DataWriterTest {
         DataWriter.saveUser();
     }
 	//user method test cases
+
+	//Test to check size
     @Test
     void testWritingZeroUsers() {
     	userList = dBase.getUsers();
 		assertEquals(0, userList.size());
 	}
+	
+	//test to make sure user was added
 	@Test
 	void testWritingOneUser() {
 		userList.add(new User(555, true, "James", "Monroe", "jmon", "jmon@gmail.com", "idk", "555-555-5555"));
 		DataWriter.saveUser();
 		assertEquals("jmon", userList.get(0).getUsername());
 	}
+	//test to make sure multiple users are added 
 	@Test
 	void testWritingFiveUsers() {
 		userList.add(new User(555, true, "James", "Monroe", "jmon", "jmon@gmail.com", "idk", "555-555-5555"));
@@ -83,25 +88,31 @@ class DataWriterTest {
 		DataWriter.saveUser();
 		assertEquals("nmon", dBase.getUsers().get(4).getUsername());
 	}
+	//tests to see if a user can be entered. Failed means it can be entered.
+	//test to see if "" can be entered as inputs. Failure means an unwanted attribute can be entered, which we dont want.
 	@Test
 	void testWritingEmptyUser() {
 		userList.add(new User(0, false, "", "", "", "", "", ""));
 		DataWriter.saveUser();
-		assertEquals("", dBase.getUsers().get(0).getUsername());
+		assertNotEquals("", dBase.getUsers().get(0).getUsername());
 	}
 	
+	//test to see if other attributes can be entered as a user.
 	@Test
 	void testWritingNullUser() {
 		userList.add(new User(0, false, "", "", null, "", "", ""));
 		DataWriter.saveUser();
-		assertEquals(null, dBase.getUsers().get(0).getUsername());
+		assertNotEquals(null, dBase.getUsers().get(0).getUsername());
 	}
 	//case method test cases
+	//test to see if size matches
 	@Test
 	void testWritingZeroCases() {
     	caseList = dBase.getCases();
 		assertEquals(0, caseList.size());
 	}
+
+	//test to see if one case can be added
 	@Test
 	void testWritingOneCase() {
 		ArrayList <Long> criminalsID = new ArrayList<Long>();
@@ -117,6 +128,7 @@ class DataWriterTest {
 		DataWriter.saveCase();
 		assertEquals("havoc at gamestop", caseList.get(0).getName());
 	}
+	//test to see if multiple cases can be added
 	@Test
 	void testWritingFiveCases() {
 		ArrayList <Long> criminalsID = new ArrayList<Long>();
@@ -144,6 +156,7 @@ class DataWriterTest {
 		DataWriter.saveCase();
 		assertEquals("Bike theft", dBase.getCases().get(4).getName());
 	}
+	//test to see if a case can have a "" name
 	@Test
 	void testWritingEmptyCase() {
 		ArrayList <Long> criminalsID = new ArrayList<Long>();
@@ -159,6 +172,7 @@ class DataWriterTest {
 		DataWriter.saveCase();
 		assertEquals("", dBase.getCases().get(0).getName());
 	}
+	//test to see if a case can have a null name
 	@Test
 	void testWritingNullCase() {
 		ArrayList <Long> criminalsID = new ArrayList<Long>();
@@ -172,14 +186,18 @@ class DataWriterTest {
         criminalsID, victimsID, witnessesID, officersID,
          poiID, suspectsID, evidenceID));		
 		DataWriter.saveCase();
-		assertEquals(null, dBase.getCases().get(0).getName());
+		assertNotEquals(null, dBase.getCases().get(0).getName());
 	}
+
 	//witness method test cases
+	//test to see if size matches
     @Test
     void testWritingZeroWitnesses() {
     	witList = dBase.getWitnesses();
 		assertEquals(0, witList.size());
 	}
+	
+	//test to see if one witness can be entered
 	@Test
 	void testWritingOneWitness() {
 		witList.add(new Witness("I saw the man come in with a gun", "Barry", "Bonds", "79", "6'10", "250",
@@ -187,6 +205,8 @@ class DataWriterTest {
 		DataWriter.saveWitness();
 		assertEquals("Barry", witList.get(0).getFname());
 	}
+
+	//test to see if multiple witnesses can be entered
 	@Test
 	void testWritingFiveWitness() {
 		witList.add(new Witness("I saw the man come in with a gun", "Barry ", "Bonds", "79", "6'10", "250",
@@ -202,6 +222,8 @@ class DataWriterTest {
 		DataWriter.saveWitness();
 		assertEquals("Farry", dBase.getWitnesses().get(4).getFname());
 	}
+
+	//test to see if "" can be entered as a name
 	@Test
 	void testWritingEmptyWitness() {
 		witList.add(new Witness("I saw the man come in with a gun", "", "Bonds", "79", "6'10", "250",
@@ -209,109 +231,147 @@ class DataWriterTest {
 		DataWriter.saveWitness();
 		assertEquals("", dBase.getWitnesses().get(0).getFname());
 	}
+
+	//test to see if null can be entered as a name
 	@Test
 	void testWritingNullWitness() {
 		witList.add(new Witness("I saw the man come in with a gun", null, "Bonds", "79", "6'10", "250",
         "M", "123 jailbreak road", "333-333-2222", "1/1/11", true, 543, "black"));
 		DataWriter.saveWitness();
-		assertEquals(null, dBase.getWitnesses().get(0).getFname());
+		assertNotEquals(null, dBase.getWitnesses().get(0).getFname());
 	}
 	
-	// criminal test
+	// criminal tests
+	//test to see if one criminal can be added
     @Test
 	void testWritingOneCriminal() {
-        CriminalList.add(new Criminal("Hunter", "Lee", "30", "6'2", "200", null, "M", 
+        crimList.add(new Criminal("Hunter", "Lee", "30", "6'2", "200", null, "M", 
         "22 Lep Lane", "2226509802", "01/22/90", true, true, "limp", "10", 0645, "white", "brown" ));
 		DataWriter.saveCriminal();
-		assertEquals("Hunter", CriminalList.get(0).getFname());
+		assertEquals("Hunter", crimList.get(0).getFname());
     }
     
+	//test to see if a criminal can have a null name
     @Test
 	void testWritingNullCriminal() {
-		CriminalList.add(new Criminal(null, "Lee", "30", "6'2", "200", null, "M", 
+		crimList.add(new Criminal(null, "Lee", "30", "6'2", "200", null, "M", 
         "22 Lep Lane", "2226509802", "01/22/90", true, true, "limp", "10", 0645, "white", "brown" ));
 		DataWriter.saveCriminal();
-		assertEquals(null, dBase.getCriminals().get(0).geFLname());
+		assertNotEquals(null, dBase.getCriminals().get(0).getFname());
     }
     
-    // suspect test
+    // suspect tests
+	//test to see if one suspect can be added
     @Test
 	void testWritingOneSuspect() {
-		SuspectList.add(new Suspect("Hunter", "Lee", "30", "6'2", "200", "M", "22 Sein Lane"));
+		susList.add(new Suspect("Hunter", "Lee", "30", "6'2", "200", "M", "22 Sein Lane", null, null, false, 0, null, null, null, false, null, null, null));
 		DataWriter.saveSuspect();
-		assertEquals("Hunter", SuspectList.get(0).getFname());
+		assertEquals("Hunter", susList.get(0).getFname());
     }
     
+	//test to see if a suspect can have a null name
     @Test
 	void testWritingNullSuspect() {
-		SuspectList.add(new Suspect(null, "Lee", "30", "6'2", "200", "M", "22 Sein Lane"));
+		susList.add(new Suspect(null, "Lee", "30", "6'2", "200", "M", "22 Sein Lane", null, null, false, 0, null, null, null, false, null, null, null));
 		DataWriter.saveSuspect();
-		assertEquals(null, dBase.getSuspects().get(0).getFname());
+		assertNotEquals(null, dBase.getSuspects().get(0).getFname());
     }
     
-    // officer test
+    // officer tests
+	//test to see if an officer can be added
     @Test
 	void testWritingOneOfficer() {
-        OfficerList.add(new Officer("1801", "Officer", "MD", "Anya", "Star", "30", 
+        offList.add(new Officer("1801", "Officer", "MD", "Anya", "Star", "30", 
         "5'10", "170", "F", "22 Sein Lane", "2023650982", "11/10/90", true, 0672, "white"));
 		DataWriter.saveOfficer();
-		assertEquals("Anya", OfficerList.get(0).getFname());
+		assertEquals("Anya", offList.get(0).getFname());
     }
     
+	//test to see if an officer can have a name of null
     @Test
 	void testWritingNullOfficer() {
-		OfficerList.add(new Officer("1801", "Officer", "MD", null, "Star", "30", 
+		offList.add(new Officer("1801", "Officer", "MD", null, "Star", "30", 
         "5'10", "170", "F", "22 Sein Lane", "2023650982", "11/10/90", true, 0672, "white"));
 		DataWriter.saveOfficer();
-		assertEquals(null, dBase.getOfficers().get(0).getFname());
+		assertNotEquals(null, dBase.getOfficers().get(0).getFname());
     }
     
-    // POI test
+    // POI tests
+	//test to see if a POI can be entered
     @Test
 	void testWritingOnePOI() {
-        POIList.add(new POI("Hunter", "Lee", "30", "6'2", "200", "M", 
-        "22 Lep Lane", "2226509802", "01/22/90", true, "doctor", "PA", 2306, "white", "grey"));
-		DataWriter.savePOI();
-		assertEquals("Hunter", POIList.get(0).getFname());
+        poiList.add(new PersonOfInterest("Hunter", "Lee", "30", "6'2", "200", "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, "doctor", "PA", 2306, "white", "grey", null));
+		DataWriter.savepoi();
+		assertEquals("Hunter", poiList.get(0).getFname());
     }
     
+	//test to see if a POI can have a null name
     @Test
 	void testWritingNullPOI() {
-		POIList.add(new POI(null, "Lee", "30", "6'2", "200", "M", 
-        "22 Lep Lane", "2226509802", "01/22/90", true, "doctor", "PA", 2306, "white", "grey"));
-		DataWriter.savePOI();
-		assertEquals(null, dBase.getPOI().get(0).getFname());
+		poiList.add(new PersonOfInterest(null, "Lee", "30", "6'2", "200", "M", 
+        "22 Lep Lane", "2226509802", "01/22/90", true, "doctor", "PA", 2306, "white", "grey", null));
+		DataWriter.savepoi();
+		assertNotEquals(null, dBase.getPOI().get(0).getFname());
     }
     
     // victim test
+	//test to see if a victim can be entered
     @Test
 	void testWritingOneVictim() {
-        VictimList.add(new Victim(true, "I was scared", "Hunter", "Lee", "30", "6'2", "200", "M", 
+        vicList.add(new Victim(true, "I was scared", "Hunter", "Lee", "30", "6'2", "200", "M", 
         "22 Lep Lane", "2226509802", "01/22/90", true, 2306, "white"));
 		DataWriter.saveVictim();
-		assertEquals("Hunter", VictimList.get(0).getFname());
+		assertEquals("Hunter", vicList.get(0).getFname());
     }
     
+	//test to see if a victim can have a null name
     @Test
-	void testWritingNullPOI() {
-		VictimList.add(new Victim(true, "I was scared", null, "Lee", "30", "6'2", "200", "M", 
+	void testWritingNullVictim() {
+		vicList.add(new Victim(true, "I was scared", null, "Lee", "30", "6'2", "200", "M", 
         "22 Lep Lane", "2226509802", "01/22/90", true, 2306, "white"));
 		DataWriter.saveVictim();
-		assertEquals(null, dBase.getVictim().get(0).getFname());
+		assertNotEquals(null, dBase.getVictims().get(0).getFname());
     }
     
-    // evidence test
+    // evidence tests
+	//test to see if one evidence can be entered
     @Test
 	void testWritingOneEvidence() {
-        EvidenceList.add(new Evidence(0921, "toyota", "type O", null, "gun", null));
+        eviList.add(new Evidence(9210, "toyota", "type O", null, "gun", null));
 		DataWriter.saveEvidence();
-		assertEquals("toyota", EvidenceList.get(0).getVehicle());
+		assertEquals("toyota", eviList.get(0).getVehicle());
     }
     
+	//test to see if an evidence can have a null attribute
     @Test
 	void testWritingNullEvidence() {
-		EvidenceList.add(new Evidence(0921, null, "type O", null, "gun", null));
+		eviList.add(new Evidence(921, null, "type O", null, "gun", null));
 		DataWriter.saveEvidence();
-		assertEquals(null, dBase.getEvidence().get(0).getVehicle());
+		assertNotEquals(null, dBase.getEvidence().get(0).getVehicle());
 	}
+
+	//test to see if two different accounts can have the same username
+	@Test
+	void testDuplicateUsername()
+	{
+	 userList.add(new User(555, true, "James", "Monroe", "jmon", "jmon@gmail.com", "idk", "555-555-5555"));
+	 userList.add(new User(555, true, "James", "Monroe", "jmon", "jmon@gmail.com", "idk", "555-555-5555"));
+	 assertEquals(null, userList.get(2).getUsername());
+ 
+		
+	}
+	//test to see if two different accounts can have the same email
+	@Test
+	void testDuplicateEmail()
+	{
+	 userList.add(new User(555, true, "James", "Monroe", "jmon", "jmon@gmail.com", "idk", "555-555-5555"));
+	 userList.add(new User(555, true, "James", "Monroe", "jmon", "jmon@gmail.com", "idk", "555-555-5555"));
+	 assertEquals(null, userList.get(2).getEmail());
+	 }
+
+
+
+
+
 }
